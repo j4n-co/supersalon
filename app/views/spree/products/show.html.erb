@@ -1,0 +1,85 @@
+<div class=" fourteen columns alpha" data-hook="product_show" itemscope itemtype="http://schema.org/Product">
+  <% @body_id = 'product-details' %>
+
+  <div data-hook="product_left_part">
+    <div class="row" data-hook="product_left_part_wrap">
+
+      <div id="product-images" data-hook="product_images">
+        <div id="main-image" data-hook>
+          <% if (@product.images + @product.variant_images).uniq.size > 1 %>
+            <div id="prev">
+            <div class="nav-inner">
+              <span class="nav-inner-text">
+                </span>
+              </div>
+            </div>
+          <% end %> 
+          <%= render :partial => 'image' %>
+          <% if (@product.images + @product.variant_images).uniq.size > 1 %>
+            <div id="next">
+              <div class="nav-inner">
+                <span class="nav-inner-text">
+                </span>
+              </div>
+            </div>
+          <% end %> 
+        </div>
+        <div id="thumbnails" data-hook>
+          <%= render :partial => 'thumbnails' %>
+        </div>
+      </div>
+
+      <div class='row' style="position:relative;">
+
+      <div>
+        <h1 class="columns five alpha" itemprop="name"><%= accurate_title %></h1>
+      </div>
+      <div class="clear"></div>
+        <div class="columns five alpha"> 
+          <div style="min-height: 8em;" data-hook="product_properties">
+        
+
+
+              <div class="row">
+                <%= render :partial => 'properties' %>
+              </div>
+
+              <div id="cart-form" class="row" data-hook="cart_form">
+                <%= render :partial => 'cart_form' %>
+              </div>
+          </div>   
+        
+        </div>
+
+        <div class="columns six" style="margin-left: 24px; ">
+          <div itemprop="description" data-hook="description" style="border-top: 2px solid;
+padding-top: 12px;">
+            <%= product_description(@product) rescue t(:product_has_no_description) %>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="related_products">
+  <p style="margin-bottom: 4em;">
+  suggested titles:
+  </p>
+    <% @related_titles.each do |related_product| %> 
+      <p class="row">
+        <% if related_product.images.length > 0 %>  
+          <a href="<%= url_for(related_product) %>">   
+            <%= image_tag related_product.images.first().attachment.url(:small), :itemprop => "image" %>
+          </a>
+        <% end %> 
+        <br>
+        <a href="<%= url_for(related_product) %>"> 
+          <%= related_product.name %>        
+        </a>
+      </p>
+    <% end %> 
+</div>

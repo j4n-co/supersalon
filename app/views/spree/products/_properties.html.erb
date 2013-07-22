@@ -1,0 +1,22 @@
+
+
+    <table id="product-properties" class="table-display" data-hook>
+      <tbody>
+        <% unless @product_properties.empty? %>  
+        <% @product_properties.each do |product_property| %>
+          <% css_class = cycle('even', 'odd', :name => "properties") %>
+          <tr class="<%= css_class %>">
+            <td><%= product_property.property.presentation %>: <%= product_property.value %></td>
+          </tr>
+        <% end %>
+        <% reset_cycle('properties') %>
+        <% end %>
+          <tr>
+            <td>
+              <% if @product.price_in(current_currency) and !@product.price.nil? %>
+                <span itemprop="price"><%= @product.price_in(current_currency).display_price %></span>
+              <% end %>
+            </td>
+          </tr>
+      </tbody>
+    </table>

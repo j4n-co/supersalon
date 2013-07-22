@@ -1,0 +1,18 @@
+<nav id="top-nav-bar">
+  <ul id="nav-bar" class="inline" data-hook>
+    <li class="cart-menu-link " id="link-to-cart" class="three columns alpha omega" data-hook><%= link_to_cart('Cart: ') %></li>
+    <br>
+    <% if spree_current_user %>
+  		<li class="cart-menu-link" id="link-to-account"><%= link_to 'Account', spree.account_path %>/<%= link_to t(:logout), spree.destroy_user_session_path %></li>
+	<% else %>
+	  <li class="cart-menu-link" id="link-to-login" class="columns two omega"><%= link_to t(:login), spree.login_path %></li>
+	<% end %>
+   
+   <% cur = Spree::Currency.current.char_code %> 
+    
+    <li class="cart-menu-link " id="link-to-currency">
+      <%= link_to "eur", currency_path(:eur), :class => cur=='EUR' ? 'current' : ''; %><%= link_to "pln", currency_path(:pln),  :class=> cur=='PLN' ? 'current' : ''; %>
+    </li>
+
+  </ul>
+</nav>

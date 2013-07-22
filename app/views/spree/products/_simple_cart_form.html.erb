@@ -1,0 +1,26 @@
+<% unless product.nil?
+  @product = product 
+  end %> 
+
+<%= form_for :order, :url => populate_orders_path do |f| %>
+  <div id="inside-product-cart-form" data-hook="inside_product_cart_form" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    
+    <% if @product.price_in(current_currency) and !@product.price.nil? %>
+      <%= hidden_field_tag "variants[#{@product.master.id}]", 1%>
+
+        <div class="add-to-cart">
+          <% if @product.on_sale? %>      
+            <%= button_tag :class => 'large primary cart_button', :type => :submit do %>
+              <%= t(:add_to_cart) %>
+            <% end %>
+          <% else %>
+            <%= content_tag('strong', t(:out_of_stock)) %>
+          <% end %>
+        </div>
+    
+    <% else %>
+    
+    <% end %>    
+
+  </div>
+<% end %>

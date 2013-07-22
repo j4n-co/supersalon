@@ -1,0 +1,15 @@
+<% content_for :sidebar do %>
+    <%#= render :partial => 'spree/shared/taxonomies' %>
+    <%#= render :partial => 'spree/shared/filters' if @taxon.children.empty? %>
+<% end %>
+
+<div data-hook="taxon_products" id="product-container">
+  <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
+</div>
+
+<% unless params[:keyword].present? %>
+  <div data-hook="taxon_children">
+    <%#= render :partial => 'taxon', :collection => @taxon.children %>
+  </div>
+<% end %>
+

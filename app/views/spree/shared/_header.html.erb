@@ -1,0 +1,45 @@
+<header id="header" class="row" data-hook>
+  <h1 id='big-logo' class="columns four">
+    <%= link_to 'Super Salon', root_path %>
+  </h1>
+  
+	<div id="main-menu" class="menu">
+
+    <h1 id='logo' class="columns">
+      <%= link_to 'Super Salon', root_path %>
+    </h1> 
+ 
+   <% if defined?(get_taxonomies) %> 
+    <% get_taxonomies.each do |taxonomy| %>
+      <%= taxons_tree(taxonomy.root, @taxon, Spree::Config[:max_level_in_taxons_menu] || 2) %>
+    <% end %>
+  <% end %>
+
+  <ul id="main-nav-bar"></ul>
+
+<!--  
+  <ul id="cart-menu">
+  <% if spree_current_user %>
+    <li><%= link_to 'Account', spree.account_path %> / <%= link_to t(:logout), spree.destroy_user_session_path %></li>
+  <% else %>
+    <li><%= link_to t(:login), spree.login_path %></li>
+  <% end %>
+
+    <li data-hook><%= link_to_cart('Cart: ') %></li>
+  </ul>
+-->
+<div class="top_search_form">
+<%= form_tag products_path, :method => :get do %>
+  <%= search_field_tag :keywords, params[:keywords], :placeholder => t(:search) %>
+  <%= submit_tag t(:search), :name => nil %>
+<% end %>
+</div>
+
+  </ul>
+
+
+  <div class="columns six omega">
+  	<%= render :partial => 'spree/shared/nav_bar' %>
+  </div>
+
+</header>

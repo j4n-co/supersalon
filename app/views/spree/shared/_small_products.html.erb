@@ -1,0 +1,39 @@
+<%
+  paginated_products = @searcher.retrieve_products if params.key?(:keywords)
+  paginated_products ||= products
+%>
+<% if products.empty? %>
+  <div class="columns ten alpha">
+    <h3>
+      <%= t(:no_products_found) %>
+    </h3>
+  </div>
+<% elsif params.key?(:keywords) %>
+  <h3 style="margin-top:0;margin-bottom:0;" class="search-results-title"><%= t(:search_results, :keywords => h(params[:keywords])) %></h3>
+<% end %>
+
+<% if products.any? %>
+<ul class="inline product-listing small-products" data-hook>
+  <% products.each_with_index do |product, i| %>
+    <% if product.on_display? %>
+      <% if i % 4 == 0
+          css_class = ''
+          elsif (i+1) % 4 == 0   
+          css_class = ''
+        else 
+          css_class = ''
+        end %>  
+      <li id="product_<%= product.id %>" class="product-list-item" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
+          <div class="product-image">
+            <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %>
+          </div>
+      </li>
+
+    <% end %>
+  <% end %>
+  <% reset_cycle("classes") %>
+</ul>
+<% end %> 
+<% if paginated_products.respond_to?(:num_pages) %>
+  <%= paginate paginated_products %>
+<% end %>

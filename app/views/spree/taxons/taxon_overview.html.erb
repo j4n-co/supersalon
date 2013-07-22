@@ -1,0 +1,11 @@
+<%#= render :partial => 'taxon', :collection => @taxon.children %>
+<div class="taxon" data-hook="taxon">
+  <% @taxon.children.each do |child_taxon| %> 
+	<div class="small_product_container">	
+  		<h3 class="small-product-header"><%= link_to child_taxon.name, seo_url(child_taxon) %></h3> 
+   		<%= render :partial => 'spree/shared/small_products', :locals => { :products => taxon_preview(child_taxon), :taxon => child_taxon } %>
+ 	</div>
+  <% end %> 
+</div>
+
+<%#= render :partial => 'taxon_overview_children', :collection => @taxon.children %>
