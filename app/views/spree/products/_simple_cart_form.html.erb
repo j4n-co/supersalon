@@ -9,7 +9,7 @@
       <%= hidden_field_tag "variants[#{@product.master.id}]", 1%>
 
         <div class="add-to-cart">
-          <% if @product.on_sale? %>      
+          <% if @product %>      
             <%= button_tag :class => 'large primary cart_button', :type => :submit do %>
               <%= t(:add_to_cart) %>
             <% end %>

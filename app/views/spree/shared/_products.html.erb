@@ -15,7 +15,7 @@
 <% if products.any? %>
 <ul id="products" class="inline product-listing" data-hook>
   <% products.each_with_index do |product, i| %>
-    <% if product.on_display? %>
+    <% if product.available? %>
       <% if i % 4 == 0
           css_class = ''
           elsif (i+1) % 4 == 0   

@@ -69,17 +69,17 @@ padding-top: 12px;">
   <p style="margin-bottom: 4em;">
   suggested titles:
   </p>
-    <% @related_titles.each do |related_product| %> 
+    <%# @related_titles.each do |related_product| %> 
       <p class="row">
-        <% if related_product.images.length > 0 %>  
-          <a href="<%= url_for(related_product) %>">   
-            <%= image_tag related_product.images.first().attachment.url(:small), :itemprop => "image" %>
+        <%# if related_product.images.length > 0 %>  
+          <a href="<%#= url_for(related_product) %>">   
+            <%#= image_tag related_product.images.first().attachment.url(:small), :itemprop => "image" %>
           </a>
-        <% end %> 
+        <%# end %> 
         <br>
-        <a href="<%= url_for(related_product) %>"> 
-          <%= related_product.name %>        
+        <a href="<%#= url_for(related_product) %>"> 
+          <%#= related_product.name %>        
         </a>
       </p>
-    <% end %> 
+    <%# end %> 
 </div>

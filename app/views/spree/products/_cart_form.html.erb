@@ -30,12 +30,14 @@
       <div data-hook="product_price" class="columns five <% if !@product.has_variants? %> alpha <% else %> omega <% end %>">
         
         <div class="add-to-cart">
-          <% if @product.on_sale? %>      
+          
+          <% if true #@product.on_sale? %>      
             <%= button_tag :class => 'large primary cart_button', :id => 'add-to-cart-button', :style=> 'width: 12em;', :type => :submit do %>
               <%= t(:add_to_cart) %>
             <% end %>
-
-            <%= number_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"), 1, :class => 'title', :in => 1..@product.on_hand, :min => 1 %>
+          <% #for varients #@product.on_hand %> 
+            
+            <%#= number_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"), 1, :class => 'title', :in => 1..2, :min => 1 %>
           <% else %>
             <%= content_tag('strong', t(:out_of_stock)) %>
           <% end %>
