@@ -9,6 +9,16 @@ Spree.config do |config|
   # Example:
   # Uncomment to override the default site name.
   # config.site_name = "Spree Demo Site"
+  config.use_s3 = true
+  config.s3_bucket = 'supersalon_file_storage'
+  config.s3_access_key = "1XRBG1CYPYJ0Z1TVAP02"
+  config.s3_secret = "2zPokmdPsQjTR19i/YbSzA0B/dPyEr2vDyOLdLlw"
+  config.attachment_path = "/app/public/spree/products/:id/:style/:basename.:extension"
+
+end
+
+Paperclip.interpolates(:s3_eu_url) do |attachment, style|
+  "#{attachment.s3_protocol}://#{Spree::Config[:s3_host_alias]}/#{attachment.bucket_name}/#{attachment.path(style).gsub(%r{^/}, "")}"
 end
 
 Spree.user_class = "Spree::User"

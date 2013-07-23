@@ -78,6 +78,8 @@
   <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></input>
 </form>
 </div>
+<script src="http://malsup.github.com/jquery.form.js"></script> 
+
 <script type="text/javascript">
 var fnames = new Array();var ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';
 try {
@@ -253,67 +255,8 @@ function mce_success_cb(resp){
 </footer>
 
 
-<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
-
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script> 
 <script>
-  var mapStyle = [
-  /*{
-    "featureType": "poi",
-    "stylers": [
-      { "visibility": "off" }
-    ]
-  },{
-    "featureType": "landscape.natural",
-    "stylers": [
-      { "hue": "#ffffff" },
-      { "saturation": 0 },
-      { "lightness": 0 }
-    ]
-  },{
-    "featureType": "landscape.man_made",
-    "stylers": [
-      { "saturation": 0 },
-      { "lightness": 0 },
-      { "color": "#FFFFFF" }
-    ]
-  },{
-    "featureType": "road.arterial",
-    "elementType": "geometry",
-    "stylers": [
-      { "color": "#000000" }
-    ]
-  },
-  {
-    "featureType": "road.local",
-    "elementType": "geometry",
-    "stylers": [
-      { "color": "#000000" }
-    ]
-  }
-  ,{
-    "elementType": "labels.text.fill",
-    "stylers": [
-      { "color": "#000000" }
-    ]
-  },{
-    "elementType": "labels.text.stroke",
-    "stylers": [
-      { "color": "#ffffff" }
-    ]
-  },{
-    "featureType": "landscape.man_made",
-    "stylers": [
-      { "visibility": "simplified" },
-      { "color": "#FFFFFF" }
-    ]
-  },{
-    "featureType": "water",
-    "stylers": [
-      { "color": "#eff0f1" }
-    ]
-  },{
-  }*/
-]
 
   function initialize() {
     var myLatlng = new google.maps.LatLng(52.248241,21.059452);
@@ -323,8 +266,7 @@ function mce_success_cb(resp){
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       mapTypeControl: false,
       zoomControl: false,
-      streetViewControl: false,
-      styles: mapStyle
+      streetViewControl: false
     };
 
     var map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
