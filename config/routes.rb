@@ -5,8 +5,18 @@ Spree2::Application.routes.draw do
   # If you would like to change where this engine is mounted, simply change the :at option to something different.
   #
   # We ask that you don't use the :as option here, as Spree relies on it being the default of "spree"
+
   mount Spree::Core::Engine, :at => '/'
-          # The priority is based upon order of creation:
+ 
+
+  Spree::Core::Engine.routes.append do
+   #Your new routes
+    match '/transferuj/show/:order_id/:payment_method_id' => 'transferuj#show', :as => :transferuj_show
+    match '/transferuj/comeback(/:server)' => 'transferuj#comeback', :as => :transferuj_comeback
+    match '/transferuj/comeback_s2s(/:server)' => 'transferuj#comeback_s2s', :as => :transferuj_comeback_s2s
+  end
+
+  # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
