@@ -5,16 +5,24 @@
     <% if spree_current_user %>
   		<li class="cart-menu-link" id="link-to-account"><%= link_to 'Account', spree.account_path %> /<%= link_to "Logout", spree.logout_path %></li>
 	<% else %>
-	  <li class="cart-menu-link" id="link-to-login" class="columns two omega">
-    <%# link_to t(:login), spree.login_path %></li>
+	  <li class="cart-menu-link" id="link-to-login" class="columns two" style="margin-right: 0.5em; ">
+    <%= link_to t(:login), spree.login_path %>  </li>
 	<% end %>
    
-   <%# cur = Spree::Currency.current.char_code %> 
-    
-    <li class="cart-menu-link " id="link-to-currency">
-      <%#= link_to "eur", currency_path(:eur), :class => cur=='EUR' ? 'current' : ''; %>
-      <%#= link_to "pln", currency_path(:pln),  :class=> cur=='PLN' ? 'current' : ''; %>
-    </li>
+<% if Spree::Config[:show_currency_selector] && supported_currencies.size > 1 %>
+  <li class="cart-menu-link"  id="currency-select" style="float: right; margin-right: 10px;" data-hook>
+    <%= form_tag(set_currency_path(:format => :html)) do %>
+
+      <% supported_currencies.each do |currency| %> 
+        <%= label :currency, currency, :class => currency.iso_code == current_currency ? 'current' : '';  %>     
+        <%=  radio_button_tag :currency, currency, currency.iso_code == current_currency , :data => { :href => set_currency_path(:format => :json) } %> 
+      <% end %> 
+      <noscript>
+        <%= submit_tag %>
+      </noscript>
+    <% end %>
+  </li>
+<% end %>
 
   </ul>
 </nav>

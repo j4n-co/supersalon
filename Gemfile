@@ -43,3 +43,4 @@ gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git
 
 #custom gems 
 gem 'spree_static_content', :github => 'spree/spree_static_content', :branch => '2-0-stable'
+gem 'spree_multi_currency', :github => "spree/spree_multi_currency", :branch => 'master'

@@ -413,6 +413,16 @@ input[type=text], input[type=email], input[type=password] {
 .cart-menu-link:last-child{
 	margin-right: 0;
 }
+.cart-menu-link label{
+	text-transform: lowercase;
+	cursor: pointer;
+}
+#currency-select{
+	margin-right: 0 !important;
+}
+.cart-menu-link input[type=radio]{
+	display: none; 
+}
 
 .small_product_container{
 	display: block;
