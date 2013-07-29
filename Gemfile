@@ -44,3 +44,7 @@ gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git
 #custom gems 
 gem 'spree_static_content', :github => 'spree/spree_static_content', :branch => '2-0-stable'
 gem 'spree_multi_currency', :github => "spree/spree_multi_currency", :branch => 'master'
+gem 'spree_related_products', :git => 'git://github.com/spree/spree_related_products.git', :branch => 'master'
+
+gem 'datashift', :git => 'http://github.com/autotelik/datashift'
+gem 'datashift_spree', :git => 'http://github.com/autotelik/datashift_spree'
