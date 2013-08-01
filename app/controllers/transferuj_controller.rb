@@ -21,7 +21,7 @@ class TransferujController < Spree::BaseController
     end
     
     #you'll need to create an md5 hash of these params
-    #MD5(id + kwota + crc + kod bezpieczeństwa)
+    #MD5(id + kwota + crc + kod bezpieczenstwa)
     @md5sum = Digest::MD5.hexdigest(@account_id.to_s+@order.total.to_s+@order.number.to_s)
     
     @transaction_data = {
@@ -60,26 +60,20 @@ class TransferujController < Spree::BaseController
     @b = params[:b]
     @server = params[:server]
     @server ||= "live"
-    c = GestPay::CryptRequest.new(@a, @server)
+    #c = GestPay::CryptRequest.new(@a, @server)
     t = c.decrypt(@b)
-    logger.info "***GESTPAY***S2S*** Data in comeback_s2s: #{params} #{t} #{@order}"
     if t[:shop_transaction_id] and Order.find_by_number t[:shop_transaction_id]  
-      logger.info "***GESTPAY***S2S*** comeback_s2s: #{t.inspect}"
       @order = Order.find_by_number t[:shop_transaction_id]  
-      logger.info "***GESTPAY***S2S*** comeback_s2s: #{@order.inspect} #{@order.payment.inspect}"
       @order.payment.started_processing  
-      logger.info "***GESTPAY***S2S*** comeback_s2s: #{@order.payment.inspect}"
       case t[:transaction_result]
-        when "XX" # Esito transazione sospeso (pagamento tramite bonifico)
+        when "XX"
           @order.payment.pend
-        when "OK" # Esito transazione positivo
+        when "OK" 
           @order.payment.complete
-        when "KO" # Esito transazione negativo
+        when "KO" 
           @order.payment.fail
-        else # Esito transazione indefinito
-          logger.info "***GESTPAY***S2S*** Esito transazione indefinito - comeback_s2s: #{params} #{t} #{@order}"
+        else 
       end      
-      logger.info "***GESTPAY***S2S*** comeback_s2s: #{@order.payment.inspect}"
     else
       raise "ERRORE, parametro ':shop_transaction_id' errato o assente, l'ordine number=#{t[:shop_transaction_id]} non esiste !"
     end
