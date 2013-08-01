@@ -8,28 +8,21 @@ GIT
       spree_core (~> 2.0.0)
 
 GIT
+  remote: git://github.com/spree/spree_related_products.git
+  revision: 0fd9cc69a6ff3b84f223365b4223245cc8bcf3b0
+  branch: master
+  specs:
+    spree_related_products (3.2)
+      spree_backend (~> 2.0.0)
+      spree_core (~> 2.0.0)
+
+GIT
   remote: git://github.com/spree/spree_static_content.git
   revision: a9d17d7fe22b29702662f14ecefb4337fbe5d196
   branch: 2-0-stable
   specs:
     spree_static_content (1.1.0.beta)
       spree_core (~> 2.0.0)
-
-GIT
-  remote: http://github.com/autotelik/datashift
-  revision: e3946791fdd53d196a357b9981277b816eb98ea5
-  specs:
-    datashift (0.13.0)
-      rubyzip
-      spreadsheet
-
-GIT
-  remote: http://github.com/autotelik/datashift_spree
-  revision: d689ec9fcc3f9704e661ae49ab77b933ca747e9d
-  specs:
-    datashift_spree (0.5.0)
-      datashift (>= 0.12.0)
-      mechanize
 
 GEM
   remote: https://rubygems.org/
@@ -117,8 +110,6 @@ GEM
       orm_adapter (~> 0.0.3)
       railties (~> 3.1)
       warden (~> 1.1.1)
-    domain_name (0.5.12)
-      unf (>= 0.0.5, < 1.0.0)
     em-websocket (0.3.8)
       addressable (>= 2.1.1)
       eventmachine (>= 0.12.9)
@@ -140,8 +131,6 @@ GEM
       builder (>= 2.1.2)
     highline (1.6.18)
     hike (1.2.3)
-    http-cookie (1.0.1)
-      domain_name (~> 0.5)
     httparty (0.11.0)
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
@@ -162,26 +151,14 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mechanize (2.7.1)
-      domain_name (~> 0.5, >= 0.5.1)
-      http-cookie (~> 1.0.0)
-      mime-types (~> 1.17, >= 1.17.2)
-      net-http-digest_auth (~> 1.1, >= 1.1.1)
-      net-http-persistent (~> 2.5, >= 2.5.2)
-      nokogiri (~> 1.4)
-      ntlm-http (~> 0.1, >= 0.1.1)
-      webrobots (>= 0.0.9, < 0.2)
     method_source (0.8)
     mime-types (1.23)
     money (5.1.1)
       i18n (~> 0.6.0)
     multi_json (1.7.7)
     multi_xml (0.5.4)
-    net-http-digest_auth (1.4)
-    net-http-persistent (2.9)
     nokogiri (1.5.10)
     nori (1.1.5)
-    ntlm-http (0.1.1)
     orm_adapter (0.0.7)
     paperclip (3.4.2)
       activemodel (>= 3.0.0)
@@ -233,8 +210,6 @@ GEM
       polyamorous (~> 0.5.0)
     rdoc (3.12.2)
       json (~> 1.4)
-    ruby-ole (1.2.11.7)
-    rubyzip (0.9.9)
     sass (3.2.9)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -251,8 +226,6 @@ GEM
     select2-rails (3.2.1)
       thor (~> 0.14)
     slop (3.3.3)
-    spreadsheet (0.8.7)
-      ruby-ole (>= 1.0)
     spree (2.0.3)
       spree_api (= 2.0.3)
       spree_backend (= 2.0.3)
@@ -309,8 +282,6 @@ GEM
       money (>= 5.0.0)
       nokogiri (>= 1.4.4)
       spree_core (>= 1.2.0)
-    spree_related_products (3.0.2)
-      spree_core (>= 0.30.0.beta1)
     spree_sample (2.0.3)
       spree_core (= 2.0.3)
     sprockets (2.2.2)
@@ -335,9 +306,6 @@ GEM
     uglifier (2.1.2)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
-    unf (0.1.1)
-      unf_ext
-    unf_ext (0.0.6)
     uuidtools (2.1.4)
     versioncake (1.0.0)
       actionpack (>= 3.0)
@@ -348,7 +316,6 @@ GEM
     wasabi (2.5.1)
       httpi (~> 1.0)
       nokogiri (>= 1.4.0)
-    webrobots (0.1.1)
     yaml_db (0.2.3)
 
 PLATFORMS
@@ -356,8 +323,6 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
-  datashift!
-  datashift_spree!
   debugger
   guard-livereload
   jquery-rails
@@ -371,7 +336,7 @@ DEPENDENCIES
   spree_auth_devise (~> 1.3.1)
   spree_gateway!
   spree_multi_currency (~> 1.0.4)
-  spree_related_products (~> 3.0.2)
+  spree_related_products!
   spree_static_content!
   sqlite3
   thin

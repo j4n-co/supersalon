@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "1.9.3"
+
 gem 'rails', '3.2.13'
 
 
@@ -41,8 +43,8 @@ gem 'spree_static_content', :github => 'spree/spree_static_content', :branch => 
 #gem 'spree_multi_currency', :github => "spree/spree_multi_currency", :branch => 'master'
 gem "spree_multi_currency", "~> 1.0.4"
 
-gem "spree_related_products", "~> 3.0.2"
-#gem 'spree_related_products', :git => 'git://github.com/spree/spree_related_products.git', :branch => 'master'
+#gem "spree_related_products", "~> 3.0.2"
+gem 'spree_related_products', :git => 'git://github.com/spree/spree_related_products.git', :branch => 'master'
 
-gem 'datashift', :git => 'http://github.com/autotelik/datashift'
-gem 'datashift_spree', :git => 'http://github.com/autotelik/datashift_spree'
+#gem 'datashift', :git => 'http://github.com/autotelik/datashift'
+#gem 'datashift_spree', :git => 'http://github.com/autotelik/datashift_spree'
