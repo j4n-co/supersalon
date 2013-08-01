@@ -1,5 +1,4 @@
-# -*- encoding : utf-8 -*-
-class TransferujController < Spree::BaseController
+class Spree::TransferujController < Spree::BaseController
   skip_before_filter :verify_authenticity_token, :only => [:comeback, :comeback_s2s]
   
   def show

@@ -11,9 +11,9 @@ Spree2::Application.routes.draw do
 
   Spree::Core::Engine.routes.append do
    #Your new routes
-    match '/transferuj/show/:order_id/:payment_method_id' => 'transferuj#show', :to => :transferuj_show, via: :get
-    match '/transferuj/success' => 'transferuj#success', :to => :transferuj_success, via: :post
-    match '/transferuj/error' => 'transferuj#error', :to => :transferuj_error, via: :post
+    match '/transferuj/show/:order_id/:payment_method_id' => 'transferuj#show', :as => :transferuj_show, via: :get
+    match '/transferuj/success' => 'transferuj#success', :as => :transferuj_success, via: :post
+    match '/transferuj/error' => 'transferuj#error', :as => :transferuj_error, via: :post
   end
 
   # The priority is based upon order of creation:
