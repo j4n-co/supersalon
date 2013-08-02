@@ -1,4 +1,6 @@
 ---
+banki-transferuj.jpg: banki-transferuj-b645b0ad6c0fa7cf893f621462abce8b.jpg
+banki-transferuj/index.jpg: banki-transferuj-b645b0ad6c0fa7cf893f621462abce8b.jpg
 check.png: check-adaa5d989f2d222b695970cc33a3a45d.png
 check/index.png: check-adaa5d989f2d222b695970cc33a3a45d.png
 domek.png: domek-cb99f1f1951c6d4ad557c7e1f75cf14f.png
@@ -29,6 +31,10 @@ store/next.png: store/next-330dcd07a65de796dc890a23d490e51b.png
 store/next/index.png: store/next-330dcd07a65de796dc890a23d490e51b.png
 store/prev.png: store/prev-efa48e07059debd3eb7c04b67b15899a.png
 store/prev/index.png: store/prev-efa48e07059debd3eb7c04b67b15899a.png
+transferuj-full-color-647x162.png: transferuj-full-color-647x162-eadae8a3228a9cff537098e3213388d1.png
+transferuj-full-color-647x162/index.png: transferuj-full-color-647x162-eadae8a3228a9cff537098e3213388d1.png
+transferuj.png: transferuj-1ef614e360d70f72b887e7b409a5851c.png
+transferuj/index.png: transferuj-1ef614e360d70f72b887e7b409a5851c.png
 admin/all.js: admin/all-7a38fbed1028e4e4c9f572132323c78a.js
 admin/all/index.js: admin/all-7a38fbed1028e4e4c9f572132323c78a.js
 application.js: application-8bd2aedf8f6091474e87f6ede0cddd4b.js
