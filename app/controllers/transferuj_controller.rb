@@ -52,7 +52,7 @@ class Spree::TransferujController < Spree::BaseController
     #@order.next
     #order.save
     #session[:order_id] = nil
-    render text: "TRUE"
+    render text: params
   end
   
   def comeback_s2s

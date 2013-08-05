@@ -11,4 +11,3 @@
 
 //= require_tree .
 //= require admin/spree_multi_currency
-//= require admin/spree_paypal_express

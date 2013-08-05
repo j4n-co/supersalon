@@ -128,7 +128,6 @@ module Spree
       
       no_children_css = ( root_taxon.children.empty? ) ? ' no_children' : ''
       taxon_wrapper = content_tag :div, :class => 'taxons-list '+no_children_css do        
-
         unless root_taxon.children.empty? 
           css_class = (root_taxon.name === 'Publishers') ? ' publishers' : ''
           taxon_tree = content_tag(:ul, :class=>'taxons-list-children'+css_class) do   

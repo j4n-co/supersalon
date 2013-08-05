@@ -39,5 +39,5 @@ gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git
 gem 'spree_static_content', :github => 'spree/spree_static_content', :branch => '2-0-stable'
 gem 'spree_multi_currency', :github => "spree/spree_multi_currency", :branch => 'master'
 gem 'spree_related_products', :github => 'spree/spree_related_products', :branch => 'master'
-gem 'spree_paypal_express', :github => "radar/better_spree_paypal_express", :branch => "2-0-stable"
+#gem 'spree_paypal_express', :github => "radar/better_spree_paypal_express", :branch => "2-0-stable"
 

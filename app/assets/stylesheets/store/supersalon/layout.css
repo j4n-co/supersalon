@@ -25,6 +25,7 @@ input[type='submit'], button{
 	letter-spacing: 1px;
 	padding-left: 0.6em;
 	padding-right: 0.6em;
+	background-color: white;
 }
 
 input[type='submit']:hover, button:hover{
@@ -403,7 +404,10 @@ input[type=text], input[type=email], input[type=password] {
 .cart-menu-link a {
 	padding:0px 0px 0 3px;
 }
-
+.cart-menu-link.cart{
+	position: relative;
+	top: -0.5em;
+}
 .cart-menu-link .current:before{
 	content: "(";
 }
@@ -539,7 +543,7 @@ padding-top: 0.7em;
 	padding-bottom: 6em;
 	max-width: 1024px;
 	margin: 0 auto;
-	margin-top: 1em;
+	margin-top: 5em;
 }
 
 .footer-content{
@@ -555,7 +559,7 @@ padding-top: 0.7em;
 .footer_links {
 float: left;
 vertical-align: top;
-margin-right: 9%;
+margin-right: 8%;
 margin-bottom: 5em;
 }
 
@@ -724,7 +728,6 @@ table tr:first-child{
 .product-list-item .info{
 	transition: letter-spacing 4s, opacity 3s;
 	transition-delay: 0s;
-
 }
 
 #map-canvas{
@@ -771,15 +774,14 @@ table tr:first-child{
 .small-product-header:hover{
 	text-decoration: underline;
 }
-
-
-#cart_items{
-	max-width: 90%;
+.outside_cart_form {
+	width: 90%;
+	margin: 0 auto;
+	margin-bottom: 2em;
+	margin-top: 2em;
 }
-
 #cart_items table{
 	table-layout: auto;
-	width: auto;
 }
 
 #cart_items table td{
@@ -789,8 +791,42 @@ table tr:first-child{
 	max-width: 300px;
 }
 
-#subtotal {
-	text-align: right;
-	margin-right: 5em;
+.cart_buttons{
+	margin: 1em;
+	float: right;
+	margin-top: 2em;
+}
+#empty-cart{
+	margin-top: 2em;
+	float: left;
+}
+#clear_cart_link{
+	margin: 0;
 }
 
+.cart_buttons .checkout.button{
+	background-color: black;
+	color: white;
+	margin-left: 2em;
+}
+
+#subtotal {
+	text-align: right;
+}
+
+.progress-steps{
+
+}
+
+.progress-steps li{
+	display: inline-block;
+	margin-right: 2em;
+}
+
+
+.progress-steps li.current, .progress-steps li.current-first{
+	border-bottom: 1px solid;
+} 
+.progress-steps li.completed-first a, .progress-steps li.completed a{ 
+	color: gray;
+}
