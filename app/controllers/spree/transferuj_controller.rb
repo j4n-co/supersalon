@@ -38,21 +38,31 @@ class Spree::TransferujController < Spree::BaseController
       :kod => @order.bill_address.zipcode,
       :kraj => @order.bill_address.country.name,
       :telefon => @order.bill_address.phone, 
-      :wyn_url => "http://sandbox.dev:3000/transferuj/success",
-      :pow_url => "http://sandbox.dev:3000/transferuj/success",
-      :pow_url_blad => "http://sandbox.dev:3000/transferuj/error"
+      :wyn_url => transferuj_success_url,
+      :pow_url => order_url(@order.number),
+      :pow_url_blad => transferuj_error_url
     }
 
     redirect_to @server+"?"+@transaction_data.to_query
   end
   
   def success
-    @order = params[:tr_crc] ? Spree::Order.find_by_id(params[:tr_crc]) : Spree::Order.find_by_id( session[:order_id] ) 
-    #@order.payment.complete
-    #@order.next
-    #order.save
-    #session[:order_id] = nil
-    render text: "true"
+    @order = params[:tr_crc] ? Spree::Order.find_by_number(params[:tr_crc]) : Spree::Order.find_by_number('R724374460')
+    @sample = {"id"=>"10169", "tr_id"=>"TR-L57-TST23X", "tr_date"=>"2013-08-05 14:34:50", "tr_crc"=>"R724374460", "tr_amount"=>"15.00", "tr_paid"=>"15.00", "tr_desc"=>"test description", "tr_status"=>"TRUE", "tr_error"=>"none", "tr_email"=>"jan.drewniak@gmail.com", "md5sum"=>"e1a0e1a084b7a25d4e57c21ed6fac1c0", "controller"=>"spree/transferuj", "action"=>"success"}
+    
+    if params[:tr_error] == 'none' && @order
+
+      if params[:tr_paid] == params[:tr_amount]
+        @order.finalize!
+        @order.state = 'complete'
+        @order.payment_total = params[:tr_paid]
+        @order.payment_state = 'paid'
+        @order.save!
+        session[:order_id] = nil
+      end
+
+    end
+    render text: "TRUE"
   end
   
   def comeback_s2s
