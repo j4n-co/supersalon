@@ -29,6 +29,7 @@ end
 group :production do
 	gem 'thin'
 	gem 'pg'
+	gem 'heroku_rails_deflate'
 end
 
 gem 'spree', '2.0.3'
