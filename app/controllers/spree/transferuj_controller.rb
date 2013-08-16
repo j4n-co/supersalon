@@ -47,7 +47,7 @@ class Spree::TransferujController < Spree::BaseController
   end
   
   def success
-    @order = params[:tr_crc] ? Spree::Order.find_by_number(params[:tr_crc]) : Spree::Order.find_by_number('R724374460')
+    @order = params[:tr_crc] ? Spree::Order.find_by_number(params[:tr_crc])[0] : Spree::Order.find_by_number('R724374460')
     @sample = {"id"=>"10169", "tr_id"=>"TR-L57-TST23X", "tr_date"=>"2013-08-05 14:34:50", "tr_crc"=>"R724374460", "tr_amount"=>"15.00", "tr_paid"=>"15.00", "tr_desc"=>"test description", "tr_status"=>"TRUE", "tr_error"=>"none", "tr_email"=>"jan.drewniak@gmail.com", "md5sum"=>"e1a0e1a084b7a25d4e57c21ed6fac1c0", "controller"=>"spree/transferuj", "action"=>"success"}
     
     if params[:tr_error] == 'none' && @order
