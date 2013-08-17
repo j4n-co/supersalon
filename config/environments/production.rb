@@ -21,11 +21,13 @@ Spree2::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  config.override_actionmailer_config = false
+  
   config.action_mailer.smtp_settings = {
     enable_starttls_auto: true
   }
-  config.action_mailer.raise_delivery_errors = true
-
+  #config.action_mailer.raise_delivery_errors = true
+  config.mails_from = "store@supersalon.com"
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
