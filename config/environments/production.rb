@@ -24,17 +24,8 @@ Spree2::Application.configure do
   config.override_actionmailer_config = false
   
   config.action_mailer.smtp_settings = {
-    tls: true
     enable_starttls_auto: true
-    address: "smtp.gmail.com" 
-    port: '587'
-    domain: "smtp.gmail.com" 
-    authentication: :plain
-    user_name: "jan.drewniak@gmail.com" 
-    password: "trixR4kix" 
   }
-  #config.action_mailer.raise_delivery_errors = true
-  config.mails_from = "store@supersalon.com"
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
