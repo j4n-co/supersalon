@@ -125,11 +125,10 @@ module Spree
     def taxons_tree(root_taxon, current_taxon, max_level = 2)
       # return '' if max_level < 0 || root_taxon.children.empty?
       #root taxon plus
-      
       no_children_css = ( root_taxon.children.empty? ) ? ' no_children' : ''
       taxon_wrapper = content_tag :div, :class => 'taxons-list '+no_children_css do        
         unless root_taxon.children.empty? 
-          css_class = (root_taxon.name === 'Publishers') ? ' publishers' : ''
+          css_class = ( root_taxon.name.match(/publishers/im) ) ? ' publishers' : ''
           taxon_tree = content_tag(:ul, :class=>'taxons-list-children'+css_class) do   
             root_taxon.children.map do |taxon|
               css_class = (current_taxon && current_taxon.self_and_ancestors.include?(taxon)) ? 'current' : nil
