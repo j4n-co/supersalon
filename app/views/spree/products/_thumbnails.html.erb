@@ -1,7 +1,9 @@
 <%# no need for thumbnails unless there is more than one image %>
 <% if (@product.images + @product.variant_images).uniq.size > 1 %>
   <ul id="product-thumbnails" class="thumbnails inline">
-    <% @product.images.each do |i| %>
+    
+    <% length_of_images = @product.images.length %> 
+    <% @product.images[1..length_of_images].each do |i| %>
       <li class='tmb-all' id='tmb-<%= i.id %>'>
         <%= link_to(image_tag(i.attachment.url(:mini)), i.attachment.url(:large), :class => 'tmb-all', :id => "tmb-#{i.id}") %>
       </li>

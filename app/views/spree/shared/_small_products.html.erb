@@ -3,11 +3,9 @@
   paginated_products ||= products
 %>
 <% if products.empty? %>
-  <div class="columns ten alpha">
-    <h3>
+    <span>
       <%= t(:no_products_found) %>
-    </h3>
-  </div>
+    </span>
 <% elsif params.key?(:keywords) %>
   <h3 style="margin-top:0;margin-bottom:0;" class="search-results-title"><%= t(:search_results, :keywords => h(params[:keywords])) %></h3>
 <% end %>
