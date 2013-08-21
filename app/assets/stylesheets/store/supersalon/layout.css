@@ -455,7 +455,6 @@ input[type=text], input[type=email], input[type=password] {
 }
 .taxons-list:hover .taxons-list-children {
 	display: block;
-	white-space: nowrap;
 }
 .taxons-list:hover .root_taxon_link{
 	margin-bottom: 0;
