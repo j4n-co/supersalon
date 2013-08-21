@@ -129,7 +129,7 @@ module Spree
       taxon_wrapper = content_tag :div, :class => 'taxons-list '+no_children_css do        
         unless root_taxon.children.empty? 
           #css_class = ( root_taxon.name.match(/publishers/im) ) ? ' publishers' : ''
-          css_class = 'flat'
+          css_class = ' flat'
           taxon_tree = content_tag(:ul, :class=>'taxons-list-children'+css_class) do   
             root_taxon.children.map do |taxon|
               css_class = (current_taxon && current_taxon.self_and_ancestors.include?(taxon)) ? 'current' : nil
