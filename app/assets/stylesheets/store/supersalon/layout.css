@@ -491,8 +491,10 @@ padding-top: 0.7em;
 	font-size: 15px;
 	line-height: 24px;
 	padding-top: 0;
-	max-width: 400px;
+	width: 400px;
+	top: 18.5px;
 }
+
 
 .taxons-list-children > li{
 	padding: 10px;
@@ -518,10 +520,10 @@ padding-top: 0.7em;
   background: url('/assets/koleczko.png') no-repeat center left transparent; 
 }
 
-.taxons-list-children.publishers{
+.taxons-list-children.flat{
 	border-bottom: 2px solid;
 }
-.taxons-list-children.publishers li{
+.taxons-list-children.flat li{
 	border-bottom: none;
 	display: inline;
 	padding: 5px;
