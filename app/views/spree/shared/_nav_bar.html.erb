@@ -3,7 +3,7 @@
     <li class="cart-menu-link " id="link-to-cart" class="three columns alpha omega" data-hook><%= link_to_cart('Cart: ') %></li>
     <br>
     <% if spree_current_user %>
-  		<li class="cart-menu-link <%=@body_id%>" id="link-to-account"><%= link_to 'Account', spree.account_path %> /<%= link_to "Logout", spree.logout_path %></li>
+  		<li class="cart-menu-link <%=@body_id%>" id="link-to-account"><%= link_to 'Account', spree.account_path %> /<%= link_to "Logout", spree.logout_path %>   </li>
 	<% else %>
 	  <li class="cart-menu-link <%=@body_id%>" id="link-to-login" class="columns two" style="margin-right: 0.5em; ">
     <%= link_to t(:login), spree.login_path %>  </li>

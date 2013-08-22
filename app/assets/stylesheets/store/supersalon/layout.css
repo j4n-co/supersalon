@@ -1,3 +1,19 @@
+input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
+    border: 2px solid black;
+    height: 20px;
+    max-width: 98%;
+    padding-left: 0.4em;
+    padding-top: 0.4em;
+    letter-spacing: 1px;
+}
+table th {
+    padding: 0.5em;
+    text-align: left;
+    font-weight: normal;
+    text-transform: capitalize;
+
+}
+
 body{
 	font-size: 15px;
 	line-height: 19px;
@@ -21,7 +37,7 @@ td {
 
 input[type='submit'], button{
 	border: outset 2px black;
-	padding-top: 0.6em;
+	padding-top: 0.4em;
 	letter-spacing: 1px;
 	padding-left: 0.6em;
 	padding-right: 0.6em;
@@ -123,7 +139,10 @@ border: 2px solid black;
 #keywords::-moz-input-placeholder{
 	color: black;	
 }
-
+.top_search_form #keywords{
+	 border-bottom: 2px solid transparent; 
+	   width: 3.5em;
+}
 .top_search_form #keywords:hover{
 }
 
@@ -133,6 +152,7 @@ border: 2px solid black;
   -o-transition: none;
   -ms-transition: none;
   transition: none;	
+  border-color:black; 
 }
 .top_search_form #keywords:not(:focus){
   -webkit-transition: none;
@@ -183,7 +203,7 @@ a {
 #header.top{
 	padding-top: 6em;
 }
-#header, #header *{
+#header, #big-logo, #logo{
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	-o-transition: all 0.3s;
@@ -228,7 +248,9 @@ display: inline;
 #nav-bar{
 	text-align: right;
 }
-
+#link-to-account{
+	margin-right: 0.5em;
+}
 #main-nav-bar {
 	display: inline-block;
 }
@@ -442,9 +464,7 @@ input[type=text], input[type=email], input[type=password] {
 	font-weight: normal;
 	z-index: 2;
 	position: relative;
-	padding-top: 5px;
-	padding-left: 5px;
-	padding-right: 5px;
+	padding: 0;
 	padding-bottom: 1.5em;
 	margin-top: -5px;
 	font-size: 15px;
@@ -490,8 +510,8 @@ padding-top: 0.7em;
 	font-size: 15px;
 	line-height: 24px;
 	padding-top: 0;
-	width: 400px;
-	top: 18.5px;
+	/*width: 400px; */
+	top: 20px;
 }
 
 
@@ -524,8 +544,9 @@ padding-top: 0.7em;
 }
 .taxons-list-children.flat li{
 	border-bottom: none;
-	display: inline;
-	padding: 5px;
+	display: block;
+	padding: 3px;
+	white-space: nowrap;
 }
 
 .add-to-cart{
@@ -619,7 +640,7 @@ max-width: 21%;
 	margin-bottom: 1em;
 	display: block;
 	vertical-align: middle;
-	width: 100%;
+	width: 80%;
 }
 #main-image img{
 	width: 100%;
