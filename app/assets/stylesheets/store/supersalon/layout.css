@@ -362,10 +362,6 @@ input[type=text], input[type=email], input[type=password] {
 	line-height: 16px;
 }
 
-.small_product_container .product-listing li {
-
-}
-
 .product-image{
 	text-align: center;
 	vertical-align: middle;
@@ -771,14 +767,10 @@ table tr:first-child{
 	outline: 1px solid black;
 	margin-left: 10px;
 }
-	
+
 .small-products.product-listing .product-image a{
 	height: 100px;
 	width: 100px;
-}
-
-.small-products.product-listing{
-	margin-bottom: 2em;
 }
 
 .small-products.product-listing .product-list-item{
@@ -796,6 +788,12 @@ table tr:first-child{
 
 .small-products.product-listing li{
 	margin-right: 0;
+	margin-bottom: 0;
+}
+
+.small-products.product-listing .product-image img{
+	height: 100%;
+	width: auto;
 }
 
 
