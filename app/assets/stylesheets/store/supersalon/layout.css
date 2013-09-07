@@ -321,7 +321,7 @@ input[type=text], input[type=email], input[type=password] {
 	max-width: 98%;
 }
 .related_products{
-	width: 160px;
+	width: 250px;
 	float: right;
 }
 
@@ -640,11 +640,22 @@ max-width: 21%;
 	margin-bottom: 1em;
 	display: block;
 	vertical-align: middle;
-	width: 80%;
+	width: 94%;
+}
+
+#main-image.large_thumb {
+	height: 250px;
+	min-height: 250px;
 }
 #main-image img{
 	width: 100%;
 }
+#main-image img.large_thumb{
+	text-align: center;
+	max-height: 500px;
+	width: auto;
+}
+
 #thumbnails{
 	clear: both;
 }
@@ -658,7 +669,9 @@ max-width: 21%;
 .right{
 	float: right;
 }
-
+.related-product-image{
+	max-width: 70%;
+}
 table{
 	table-layout: fixed;
 	width: 100%;

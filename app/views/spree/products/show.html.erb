@@ -1,12 +1,14 @@
-<div class=" fourteen columns alpha" data-hook="product_show" itemscope itemtype="http://schema.org/Product">
+<% number_of_images = @product.images + @product.variant_images %> 
+
+<div class=" twelve columns alpha" data-hook="product_show" itemscope itemtype="http://schema.org/Product">
   <% @body_id = 'product-details' %>
 
   <div data-hook="product_left_part">
     <div class="row" data-hook="product_left_part_wrap">
 
       <div id="product-images" data-hook="product_images">
-        <div id="main-image" data-hook>
-          <% number_of_images = @product.images + @product.variant_images %> 
+        <div id="main-image" <%=(number_of_images.uniq.size > 1) ? '' : 'class=large_thumb' ; %> data-hook>
+          
           <% if number_of_images.uniq.size > 1 %>
             <div id="prev">
             <div class="nav-inner">
@@ -67,20 +69,19 @@ padding-top: 12px;">
 </div>
 
 <div class="related_products">
-  <p style="margin-bottom: 4em;">
+  <p>
   suggested titles:
   </p>
-    <%# @related_titles.each do |related_product| %> 
+    <% @related_products.each do |related_product| %> 
       <p class="row">
-        <%# if related_product.images.length > 0 %>  
-          <a href="<%#= url_for(related_product) %>">   
+          <a href="<%= url_for(related_product) %>">   
+            <%= large_image(related_product, :itemprop => "image",  :class=>"related-product-image") %>
             <%#= image_tag related_product.images.first().attachment.url(:small), :itemprop => "image" %>
           </a>
-        <%# end %> 
         <br>
-        <a href="<%#= url_for(related_product) %>"> 
-          <%#= related_product.name %>        
+        <a href="<%= url_for(related_product) %>"> 
+          <%= related_product.name %>        
         </a>
       </p>
-    <%# end %> 
+    <% end %> 
 </div>
