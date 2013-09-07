@@ -1,4 +1,9 @@
 Spree::ProductsController.class_eval do
+    before_filter :load_product, :only => :show
+    rescue_from ActiveRecord::RecordNotFound, :with => :render_404
+    helper 'spree/taxons'
+
+    respond_to :html
 
     def show
       return unless @product
@@ -29,7 +34,7 @@ Spree::ProductsController.class_eval do
           # Do nothing
         else
           if referer_path && referer_path.match(/\/t\/(.*)/)
-            @taxon = Taxon.find_by_permalink($1)
+            @taxon = Spree::Taxon.find_by_permalink($1)
           end
         end
       end

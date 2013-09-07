@@ -75,7 +75,7 @@ padding-top: 12px;">
     <% @related_products.each do |related_product| %> 
       <p class="row">
           <a href="<%= url_for(related_product) %>">   
-            <%= large_image(related_product, :itemprop => "image",  :class=>"related-product-image") %>
+            <%= product_image(related_product, :itemprop => "image",  :class=>"related-product-image") %>
             <%#= image_tag related_product.images.first().attachment.url(:small), :itemprop => "image" %>
           </a>
         <br>
