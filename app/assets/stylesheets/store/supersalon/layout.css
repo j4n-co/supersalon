@@ -519,7 +519,6 @@ padding-top: 0.7em;
 	padding: 10px;
 	display: inline-block;
 	vertical-align: top;
-	max-width: 160px;
 	white-space: normal;
 	line-height: 1.2em;
 }
@@ -821,8 +820,15 @@ table tr:first-child{
 }
 
 #cart_items table td{
-	padding: 1em;
+	padding: 0.5em;
 }
+#cart_items input[type=number]{
+	margin-left: 0;
+}
+#cart_items .cart-item-image{
+	max-width: 125px;
+}
+
 .cart-item-description{
 	max-width: 300px;
 }
