@@ -116,6 +116,9 @@
 	},
 	"file_history":
 	[
+		"/Volumes/sandbox/root/spree2/app/views/spree/admin/payments/source_forms/_transferuj.html.erb",
+		"/Volumes/sandbox/root/spree2/app/views/spree/admin/payments/source_views/_transferuj.html.erb",
+		"/Volumes/sandbox/root/spree2/app/views/spree/admin/payments/source_views/transferuj.html.erb",
 		"/Volumes/sandbox/root/spree2/supersalon",
 		"/Volumes/sandbox/usr/lib/ruby/gems/1.9.1/gems/spree_frontend-2.0.3/app/assets/stylesheets/store/screen.css.scss",
 		"/Volumes/sandbox/root/spree2/config.ru",
@@ -240,10 +243,7 @@
 		"/Volumes/sandbox/root/skedx/app/assets/stylesheets/modules/_wall_filter.scss",
 		"/Volumes/sandbox/root/skedx/bridge_web_app.sublime-project",
 		"/Volumes/sandbox/root/skedx/app/assets/stylesheets/bridge.scss",
-		"/Volumes/sandbox/root/skedx/app/views/api/v1/users/index.json.rabl",
-		"/Volumes/sandbox/root/skedx/app/views/api/v1/users/destroy.json.rabl",
-		"/Volumes/sandbox/root/skedx/app/views/api/v1/users/tags.json.rabl",
-		"/Volumes/sandbox/root/skedx/app/views/api/v1/users/photo.json.rabl"
+		"/Volumes/sandbox/root/skedx/app/views/api/v1/users/index.json.rabl"
 	],
 	"find":
 	{
@@ -536,6 +536,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 386.0,
+	"side_bar_width": 297.0,
 	"status_bar_visible": true
 }
