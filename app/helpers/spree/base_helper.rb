@@ -153,8 +153,8 @@ module Spree
             end.join("\n").html_safe 
           end
         end 
-
-        css_class = (current_taxon) ? 'current root_taxon_link menu_item' : 'root_taxon_link menu_item'
+        
+        css_class = (current_taxon && current_taxon.self_and_ancestors.include?(root_taxon)) ? 'current root_taxon_link menu_item' : 'root_taxon_link menu_item'
         
         root_taxon_link = content_tag(:h3, :class=>css_class ) do 
           

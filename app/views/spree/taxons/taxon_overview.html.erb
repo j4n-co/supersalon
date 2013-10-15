@@ -1,7 +1,7 @@
 <%#= render :partial => 'taxon', :collection => @taxon.children %>
   
   <% @taxon.children.each do |child_taxon| %> 
-  	<div style="max-width: 50%; display: block; margin-bottom: 3em; ">	
+  	<div class="taxon-group">	
   		<h1 class="small-product-header" style="margin: 0;">
   			<%= link_to child_taxon.name, seo_url(child_taxon) %>
   		</h1> 

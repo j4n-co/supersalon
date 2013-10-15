@@ -79,6 +79,10 @@ border: 2px solid black;
 	border-bottom: 2px solid;
 }
 
+.current.root_taxon_link a{
+	border-bottom: 2px solid;
+}
+
 #cart-menu {
 	display: inline;
 }
@@ -480,6 +484,10 @@ input[type=text], input[type=email], input[type=password] {
 .taxons-list .taxons-list-children {
 	display: none;
 }
+
+.taxons-list .taxons-list-children .current a{
+	border-bottom: 1px solid;
+}
 .taxons-list {
 	z-index: 1;
 	background-color: white;
@@ -870,4 +878,18 @@ table tr:first-child{
 } 
 .progress-steps li.completed-first a, .progress-steps li.completed a{ 
 	color: gray;
+}
+
+.pagination .last, .pagination .first{
+	letter-spacing: -7px; 
+}
+.pagination .first{
+	margin-right: 10px;
+}
+
+.taxon-group{
+	display: block; 
+	margin-bottom: 3em;
+	margin-right: 4em; 
+	min-height: 130px; 
 }
