@@ -55,7 +55,7 @@
         </div>
 
         <div class="columns six" style="margin-left: 24px; ">
-          <div itemprop="description" data-hook="description" style="border-top: 2px solid; padding-top: 0px;">
+          <div class="product_description" itemprop="description" data-hook="description">
             <%= product_description(@product) rescue t(:product_has_no_description) %>
           </div>
         </div>
@@ -68,7 +68,7 @@
 </div>
 
 <div class="related_products">
-  <p>
+  <p class='related_products_title'>
   suggested titles:
   </p>
     <% @related_products.each do |related_product| %> 

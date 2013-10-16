@@ -325,11 +325,11 @@ input[type=text], input[type=email], input[type=password] {
 	max-width: 98%;
 }
 .related_products{
-	width: 250px;
+	width: 200px;
 	float: right;
 }
 
-@media all and (max-width:950px){
+@media all and (max-width:928px){
 	.related_products{
 		width: auto;
 		clear: both;
@@ -569,7 +569,7 @@ padding-top: 0.7em;
 	padding-bottom: 6em;
 	max-width: 1024px;
 	margin: 0 auto;
-	margin-top: 5em;
+	margin-top: 3em;
 }
 
 .footer-content{
@@ -665,7 +665,7 @@ max-width: 21%;
 }
 #product-thumbnails{
 	display: inline;
-}
+}`
 .tmb-all {
 	display: inline;
 }
@@ -674,7 +674,11 @@ max-width: 21%;
 	float: right;
 }
 .related-product-image{
-	max-width: 70%;
+	max-width: 100%;
+}
+.related_products_title{
+	margin-top: 0 ;
+	text-transform: capitalize;
 }
 table{
 	table-layout: fixed;
@@ -905,4 +909,14 @@ table tr:first-child{
 	padding-bottom: 0.1em;
 	text-transform: capitalize;
 	font-weight: normal; 
+}
+.product_description{
+	border-top: 2px solid; 
+	padding-top: 0px;
+	padding-top: 1em;
+}
+
+.product_description p{
+	margin-top: 0;
+	margin-bottom: 1.5em;
 }
