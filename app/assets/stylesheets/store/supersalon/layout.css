@@ -893,3 +893,10 @@ table tr:first-child{
 	margin-right: 4em; 
 	min-height: 130px; 
 }
+
+.out-of-stock{
+	margin-top: 9px;
+	margin-bottom: 5px;
+	display: inline-block;
+	color: grey;
+}
