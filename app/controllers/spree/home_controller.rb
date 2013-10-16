@@ -9,7 +9,7 @@ module Spree
       @searcher.current_currency = current_currency
       @products = @searcher.retrieve_products
       
-      @products.sort_by!{|p| p.created_at}.reverse!
+      #@products.sort_by!{|p| p.created_at}.reverse!
     end
   end
 end
