@@ -367,13 +367,13 @@ input[type=text], input[type=email], input[type=password] {
 }
 
 .product-image{
-	text-align: center;
-	vertical-align: middle;
-	height: 270px;
-	position: relative;
-	width: 185px;
-	overflow: hidden;
-	margin-bottom: 1em;
+text-align: center;
+vertical-align: middle;
+height: 250px;
+position: relative;
+width: 200px;
+overflow: hidden;
+margin-bottom: 1em;
 }
 
 .product-name {

@@ -80,10 +80,90 @@
 	"buffers":
 	[
 		{
+			"file": "app/controllers/spree/home_controller.rb",
+			"settings":
+			{
+				"buffer_size": 413,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/spree/shared/_products.html.erb",
+			"settings":
+			{
+				"buffer_size": 2107,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/helpers/spree/base_helper.rb",
+			"settings":
+			{
+				"buffer_size": 9349,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/kaminari/_first_page.html.erb",
+			"settings":
+			{
+				"buffer_size": 415,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/kaminari/_next_page.html.erb",
+			"settings":
+			{
+				"buffer_size": 420,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/kaminari/_last_page.html.erb",
+			"settings":
+			{
+				"buffer_size": 413,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/kaminari/_prev_page.html.erb",
+			"settings":
+			{
+				"buffer_size": 429,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/spree/taxons/show.html.erb",
+			"settings":
+			{
+				"buffer_size": 172,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/spree/taxons/taxon_overview.html.erb",
+			"settings":
+			{
+				"buffer_size": 524,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "app/views/spree/shared/_footer.html.erb",
 			"settings":
 			{
-				"buffer_size": 10538,
+				"buffer_size": 10541,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/stylesheets/store/supersalon/layout.css",
+			"settings":
+			{
+				"buffer_size": 13458,
 				"line_ending": "Unix"
 			}
 		}
@@ -124,6 +204,8 @@
 	},
 	"file_history":
 	[
+		"/Volumes/sandbox/root/spree2/app/assets/stylesheets/store/supersalon/layout.css",
+		"/Volumes/sandbox/root/spree2/app/views/spree/shared/_footer.html.erb",
 		"/Volumes/sandbox/root/spree2/app/views/spree/admin/payments/source_forms/_transferuj.html.erb",
 		"/Volumes/sandbox/root/spree2/app/views/spree/admin/payments/source_views/_transferuj.html.erb",
 		"/Volumes/sandbox/root/spree2/app/views/spree/admin/payments/source_views/transferuj.html.erb",
@@ -249,9 +331,7 @@
 		"/Volumes/sandbox/root/skedx/config/compass.rb",
 		"/Volumes/sandbox/root/skedx/app/assets/javascripts/frameworks.js",
 		"/Volumes/sandbox/root/skedx/app/assets/stylesheets/modules/_wall_filter.scss",
-		"/Volumes/sandbox/root/skedx/bridge_web_app.sublime-project",
-		"/Volumes/sandbox/root/skedx/app/assets/stylesheets/bridge.scss",
-		"/Volumes/sandbox/root/skedx/app/views/api/v1/users/index.json.rabl"
+		"/Volumes/sandbox/root/skedx/bridge_web_app.sublime-project"
 	],
 	"find":
 	{
@@ -259,9 +339,13 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
+			"/Volumes/sandbox/root/spree2",
+			"/Volumes/sandbox/root/spree2/app",
+			"/Volumes/sandbox/root/spree2",
+			"/Volumes/sandbox/root/spree2/app/views/spree",
 			"/Volumes/sandbox/usr/lib/ruby/gems/1.9.1/gems/spree_frontend-2.0.3",
 			"/Volumes/sandbox/usr/lib/ruby/gems/1.9.1/gems/spree_backend-2.0.3,/Volumes/sandbox/usr/lib/ruby/gems/1.9.1/gems/spree_cmd-2.0.3,/Volumes/sandbox/usr/lib/ruby/gems/1.9.1/gems/spree_core-2.0.3,/Volumes/sandbox/usr/lib/ruby/gems/1.9.1/gems/spree_api-2.0.3,/Volumes/sandbox/usr/lib/ruby/gems/1.9.1/gems/spree_frontend-2.0.3,/Volumes/sandbox/usr/lib/ruby/gems/1.9.1/gems/spree_related_products-3.0.2",
 			"/Volumes/sandbox/usr/lib/ruby/gems/1.9.1/gems/spree_backend-2.0.3,/Volumes/sandbox/usr/lib/ruby/gems/1.9.1/gems/spree_cmd-2.0.3,/Volumes/sandbox/usr/lib/ruby/gems/1.9.1/gems/spree_core-2.0.3,/Volumes/sandbox/usr/lib/ruby/gems/1.9.1/gems/spree_api-2.0.3,/Volumes/sandbox/usr/lib/ruby/gems/1.9.1/gems/spree_frontend-2.0.3,/Volumes/sandbox/usr/lib/ruby/gems/1.9.1/gems/spree_related_products-3.0.2,/Volumes/sandbox/usr/lib/ruby/gems/1.9.1/gems/spree_sample-2.0.3",
@@ -320,6 +404,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"current_taxon",
+			"taxons_tree",
+			"current_taxon",
+			"current",
+			"root",
+			"paginate",
+			"pagination",
 			"h6",
 			"new-customer",
 			"data-hook",
@@ -440,14 +531,7 @@
 			"formatAvailableTagsForFiltering",
 			"updateAudience",
 			"resetPostTags",
-			"resetAddTags",
-			"formatAvailableTagsForFiltering",
-			"availableTags",
-			"debugger",
-			"debugg",
-			"handleTagSelection",
-			"handle",
-			"tag"
+			"resetAddTags"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -467,23 +551,51 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 10,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/views/spree/shared/_footer.html.erb",
+					"file": "app/controllers/spree/home_controller.rb",
 					"settings":
 					{
-						"buffer_size": 10538,
+						"buffer_size": 413,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								640,
-								640
+								124,
+								124
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/spree/shared/_products.html.erb",
+					"settings":
+					{
+						"buffer_size": 2107,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2066,
+								2074
 							]
 						],
 						"settings":
@@ -493,7 +605,246 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
+						"translation.y": 138.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/helpers/spree/base_helper.rb",
+					"settings":
+					{
+						"buffer_size": 9349,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5732,
+								5732
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 38.0,
+						"translation.y": 2135.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/kaminari/_first_page.html.erb",
+					"settings":
+					{
+						"buffer_size": 415,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								377,
+								377
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/kaminari/_next_page.html.erb",
+					"settings":
+					{
+						"buffer_size": 420,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								366,
+								366
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/views/kaminari/_last_page.html.erb",
+					"settings":
+					{
+						"buffer_size": 413,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								373,
+								373
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/views/kaminari/_prev_page.html.erb",
+					"settings":
+					{
+						"buffer_size": 429,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								375,
+								375
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/views/spree/taxons/show.html.erb",
+					"settings":
+					{
+						"buffer_size": 172,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								172,
+								172
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/views/spree/taxons/taxon_overview.html.erb",
+					"settings":
+					{
+						"buffer_size": 524,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								500,
+								500
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "app/views/spree/shared/_footer.html.erb",
+					"settings":
+					{
+						"buffer_size": 10541,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1706,
+								1706
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4047.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "app/assets/stylesheets/store/supersalon/layout.css",
+					"settings":
+					{
+						"buffer_size": 13458,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5818,
+								5818
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 5360.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
