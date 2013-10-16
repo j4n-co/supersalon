@@ -665,7 +665,7 @@ max-width: 21%;
 }
 #product-thumbnails{
 	display: inline;
-}`
+}
 .tmb-all {
 	display: inline;
 }
@@ -916,7 +916,7 @@ table tr:first-child{
 	padding-top: 1em;
 }
 
-.product_description p{
+.product_description p {
 	margin-top: 0;
 	margin-bottom: 1.5em;
 }
