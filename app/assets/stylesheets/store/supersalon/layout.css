@@ -923,3 +923,17 @@ table tr:first-child{
 	margin-top: 0;
 	margin-bottom: 1.5em;
 }
+
+.bank-transfer-table{
+	width: 50%;
+}
+
+.bank-transfer-table th{
+	
+}
+table.bank-transfer-table tr:first-child{
+	border-top: none; 
+}
+.bank-transfer-table tr{
+	border-bottom: none;
+}

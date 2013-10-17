@@ -24,6 +24,14 @@ GIT
       spree_core (~> 2.0.0)
 
 GIT
+  remote: git://github.com/vinsol/spree_bank_transfer.git
+  revision: 525c42f3b75f1a99f4762c7ccef2fc4a243d108d
+  branch: master
+  specs:
+    spree_bank_transfer (2.0.3)
+      spree_core (~> 2.0.3)
+
+GIT
   remote: http://github.com/autotelik/datashift
   revision: e3946791fdd53d196a357b9981277b816eb98ea5
   specs:
@@ -390,6 +398,7 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   spree (= 2.0.3)
   spree_auth_devise!
+  spree_bank_transfer!
   spree_gateway!
   spree_multi_currency!
   spree_related_products!
