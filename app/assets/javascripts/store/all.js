@@ -8,4 +8,4 @@
 //= require jquery_ujs
 //= require store/spree_frontend
 //= require_tree .
-//= require store/spree_bank_transfer
+

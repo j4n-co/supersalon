@@ -4,6 +4,7 @@
     <%banks = banks.where(:currency => @order.currency) %> 
 
     <% banks.each do |bank| %>
+      <h3>Please make a bank transfer to the following account. Your order will be processed after we receive this transaction.</h3>
       <table class="bank-transfer-table">
       <thead>
         <th>
@@ -44,5 +45,8 @@
       <tr>
       </tbody>
     </table>
+    <p>
+    (these account details will be emailed to you as well)
+    </p>
     <% end %>
 <% end %>
