@@ -1,3 +1,4 @@
+
 input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
     border: 2px solid black;
     height: 20px;
@@ -486,7 +487,7 @@ margin-bottom: 1em;
 }
 
 .taxons-list .taxons-list-children .current a{
-	border-bottom: 1px solid;
+	border-bottom: 2px solid;
 }
 .taxons-list {
 	z-index: 1;
@@ -503,20 +504,22 @@ text-align: left;
 padding-top: 0.7em;
 }
 .taxons-list-children{
-	position: absolute;
+	position: fixed;
 	z-index: 1;
 	background-color: #FFF;
 	border: 2px solid;
 	padding: 10px;
-	left: -11px;
-	margin-top: 10px;	
+	padding-top: 0;
+	padding-top: 12px;
+	margin-top: 12px;	
 	border-top: 0;
 	font-family: 'Calibre-Medium';
 	font-size: 15px;
 	line-height: 24px;
-	padding-top: 0;
 	/*width: 400px; */
-	top: 20px;
+	max-height: 60%;
+	overflow: auto;
+	margin-left: -1em; 
 }
 
 

@@ -16,8 +16,8 @@
         <h6><%= Spree.t(:shipments) %> <%= link_to "(#{Spree.t(:edit)})", checkout_state_path(:delivery) unless @order.completed? %></h6>
         <div class="delivery">
           <% order.shipments.each do |shipment| %>
-            <%= shipment.stock_location.name %>
-            <%= shipment.shipping_method.name %>
+            <%= shipment.stock_location.try(:name) %>
+            <%= shipment.shipping_method.try(:name) %>
             <br/>
           <% end %>
         </div>
