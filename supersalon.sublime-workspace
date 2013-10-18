@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"border",
+				"border-top"
+			],
+			[
 				"max-",
 				"max-height"
 			],
@@ -52,10 +56,6 @@
 				"toolbar_bg"
 			],
 			[
-				"border",
-				"border-width"
-			],
-			[
 				"getFront",
 				"getFrontPageDescriptions"
 			],
@@ -79,94 +79,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/controllers/spree/home_controller.rb",
-			"settings":
-			{
-				"buffer_size": 413,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/spree/shared/_products.html.erb",
-			"settings":
-			{
-				"buffer_size": 2107,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/helpers/spree/base_helper.rb",
-			"settings":
-			{
-				"buffer_size": 9349,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/kaminari/_first_page.html.erb",
-			"settings":
-			{
-				"buffer_size": 415,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/kaminari/_next_page.html.erb",
-			"settings":
-			{
-				"buffer_size": 420,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/kaminari/_last_page.html.erb",
-			"settings":
-			{
-				"buffer_size": 413,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/kaminari/_prev_page.html.erb",
-			"settings":
-			{
-				"buffer_size": 429,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/spree/taxons/show.html.erb",
-			"settings":
-			{
-				"buffer_size": 172,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/spree/taxons/taxon_overview.html.erb",
-			"settings":
-			{
-				"buffer_size": 524,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/spree/shared/_footer.html.erb",
-			"settings":
-			{
-				"buffer_size": 10541,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/stylesheets/store/supersalon/layout.css",
-			"settings":
-			{
-				"buffer_size": 13458,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -191,7 +103,14 @@
 	},
 	"console":
 	{
-		"height": 132.0
+		"height": 132.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())",
+			"urllib.request.install_opener( urllib.request.build_opener( ",
+			"ipp = sublime.installed_packages_path(); ",
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; "
+		]
 	},
 	"distraction_free":
 	{
@@ -204,8 +123,35 @@
 	},
 	"file_history":
 	[
-		"/Volumes/sandbox/root/spree2/app/assets/stylesheets/store/supersalon/layout.css",
 		"/Volumes/sandbox/root/spree2/app/views/spree/shared/_footer.html.erb",
+		"/Volumes/sandbox/root/spree2/app/views/spree/taxons/taxon_overview.html.erb",
+		"/Volumes/sandbox/root/spree2/app/views/spree/taxons/show.html.erb",
+		"/Volumes/sandbox/root/spree2/app/views/kaminari/_prev_page.html.erb",
+		"/Volumes/sandbox/root/spree2/app/views/kaminari/_last_page.html.erb",
+		"/Volumes/sandbox/root/spree2/app/views/kaminari/_next_page.html.erb",
+		"/Volumes/sandbox/root/spree2/app/views/kaminari/_first_page.html.erb",
+		"/Volumes/sandbox/root/spree2/app/views/spree/products/show.html.erb",
+		"/Volumes/sandbox/root/spree2/app/helpers/spree/base_helper.rb",
+		"/Volumes/sandbox/root/spree2/app/views/spree/products/_simple_cart_form.html.erb",
+		"/Volumes/sandbox/root/spree2/app/views/spree/products/_cart_form.html.erb",
+		"/Volumes/sandbox/root/spree2/app/views/spree/checkout/_address.html.erb",
+		"/Volumes/sandbox/root/spree2/app/controllers/spree/home_controller.rb",
+		"/Volumes/sandbox/root/spree2/app/views/spree/shared/_products.html.erb",
+		"/Volumes/sandbox/root/spree2/app/views/spree/shared/_order_details.html.erb",
+		"/Volumes/sandbox/root/spree2/Gemfile",
+		"/Volumes/sandbox/root/spree2/app/assets/stylesheets/store/all.css",
+		"/Volumes/sandbox/root/spree2/db/migrate/20131017133242_add_name_address_to_banks.rb",
+		"/Volumes/sandbox/root/spree2/db/migrate/20131017134527_add_currency_to_banks.rb",
+		"/Volumes/sandbox/root/spree2/app/models/spree/bank.rb",
+		"/Volumes/sandbox/root/spree2/app/views/spree/admin/banks/_form.html.erb",
+		"/Volumes/sandbox/root/spree2/app/assets/stylesheets/admin/all.css",
+		"/Volumes/sandbox/root/spree2/app/assets/stylesheets/store/supersalon/layout.css",
+		"/Volumes/sandbox/root/spree2/app/assets/javascripts/store/all.js",
+		"/Volumes/sandbox/root/spree2/app/assets/stylesheets/application.css",
+		"/Volumes/sandbox/root/spree2/app/views/spree/checkout/payment/_banktransfer.html.erb",
+		"/Volumes/sandbox/root/spree2/app/views/spree/checkout/edit.html.erb",
+		"/Volumes/sandbox/root/spree2/app/views/spree/order_mailer/confirm_email.text.erb",
+		"/Volumes/sandbox/root/spree2/app/assets/javascripts/store/checkout.js",
 		"/Volumes/sandbox/root/spree2/app/views/spree/admin/payments/source_forms/_transferuj.html.erb",
 		"/Volumes/sandbox/root/spree2/app/views/spree/admin/payments/source_views/_transferuj.html.erb",
 		"/Volumes/sandbox/root/spree2/app/views/spree/admin/payments/source_views/transferuj.html.erb",
@@ -304,34 +250,7 @@
 		"/Volumes/sandbox/root/skedx/app/assets/javascripts/timer.js",
 		"/Volumes/sandbox/root/skedx/app/controllers/wall_messages_controller.rb",
 		"/Volumes/sandbox/root/skedx/app/views/api/v1/wall_message_threads/index.json.jbuilder",
-		"/Volumes/sandbox/root/skedx/app/views/api/v1/wall_message_threads/available_tags.json.rabl",
-		"/Volumes/sandbox/root/skedx/app/views/api/v1/wall_message_threads/audience.json.jbuilder",
-		"/Volumes/sandbox/root/skedx/app/views/api/v1/wall_message_threads/_index.json.jbuilder",
-		"/Volumes/sandbox/root/skedx/app/views/api/v1/wall_message_threads/create.json.jbuilder",
-		"/Volumes/sandbox/root/skedx/app/views/api/v1/wall_message_threads/_wall_message_threads.json.jbuilder",
-		"/Volumes/sandbox/root/skedx/app/assets/stylesheets/modules/_post.scss",
-		"/Volumes/sandbox/root/skedx/app/views/api/v1/profiles/_profile.json.rabl",
-		"/Volumes/sandbox/root/skedx/app/views/api/v1/profiles/show.json.rabl",
-		"/Volumes/sandbox/root/skedx/app/views/api/v1/wall_messages/_message.json.rabl",
-		"/Volumes/sandbox/root/skedx/app/views/api/v1/wall_message_threads/index.json.rabl",
-		"/Volumes/sandbox/root/skedx/app/controllers/api/v1/profiles_controller.rb",
-		"/Volumes/sandbox/root/skedx/app/assets/stylesheets/modules/_instruction_box.scss",
-		"/Volumes/sandbox/root/skedx/app/views/wall/_hash_tag_filter.html.haml",
-		"/Users/jan/Downloads/testCSV.csv",
-		"/Volumes/sandbox/root/skedx/script/rails",
-		"/Volumes/sandbox/root/skedx/app/models/wall_message_thread.rb",
-		"/Users/jan/Downloads/HTML5-Desktop-Notifications-master/index.html",
-		"/Volumes/sandbox/root/skedx/app/views/shared/bridge/_nav.html.haml",
-		"/Volumes/sandbox/root/skedx/app/views/layouts/email.html.erb",
-		"/Volumes/transmission/config/settings.json",
-		"/Volumes/sandbox/root/skedx/app/views/support_tickets/show.html.haml",
-		"/Users/jan/Library/Application Support/Sublime Text 2/Packages/Color Scheme - Default/Monokai.tmTheme",
-		"/Volumes/sandbox/root/skedx/app/models/notifier.rb",
-		"/Volumes/sandbox/root/skedx/Gemfile.lock",
-		"/Volumes/sandbox/root/skedx/config/compass.rb",
-		"/Volumes/sandbox/root/skedx/app/assets/javascripts/frameworks.js",
-		"/Volumes/sandbox/root/skedx/app/assets/stylesheets/modules/_wall_filter.scss",
-		"/Volumes/sandbox/root/skedx/bridge_web_app.sublime-project"
+		"/Volumes/sandbox/root/skedx/app/views/api/v1/wall_message_threads/available_tags.json.rabl"
 	],
 	"find":
 	{
@@ -404,6 +323,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"%>",
+			"sstate",
+			"billing",
+			"submit",
+			"disableSaveOnClick",
+			"disable",
+			"var",
+			"submit",
+			"current",
+			"footer",
+			"body",
+			"taxons-list-children",
 			"current_taxon",
 			"taxons_tree",
 			"current_taxon",
@@ -519,19 +450,7 @@
 			"newPost.",
 			"newPost",
 			"handleFilterChange",
-			"hashTag",
-			"showFilter",
-			"debug",
-			"handleTagSelection",
-			"handleTagSele",
-			"tagChecked",
-			"formatAvailab",
-			"updateAu",
-			"tag.name",
-			"formatAvailableTagsForFiltering",
-			"updateAudience",
-			"resetPostTags",
-			"resetAddTags"
+			"hashTag"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -551,304 +470,8 @@
 	"groups":
 	[
 		{
-			"selected": 10,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/controllers/spree/home_controller.rb",
-					"settings":
-					{
-						"buffer_size": 413,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								124,
-								124
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/views/spree/shared/_products.html.erb",
-					"settings":
-					{
-						"buffer_size": 2107,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2066,
-								2074
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 138.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/helpers/spree/base_helper.rb",
-					"settings":
-					{
-						"buffer_size": 9349,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5732,
-								5732
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 38.0,
-						"translation.y": 2135.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/views/kaminari/_first_page.html.erb",
-					"settings":
-					{
-						"buffer_size": 415,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								377,
-								377
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/views/kaminari/_next_page.html.erb",
-					"settings":
-					{
-						"buffer_size": 420,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								366,
-								366
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/views/kaminari/_last_page.html.erb",
-					"settings":
-					{
-						"buffer_size": 413,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								373,
-								373
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/views/kaminari/_prev_page.html.erb",
-					"settings":
-					{
-						"buffer_size": 429,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								375,
-								375
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/views/spree/taxons/show.html.erb",
-					"settings":
-					{
-						"buffer_size": 172,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								172,
-								172
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "app/views/spree/taxons/taxon_overview.html.erb",
-					"settings":
-					{
-						"buffer_size": 524,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								500,
-								500
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "app/views/spree/shared/_footer.html.erb",
-					"settings":
-					{
-						"buffer_size": 10541,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1706,
-								1706
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 4047.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "app/assets/stylesheets/store/supersalon/layout.css",
-					"settings":
-					{
-						"buffer_size": 13458,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5818,
-								5818
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 5360.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -887,6 +510,7 @@
 	{
 		"height": 112.0
 	},
+	"project": "supersalon.sublime-project",
 	"replace":
 	{
 		"height": 64.0
@@ -920,10 +544,24 @@
 		],
 		"width": 380.0
 	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 297.0,
-	"status_bar_visible": true
+	"side_bar_width": 539.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
 }

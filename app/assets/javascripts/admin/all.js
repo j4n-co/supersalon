@@ -7,8 +7,10 @@
 //= require jquery
 //= require jquery_ujs
 
-//= require admin/spree_backend
 
-//= require_tree .
 //= require admin/spree_multi_currency
 //= require admin/spree_bank_transfer
+//= require jquery-fileupload
+//= require_tree .
+
+//= require admin/spree_backend
