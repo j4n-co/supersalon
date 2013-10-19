@@ -42,6 +42,7 @@ gem 'spree_static_content', :github => 'spree/spree_static_content', :branch => 
 gem 'spree_multi_currency', :github => "spree/spree_multi_currency", :branch => 'master'
 gem 'spree_related_products', :github => 'spree/spree_related_products', :branch => 'master'
 gem 'spree_bank_transfer',  :github => 'vinsol/spree_bank_transfer', :branch => 'master'
+gem 'spree_paypal_express', :github => "radar/better_spree_paypal_express", :branch => "2-0-stable"
 
 gem "jquery-fileupload-rails"
 
