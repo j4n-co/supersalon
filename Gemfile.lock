@@ -225,6 +225,9 @@ GEM
       webrobots (>= 0.0.9, < 0.2)
     method_source (0.8)
     mime-types (1.23)
+    mina (0.3.0)
+      open4
+      rake
     money (5.1.1)
       i18n (~> 0.6.0)
     multi_json (1.7.7)
@@ -234,6 +237,7 @@ GEM
     nokogiri (1.5.10)
     nori (1.1.5)
     ntlm-http (0.1.1)
+    open4 (1.3.0)
     orm_adapter (0.4.0)
     paperclip (3.4.2)
       activemodel (>= 3.0.0)
@@ -409,6 +413,7 @@ DEPENDENCIES
   guard-livereload
   jquery-fileupload-rails
   jquery-rails
+  mina
   pg
   pry
   pry-debugger

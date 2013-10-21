@@ -31,6 +31,9 @@ group :production do
 	#gem 'heroku_rails_deflate'
 end
 
+#digitalOcean deployment
+gem "mina"
+
 #SPREE 2.0.3
 gem 'spree', '2.0.3'
 
