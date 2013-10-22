@@ -15,6 +15,7 @@ group :assets do
 end
 
 gem 'sqlite3'
+gem "mysql2"
 
 group :development do
 	gem 'debugger'
