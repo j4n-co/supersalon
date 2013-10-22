@@ -15,6 +15,7 @@ Spree.config do |config|
   config.s3_secret = "2zPokmdPsQjTR19i/YbSzA0B/dPyEr2vDyOLdLlw"
   config.attachment_path = "/app/public/spree/products/:id/:style/:basename.:extension"
   config.address_requires_state = true
+  config.set(:allow_ssl_in_production => false)
 end
 
 Paperclip.interpolates(:s3_eu_url) do |attachment, style|
