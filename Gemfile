@@ -14,8 +14,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'sqlite3'
-gem "mysql2"
 
 group :development do
 	gem 'debugger'
@@ -25,11 +23,16 @@ group :development do
 	gem 'pry-debugger'
 	gem 'datashift', :git => 'http://github.com/autotelik/datashift'
 	gem 'datashift_spree', :git => 'http://github.com/autotelik/datashift_spree'
+	gem 'sqlite3'
+end
+
+group :staging do
+	gem 'pg'
 end
 
 group :production do
 	gem 'thin'
-	gem 'pg'
+	gem 'sqlite3'
 	#gem 'heroku_rails_deflate'
 end
 
