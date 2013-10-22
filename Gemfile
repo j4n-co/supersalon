@@ -14,6 +14,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+#this breaks heroku and BUNDLE_WITHOUT isn't working at all. 
+gem 'sqlite3'
+
 
 group :development do
 	gem 'debugger'
@@ -23,17 +26,18 @@ group :development do
 	gem 'pry-debugger'
 	gem 'datashift', :git => 'http://github.com/autotelik/datashift'
 	gem 'datashift_spree', :git => 'http://github.com/autotelik/datashift_spree'
-	gem 'sqlite3'
+	gem 'heroku_san'
 end
 
+#heroku specific
 group :staging do
 	gem 'thin'
 	gem 'pg'
+	#gem 'heroku_rails_deflate'
 end
 
+#digitalOcean specific
 group :production do
-	gem 'sqlite3'
-	#gem 'heroku_rails_deflate'
 end
 
 #digitalOcean deployment

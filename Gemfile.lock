@@ -178,6 +178,7 @@ GEM
       eventmachine (>= 0.12.9)
     erubis (2.7.0)
     eventmachine (1.0.0)
+    excon (0.25.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
     ffaker (1.16.2)
@@ -192,6 +193,11 @@ GEM
       multi_json (~> 1.0)
     gyoku (0.4.6)
       builder (>= 2.1.2)
+    heroku-api (0.3.15)
+      excon (~> 0.25.1)
+    heroku_san (4.3.0)
+      heroku-api (>= 0.1.2)
+      rake
     highline (1.6.18)
     hike (1.2.3)
     http-cookie (1.0.1)
@@ -422,6 +428,7 @@ DEPENDENCIES
   datashift_spree!
   debugger
   guard-livereload
+  heroku_san
   jquery-fileupload-rails
   jquery-rails
   pg
