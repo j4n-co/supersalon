@@ -234,7 +234,6 @@ GEM
       i18n (~> 0.6.0)
     multi_json (1.7.7)
     multi_xml (0.5.4)
-    mysql2 (0.3.13)
     net-http-digest_auth (1.4)
     net-http-persistent (2.9)
     net-scp (1.1.2)
@@ -425,7 +424,6 @@ DEPENDENCIES
   guard-livereload
   jquery-fileupload-rails
   jquery-rails
-  mysql2
   pg
   pry
   pry-debugger

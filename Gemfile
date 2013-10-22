@@ -27,11 +27,11 @@ group :development do
 end
 
 group :staging do
+	gem 'thin'
 	gem 'pg'
 end
 
 group :production do
-	gem 'thin'
 	gem 'sqlite3'
 	#gem 'heroku_rails_deflate'
 end
