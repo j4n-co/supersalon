@@ -14,8 +14,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'sqlite3'
+
 group :development do
-	gem 'sqlite3'
 	gem 'debugger'
 	gem 'pry'
 	gem 'guard-livereload'
