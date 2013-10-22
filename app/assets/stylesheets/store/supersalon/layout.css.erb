@@ -481,7 +481,9 @@ margin-bottom: 1em;
 .taxons-list:hover .root_taxon_link{
 	margin-bottom: 0;
 }
-
+.root_taxon_link.menu_item:hover a{
+	border-bottom: 2px solid black;
+}
 .taxons-list .taxons-list-children {
 	display: none;
 }
@@ -512,6 +514,7 @@ padding-top: 0.7em;
 	padding-top: 0;
 	padding-top: 12px;
 	margin-top: 12px;	
+	margin-top: 11.5px;	
 	border-top: 0;
 	font-family: 'Calibre-Medium';
 	font-size: 15px;
@@ -550,10 +553,15 @@ padding-top: 0.7em;
 	border-bottom: 2px solid;
 }
 .taxons-list-children.flat li{
-	border-bottom: none;
 	display: block;
 	padding: 3px;
 	white-space: nowrap;
+}
+.taxons-list-children.flat li:hover a{
+		border-bottom: 2px solid white;
+}
+.taxons-list-children.flat li:hover a{
+	border-bottom: 2px solid black;
 }
 
 .add-to-cart{
@@ -572,7 +580,7 @@ padding-top: 0.7em;
 	padding-bottom: 6em;
 	max-width: 1024px;
 	margin: 0 auto;
-	margin-top: 3em;
+	margin-top: 2em;
 }
 
 .footer-content{
@@ -780,8 +788,7 @@ table tr:first-child{
 #map-canvas{
 	float: left;
 	margin-right: 3em;
-	outline: 1px solid black;
-	margin-left: 10px;
+	border: 2px solid black;
 }
 
 .small-products.product-listing .product-image a{
@@ -887,18 +894,13 @@ table tr:first-child{
 	color: gray;
 }
 
-.pagination .last, .pagination .first{
-	letter-spacing: -7px; 
-}
-.pagination .first{
-	margin-right: 10px;
-}
 
 .taxon-group{
 	display: block; 
 	margin-bottom: 3em;
 	margin-right: 4em; 
 	min-height: 130px; 
+	float: left; 
 }
 
 .out-of-stock{
@@ -936,4 +938,57 @@ table.bank-transfer-table tr:first-child{
 }
 .bank-transfer-table tr{
 	border-bottom: none;
+}
+
+.pagination{
+
+}
+
+.pagination .next, .pagination .prev, 
+.pagination .last, .pagination .first{
+	background: url("<%=asset_path('arrows.png')%>") no-repeat 0 0 transparent;
+	background-size: auto 0.8em;
+	width: 20px;
+	opacity: 1;
+}
+.pagination .next:hover, .pagination .prev:hover,
+.pagination .last:hover, .pagination .first:hover{
+	opacity: 0.5;
+}
+.pagination .next{
+	background-position: -64px 0px;
+}
+.pagination .prev{
+	background-position: -34px 0px;
+}
+
+.pagination .last{
+	background-position: -95px 0px;
+	width: 25px;
+}
+
+.pagination .first{
+	background-position: 0px 0px;
+	width: 25px;
+}
+
+.pagination a{
+	color: transparent;
+}
+.pagination .page a{
+	color: black; 
+}
+.pagination .page:hover{
+	color: black; 
+	border-bottom: 2px solid;
+}
+
+.pagination .page.current {
+	color: black; 
+	border-bottom: 2px solid;
+
+}
+.pagination span{
+	display: inline-block;
+	background-size: auto 0.8em;
 }

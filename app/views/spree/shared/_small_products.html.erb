@@ -1,7 +1,7 @@
 <%
-  paginated_products = @searcher.retrieve_products if params.key?(:keywords)
-  paginated_products ||= products
+  products = @searcher.retrieve_products if params.key?(:keywords)
 %>
+<% #binding.pry %> 
 <% if products.empty? %>
     <span>
       <%= t(:no_products_found) %>
@@ -14,13 +14,7 @@
 <ul class="inline product-listing small-products" data-hook>
   <% products.each_with_index do |product, i| %>
     <% if product.available? %>
-      <% if i % 4 == 0
-          css_class = ''
-          elsif (i+1) % 4 == 0   
-          css_class = ''
-        else 
-          css_class = ''
-        end %>  
+ 
       <li id="product_<%= product.id %>" class="product-list-item" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
           <div class="product-image">
             <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %>
@@ -29,9 +23,7 @@
 
     <% end %>
   <% end %>
-  <% reset_cycle("classes") %>
 </ul>
+
 <% end %> 
-<% if paginated_products.respond_to?(:num_pages) %>
-  <%= paginate paginated_products %>
-<% end %>
+
