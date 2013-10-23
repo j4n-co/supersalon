@@ -59,5 +59,8 @@ gem 'spree_paypal_express', :github => "radar/better_spree_paypal_express", :bra
 
 gem "jquery-fileupload-rails"
 
-#gem 'spree_paypal_express', :github => "radar/better_spree_paypal_express", :branch => "2-0-stable"
+gem 'spree_print_invoice' , :git => 'git://github.com/spree/spree_print_invoice.git', :branch => 'master'
 
+gem 'spree_html_invoice', :path=>'vendor/engines/spree_html_invoice'
+
+#gem '', :git => 'git://raw.github.com/CodeCantor/spree-html-invoice.git', :branch => "master"

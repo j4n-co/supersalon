@@ -37,6 +37,15 @@ GIT
       spree_core (~> 2.0.0)
 
 GIT
+  remote: git://github.com/spree/spree_print_invoice.git
+  revision: 165d300881c9b18c5b1eae85758ff8ce7de41a96
+  branch: master
+  specs:
+    spree_print_invoice (2.0.0)
+      prawn (= 0.8.4)
+      spree_core (~> 2.0)
+
+GIT
   remote: git://github.com/spree/spree_related_products.git
   revision: 0fd9cc69a6ff3b84f223365b4223245cc8bcf3b0
   branch: master
@@ -76,6 +85,12 @@ GIT
     datashift_spree (0.5.0)
       datashift (>= 0.12.0)
       mechanize
+
+PATH
+  remote: vendor/engines/spree_html_invoice
+  specs:
+    spree_html_invoice (1.4.2)
+      spree_core (>= 2.0)
 
 GEM
   remote: https://rubygems.org/
@@ -268,6 +283,16 @@ GEM
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
+    prawn (0.8.4)
+      prawn-core (>= 0.8.4, < 0.9)
+      prawn-core (>= 0.8.4, < 0.9)
+      prawn-layout (>= 0.8.4, < 0.9)
+      prawn-layout (>= 0.8.4, < 0.9)
+      prawn-security (>= 0.8.4, < 0.9)
+      prawn-security (>= 0.8.4, < 0.9)
+    prawn-core (0.8.4)
+    prawn-layout (0.8.4)
+    prawn-security (0.8.4)
     pry (0.9.10)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -442,8 +467,10 @@ DEPENDENCIES
   spree_auth_devise!
   spree_bank_transfer!
   spree_gateway!
+  spree_html_invoice!
   spree_multi_currency!
   spree_paypal_express!
+  spree_print_invoice!
   spree_related_products!
   spree_static_content!
   sqlite3
