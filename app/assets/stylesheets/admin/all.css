@@ -11,4 +11,5 @@
  *= require admin/spree_multi_currency
  *= require admin/spree_bank_transfer
  *= require jquery.fileupload-ui
+ *= require admin/spree_i18n
 */
