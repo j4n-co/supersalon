@@ -29,17 +29,6 @@ GIT
       spree_core (~> 2.0.0)
 
 GIT
-  remote: git://github.com/spree/spree_i18n.git
-  revision: 3ec1232abccf54ae3747effaeeef49faa030bcfe
-  branch: 2-0-stable
-  specs:
-    spree_i18n (3.1.0.beta)
-      globalize3 (~> 0.3.0)
-      i18n (~> 0.6.1)
-      rails-i18n (~> 0.7.3)
-      spree_core (~> 2.0.0)
-
-GIT
   remote: git://github.com/spree/spree_multi_currency.git
   revision: e16b66c9c22f769236586cb1d4c16f05a7fb2cc0
   branch: master
@@ -208,10 +197,6 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
     ffaker (1.16.2)
-    globalize3 (0.3.0)
-      activemodel (>= 3.0.0)
-      activerecord (>= 3.0.0)
-      paper_trail (~> 2)
     guard (1.6.0)
       listen (>= 0.6.0)
       lumberjack (>= 1.0.2)
@@ -223,8 +208,6 @@ GEM
       multi_json (~> 1.0)
     gyoku (0.4.6)
       builder (>= 2.1.2)
-    haml (4.0.3)
-      tilt
     heroku-api (0.3.15)
       excon (~> 0.25.1)
     heroku_san (4.3.0)
@@ -285,9 +268,6 @@ GEM
     nori (1.1.5)
     ntlm-http (0.1.1)
     orm_adapter (0.4.0)
-    paper_trail (2.7.2)
-      activerecord (~> 3.0)
-      railties (~> 3.0)
     paperclip (3.4.2)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
@@ -336,8 +316,6 @@ GEM
       activesupport (= 3.2.13)
       bundler (~> 1.0)
       railties (= 3.2.13)
-    rails-i18n (0.7.4)
-      i18n (~> 0.5)
     railties (3.2.13)
       actionpack (= 3.2.13)
       activesupport (= 3.2.13)
@@ -472,7 +450,6 @@ DEPENDENCIES
   datashift_spree!
   debugger
   guard-livereload
-  haml
   heroku_san
   jquery-fileupload-rails
   jquery-rails
@@ -488,7 +465,6 @@ DEPENDENCIES
   spree_bank_transfer!
   spree_gateway!
   spree_html_invoice!
-  spree_i18n!
   spree_multi_currency!
   spree_paypal_express!
   spree_print_invoice!
