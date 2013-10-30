@@ -17,6 +17,8 @@ end
 #this breaks heroku and BUNDLE_WITHOUT isn't working at all. 
 gem 'sqlite3'
 
+gem 'datashift', :git => 'http://github.com/autotelik/datashift'
+gem 'datashift_spree', :git => 'http://github.com/autotelik/datashift_spree'
 
 group :development do
 	gem 'debugger'
@@ -24,8 +26,6 @@ group :development do
 	gem 'guard-livereload'
 	gem 'rack-livereload'
 	gem 'pry-debugger'
-	gem 'datashift', :git => 'http://github.com/autotelik/datashift'
-	gem 'datashift_spree', :git => 'http://github.com/autotelik/datashift_spree'
 	gem 'heroku_san'
 end
 
@@ -63,4 +63,6 @@ gem 'spree_print_invoice' , :github => 'spree/spree_print_invoice', :branch => '
 
 gem 'spree_html_invoice', :path=>'vendor/engines/spree_html_invoice'
 
-#gem '', :git => 'git://raw.github.com/CodeCantor/spree-html-invoice.git', :branch => "master"
+gem 'spree_i18n', github: 'spree/spree_i18n', :branch => '2-0-stable'
+
+gem "haml"
