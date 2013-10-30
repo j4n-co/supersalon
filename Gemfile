@@ -45,11 +45,11 @@ gem 'rvm-capistrano'
 gem 'spree', '2.0.3'
 
 
-gem 'datashift', :github => 'autotelik/datashift', :branch => 'master'
-gem 'datashift_spree', :github => 'autotelik/datashift_spree', :branch => 'master'
+#gem 'datashift', :github => 'autotelik/datashift', :branch => 'master'
+#gem 'datashift_spree', :github => 'autotelik/datashift_spree', :branch => 'master'
 
 
-gem 'spree_gateway', github: 'spree/spree_gateway', :branch => '2-0-stable'
+gem 'spree_gateway', :github => 'spree/spree_gateway', :branch => '2-0-stable'
 gem "spree_auth_devise", :github => "spree/spree_auth_devise", :branch => '2-0-stable'
 
 #custom gems 
@@ -63,6 +63,6 @@ gem "jquery-fileupload-rails"
 
 gem 'spree_print_invoice' , :github => 'spree/spree_print_invoice', :branch => 'master'
 
-gem 'spree_html_invoice', :path=>'vendor/engines/spree_html_invoice'
+gem 'spree_html_invoice', :path => 'vendor/engines/spree_html_invoice'
 
-gem 'spree_i18n', github: 'spree/spree_i18n', :branch => '2-0-stable'
+gem 'spree_i18n', :github => 'spree/spree_i18n', :branch => '2-0-stable'
