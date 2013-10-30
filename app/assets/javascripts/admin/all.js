@@ -15,4 +15,3 @@
 
 //= require admin/spree_backend
 //= require admin/spree_paypal_express
-//= require admin/spree_i18n
