@@ -29,6 +29,8 @@ set :rvm_type, :system
 
 set :bundle_without, [:development, :test, :acceptance]
 
+role :db, server_ip, :primary => true 
+
 
 before "deploy:start" do
   deploy.migrate
