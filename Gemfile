@@ -17,9 +17,6 @@ end
 #this breaks heroku and BUNDLE_WITHOUT isn't working at all. 
 gem 'sqlite3'
 
-gem 'datashift', :git => 'http://github.com/autotelik/datashift'
-gem 'datashift_spree', :git => 'http://github.com/autotelik/datashift_spree'
-
 group :development do
 	gem 'debugger'
 	gem 'pry'
@@ -46,6 +43,11 @@ gem 'rvm-capistrano'
 
 #SPREE 2.0.3
 gem 'spree', '2.0.3'
+
+
+gem 'datashift', :github => 'autotelik/datashift', :branch => 'master'
+gem 'datashift_spree', :github => 'autotelik/datashift_spree', :branch => 'master'
+
 
 gem 'spree_gateway', github: 'spree/spree_gateway', :branch => '2-0-stable'
 gem "spree_auth_devise", :github => "spree/spree_auth_devise", :branch => '2-0-stable'
