@@ -3,7 +3,6 @@ require 'bundler/capistrano'
 require './config/boot'
 require 'airbrake/capistrano'
 
-set :application, "supersalon"
 set :port, 22
 set :deploy_to, "/home/rails/"
 set :use_sudo, false
@@ -29,7 +28,9 @@ set :keep_releases, 3
 set :rvm_type, :user
 set :rvm_type, :system
 
-set :bundle_without, [:development, :test, :acceptance]
+set :bundle_flags, "--deployment"
+
+#set :bundle_without, [:development, :test, :acceptance]
 
 role :db, server_ip, :primary => true 
 
@@ -39,10 +40,6 @@ before "deploy:start" do
 end
 
 namespace :deploy do
-
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run "service unicorn restart"
-  end
 
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "service unicorn restart"
