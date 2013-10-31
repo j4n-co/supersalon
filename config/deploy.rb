@@ -28,7 +28,7 @@ set :keep_releases, 3
 set :rvm_type, :user
 set :rvm_type, :system
 
-set :bundle_flags, "--deployment"
+set :bundle_flags, "--deployment --verbose"
 
 #set :bundle_without, [:development, :test, :acceptance]
 
