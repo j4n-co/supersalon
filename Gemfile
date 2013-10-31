@@ -41,6 +41,8 @@ end
 gem 'capistrano'
 gem 'rvm-capistrano'
 
+gem 'airbrake'
+
 #SPREE 2.0.3
 gem 'spree', '2.0.3'
 

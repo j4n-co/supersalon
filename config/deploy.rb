@@ -1,5 +1,7 @@
 require "rvm/capistrano"
 require 'bundler/capistrano'
+require './config/boot'
+require 'airbrake/capistrano'
 
 set :application, "supersalon"
 set :port, 22
@@ -75,3 +77,4 @@ end
 #     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
 #   end
 # end
+
