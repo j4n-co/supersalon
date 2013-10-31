@@ -45,8 +45,8 @@ gem 'rvm-capistrano'
 gem 'spree', '2.0.3'
 
 
-gem 'datashift'
-gem 'datashift_spree'
+#gem 'datashift'
+#gem 'datashift_spree'
 
 
 gem 'spree_gateway', :github => 'spree/spree_gateway', :branch => '2-0-stable'
