@@ -165,6 +165,12 @@ GEM
     coffee-script-source (1.6.3)
     columnize (0.3.6)
     daemons (1.1.9)
+    datashift (0.13.0)
+      rubyzip
+      spreadsheet
+    datashift_spree (0.5.0)
+      datashift (>= 0.12.0)
+      mechanize
     debugger (1.5.0)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.2.0)
@@ -181,6 +187,8 @@ GEM
       warden (~> 1.2.1)
     devise-encryptable (0.1.2)
       devise (>= 2.1.0)
+    domain_name (0.5.14)
+      unf (>= 0.0.5, < 1.0.0)
     em-websocket (0.3.8)
       addressable (>= 2.1.1)
       eventmachine (>= 0.12.9)
@@ -212,6 +220,8 @@ GEM
       rake
     highline (1.6.18)
     hike (1.2.3)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
     httparty (0.11.0)
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
@@ -235,12 +245,23 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mechanize (2.7.2)
+      domain_name (~> 0.5, >= 0.5.1)
+      http-cookie (~> 1.0.0)
+      mime-types (~> 1.17, >= 1.17.2)
+      net-http-digest_auth (~> 1.1, >= 1.1.1)
+      net-http-persistent (~> 2.5, >= 2.5.2)
+      nokogiri (~> 1.4)
+      ntlm-http (~> 0.1, >= 0.1.1)
+      webrobots (>= 0.0.9, < 0.2)
     method_source (0.8)
     mime-types (1.23)
     money (5.1.1)
       i18n (~> 0.6.0)
     multi_json (1.7.7)
     multi_xml (0.5.4)
+    net-http-digest_auth (1.4)
+    net-http-persistent (2.9)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
@@ -250,6 +271,7 @@ GEM
       net-ssh (>= 2.6.5)
     nokogiri (1.5.10)
     nori (1.1.5)
+    ntlm-http (0.1.1)
     orm_adapter (0.4.0)
     paper_trail (2.7.2)
       activerecord (~> 3.0)
@@ -318,6 +340,8 @@ GEM
       polyamorous (~> 0.5.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    ruby-ole (1.2.11.7)
+    rubyzip (1.0.0)
     rvm-capistrano (1.5.1)
       capistrano (~> 2.15.4)
     sass (3.2.9)
@@ -336,6 +360,8 @@ GEM
     select2-rails (3.2.1)
       thor (~> 0.14)
     slop (3.3.3)
+    spreadsheet (0.9.1)
+      ruby-ole (>= 1.0)
     spree (2.0.3)
       spree_api (= 2.0.3)
       spree_backend (= 2.0.3)
@@ -407,6 +433,9 @@ GEM
     uglifier (2.1.2)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    unf (0.1.3)
+      unf_ext
+    unf_ext (0.0.6)
     uuidtools (2.1.4)
     versioncake (1.0.0)
       actionpack (>= 3.0)
@@ -417,6 +446,7 @@ GEM
     wasabi (2.5.1)
       httpi (~> 1.0)
       nokogiri (>= 1.4.0)
+    webrobots (0.1.1)
     xml-simple (1.1.2)
     yaml_db (0.2.3)
 
@@ -426,6 +456,8 @@ PLATFORMS
 DEPENDENCIES
   capistrano
   coffee-rails (~> 3.2.1)
+  datashift
+  datashift_spree
   debugger
   guard-livereload
   heroku_san
