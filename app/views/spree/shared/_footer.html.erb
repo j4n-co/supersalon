@@ -21,11 +21,28 @@
         <span class="tel">(+48) 22 468 16 19</span>
         <span class='email'>info@supersalon.org</span>
       </div>
+
+      <br>
+
+      <% if SpreeI18n::Config.supported_locales.size > 1 %>
+        <div id="locale-select" style="float: right; margin-right: 10px;" data-hook>
+          <%= form_tag(set_locale_path) do %>
+            <label for="locale"><%= Spree.t(:'i18n.language') %>:</label>
+            <%= select_tag(:locale, options_for_select(supported_locales_options, I18n.locale),
+                           :data => { :href => set_locale_path }) %>
+            <noscript>
+              <%= submit_tag %>
+            </noscript>
+          <% end %>
+        </div>
+      <% end %>
+
     </div>
     
     <div id="footer-pages-deface" class="footer_links legal">
       <h4 class="footer-header"><a href="/info">Info:</a></h4>
-  	</div>
+      <!-- insert_bottom '#main-nav-bar' -->
+    </div>
   	
     <ul class="footer_links offset-by-one">
   		<li>
@@ -36,19 +53,12 @@
           @Facebook
   		  </a>
       </li>
-      <!-- 
-  		<li id="tumblr-link">
-        <a href="#">
-  			 @Tumblr
-        </a>
-  		</li>
-    -->
   		<li id="instagram-link">
   			<a href="http://instagram.com/supersalon">
           @Instagram
         </a>
   		</li>
-  	</ul>
+    </ul>
  	  
     <div id="mailing_list" style="width:25%;" class="footer_links mailing-list">
 <!-- Begin MailChimp Signup Form -->
@@ -70,6 +80,7 @@
   <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></input>
 </form>
 </div>
+
 <script src="http://malsup.github.com/jquery.form.js"></script> 
 
 <script type="text/javascript">

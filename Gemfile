@@ -67,4 +67,4 @@ gem 'spree_print_invoice' , :github => 'spree/spree_print_invoice', :branch => '
 
 gem 'spree_html_invoice', :path => 'vendor/engines/spree_html_invoice'
 
-gem 'spree_i18n', :github => 'spree/spree_i18n', :branch => '2-0-stable'
+gem 'spree_i18n', :path => 'vendor/engines/spree_i18n-master'

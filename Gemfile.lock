@@ -29,17 +29,6 @@ GIT
       spree_core (~> 2.0.0)
 
 GIT
-  remote: git://github.com/spree/spree_i18n.git
-  revision: 74a81254f098787786b3b5867cbaf6b9c0bbc676
-  branch: 2-0-stable
-  specs:
-    spree_i18n (3.1.0.beta)
-      globalize3 (~> 0.3.0)
-      i18n (~> 0.6.1)
-      rails-i18n (~> 0.7.3)
-      spree_core (~> 2.0.0)
-
-GIT
   remote: git://github.com/spree/spree_multi_currency.git
   revision: e16b66c9c22f769236586cb1d4c16f05a7fb2cc0
   branch: master
@@ -86,6 +75,14 @@ PATH
   specs:
     spree_html_invoice (1.4.2)
       spree_core (>= 2.0)
+
+PATH
+  remote: vendor/engines/spree_i18n-master
+  specs:
+    spree_i18n (3.0.0)
+      globalize (~> 3.0.0)
+      rails-i18n (~> 0.7.3)
+      spree_core (~> 2.0.3)
 
 GEM
   remote: https://rubygems.org/
@@ -201,7 +198,7 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
     ffaker (1.16.2)
-    globalize3 (0.3.1)
+    globalize (3.0.0)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
       paper_trail (~> 2)

@@ -1,7 +1,7 @@
 module Spree
   module Api
     Spree::Api::BaseController::TaxonsController.class_eval do
-
+      
       def create
         #authorize! :create, Taxon
         @taxon = Taxon.new(params[:taxon])
