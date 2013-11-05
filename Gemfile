@@ -16,6 +16,7 @@ end
 
 #this breaks heroku and BUNDLE_WITHOUT isn't working at all. 
 gem 'sqlite3'
+gem 'mysql2'
 
 group :development do
 	gem 'debugger'
