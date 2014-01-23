@@ -1,4 +1,5 @@
 <footer id="footer">
+
   <div id="sidebar"></div>
   <div class="footer-content">
 
@@ -24,7 +25,9 @@
 
       <br>
 
+
       <% if SpreeI18n::Config.supported_locales.size > 1 %>
+        <!-- LANGUAGE SELECTION
         <div id="locale-select" style="float: right; margin-right: 10px;" data-hook>
           <%= form_tag(set_locale_path) do %>
             <label for="locale"><%= Spree.t(:'i18n.language') %>:</label>
@@ -35,6 +38,7 @@
             </noscript>
           <% end %>
         </div>
+        -->
       <% end %>
 
     </div>
@@ -255,4 +259,6 @@ function mce_success_cb(resp){
 <!--End mc_embed_signup--> 
     </div>
 </div>
+  <%= image_tag("payment-methods-footer-bw.png") %> 
+
 </footer>
