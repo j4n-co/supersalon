@@ -1,0 +1,103 @@
+class Spree::PayuController < Spree::BaseController
+    #skip_before_filter :verify_authenticity_token, :only => [:comeback, :comeback_s2s] 
+    def show
+      
+      if params[:payment_method_id] and Spree::BillingIntegration.exists? params[:payment_method_id]
+        @payu = Spree::BillingIntegration.find params[:payment_method_id]
+      else
+        flash[:error] = "oops, it looks like Billing Integration no.#{params[:payment_method_id]} does not exist!"
+        redirect_to checkout_state_url(:payment)
+      end
+      
+      if params[:order_id] and Spree::Order.exists?(params[:order_id])
+        @order = Spree::Order.find(params[:order_id])
+      else
+        flash[:error] = "oops, order #{params[:order_id]} doesn't exist!"
+        redirect_to checkout_state_url(:payment)
+      end
+
+      @server = @payu.preferences[:server]
+
+      @transaction_data = {
+        :last_name => @order.bill_address.last_name,
+        :first_name => @order.bill_address.first_name,
+        :email => @order.email,
+        
+        :pos_id => @payu.preferences[:pos_id],
+        :pos_auth_key => @payu.preferences[:pos_auth_key],
+        :session_id => session[:session_id],        
+        :amount => @order.total.to_s,
+        :desc => "super salon",
+        :client_ip => request.remote_ip,
+        :js => 0
+      }
+
+      redirect_to @payu.preferences[:server]+"?"+@transaction_data.to_query
+    
+    end
+    
+    def success
+      @order = params[:tr_crc] ? Spree::Order.find_by_number(params[:tr_crc]) : Spree::Order.find_by_number('R148453203')
+      
+      @sample = {"id"=>"10169", "tr_id"=>"TR-L57-TST23X", "tr_date"=>"2013-08-05 14:34:50", "tr_crc"=>"R724374460", "tr_amount"=>"15.00", "tr_paid"=>"15.00", "tr_desc"=>"test description", "tr_status"=>"TRUE", "tr_error"=>"none", "tr_email"=>"jan.drewniak@gmail.com", "md5sum"=>"e1a0e1a084b7a25d4e57c21ed6fac1c0", "controller"=>"spree/payu", "action"=>"success"}
+      
+      if ENV['RAILS_ENV'] ||= 'development'
+          @order.state = 'complete'
+          @order.payment_total = params[:tr_paid] || '15.00'
+          @order.payment_state = 'paid'
+          @order.finalize!
+          
+          @order.payments.first.complete
+          @order.payments.first.source_type = 'Spree::BillingIntegration::Payu'
+          @order.payments.first.save!
+          @order.save!
+          session[:order_id] = nil
+      end
+
+      if params[:tr_error] == 'none'
+        if params[:tr_paid] == params[:tr_amount]
+          @order.state = 'complete'
+          @order.payment_total = params[:tr_paid] || '15.00'
+          @order.payment_state = 'paid'
+          @order.finalize!
+         
+          @order.payments.first.complete
+          @order.payments.first.source_type = 'Spree::BillingIntegration::Payu'
+          @order.payments.first.save!
+          @order.save!
+          session[:order_id] = nil
+        end
+
+      end
+      render text: "TRUE"
+    end
+    
+    def error
+      @a = params[:a]
+      @b = params[:b]
+      @server = params[:server]
+      @server ||= "live"
+      #c = GestPay::CryptRequest.new(@a, @server)
+      t = c.decrypt(@b)
+      if t[:shop_transaction_id] and Order.find_by_number t[:shop_transaction_id]  
+        @order = Order.find_by_number t[:shop_transaction_id]  
+        @order.payment.started_processing  
+        case t[:transaction_result]
+          when "XX"
+            @order.payment.pend
+          when "OK" 
+            @order.payment.complete
+          when "KO" 
+            @order.payment.fail
+          else 
+        end      
+      else
+        raise "ERRORE, parametro ':shop_transaction_id' errato o assente, l'ordine number=#{t[:shop_transaction_id]} non esiste !"
+      end
+    end
+    
+    def status
+    
+    end
+
+end

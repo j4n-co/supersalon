@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"favicon",
+				"favicon_link_tag"
+			],
+			[
 				"bord",
 				"border-bottom"
 			],
@@ -83,40 +87,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/views/spree/shared/_footer.html.erb",
-			"settings":
-			{
-				"buffer_size": 10437,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "Searching 95 files for \"google_analytics\"\n\n/Volumes/sandbox/root/spree2/app/views/spree/layouts/spree_application.html.erb:\n   47      <%= render :partial => 'spree/shared/footer' %>\n   48  \n   49:     <%= render :partial => 'spree/shared/google_analytics' %>\n   50  \n   51    </body>\n\n1 match in 1 file\n",
-			"settings":
-			{
-				"buffer_size": 304,
-				"line_ending": "Unix",
-				"name": "Find Results",
-				"scratch": true
-			}
-		},
-		{
-			"file": "app/views/spree/layouts/spree_application.html.erb",
-			"settings":
-			{
-				"buffer_size": 1661,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/spree/shared/_google_analytics.html.erb",
-			"settings":
-			{
-				"buffer_size": 1482,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -161,15 +131,31 @@
 	},
 	"file_history":
 	[
+		"/Volumes/sandbox/root/spree2/app/views/spree/checkout/payment/_payu.html.erb",
+		"/Volumes/sandbox/root/spree2/config/routes.rb",
+		"/Volumes/sandbox/root/spree2/app/models/spree/billing_integration/payu.rb",
+		"/Volumes/sandbox/root/spree2/app/controllers/spree/payu_controller.rb",
+		"/Volumes/sandbox/root/spree2/config/application.rb",
+		"/Volumes/sandbox/root/spree2/config/initializers/spree.rb",
+		"/Volumes/sandbox/root/spree2/config/spree.yml",
+		"/Volumes/sandbox/root/spree2/app/controllers/checkout_controller_decorator.rb",
+		"/Volumes/sandbox/root/spree2/app/models/spree/billing_integration/transferuj.rb",
+		"/Volumes/sandbox/root/spree2/app/models/spree/billing_integration/transffer.rb",
+		"/Volumes/sandbox/root/spree2/Gemfile",
+		"/Volumes/sandbox/root/spree2/app/views/spree/checkout/_delivery.html.erb",
+		"/Volumes/sandbox/root/spree2/app/helpers/spree/base_helper.rb",
+		"/Volumes/sandbox/root/spree2/app/views/spree/shared/_head.html.erb",
+		"/Volumes/sandbox/root/spree2/app/helpers/spree/number_helper_decorator.rb",
+		"/Volumes/sandbox/root/spree2/app/views/spree/layouts/spree_application.html.erb",
+		"/Volumes/sandbox/root/spree2/app/views/spree/shared/_footer.html.erb",
+		"/Volumes/sandbox/root/spree2/app/views/spree/shared/_google_analytics.html.erb",
 		"/Volumes/sandbox/root/spree2/app/views/spree/shared/_nav_bar.html.erb",
 		"/Volumes/sandbox/root/spree2/app/assets/javascripts/store/all.js",
 		"/Volumes/sandbox/root/spree2/app/assets/javascripts/admin/all.js",
 		"/Volumes/sandbox/root/spree2/app/assets/stylesheets/admin/all.css",
 		"/Volumes/sandbox/root/spree2/Gemfile.lock",
-		"/Volumes/sandbox/root/spree2/Gemfile",
 		"/Volumes/sandbox/root/spree2/config/deploy.rb",
 		"/Volumes/sandbox/root/spree2/config/database.yml",
-		"/Volumes/sandbox/root/spree2/config/initializers/spree.rb",
 		"/Volumes/sandbox/root/spree2/vendor/engines/spree_importer/spree_importer.gemspec",
 		"/Volumes/sandbox/root/spree2/vendor/engines/spree_importer/Gemfile",
 		"/Volumes/sandbox/root/spree2/vendor/engines/spree_importer/Guardfile",
@@ -200,10 +186,8 @@
 		"/Volumes/sandbox/root/spree2/app/assets/stylesheets/store/supersalon/layout.css.erb.css",
 		"/Volumes/sandbox/root/spree2/app/assets/images/arrows.png",
 		"/Volumes/sandbox/root/spree2/app/assets/stylesheets/store/spree_core.css",
-		"/Volumes/sandbox/root/spree2/app/views/spree/shared/_footer.html.erb",
 		"/Volumes/sandbox/root/spree2/app/views/spree/taxons/show.html.erb",
 		"/Volumes/sandbox/root/spree2/app/views/spree/products/show.html.erb",
-		"/Volumes/sandbox/root/spree2/app/helpers/spree/base_helper.rb",
 		"/Volumes/sandbox/root/spree2/app/views/spree/products/_simple_cart_form.html.erb",
 		"/Volumes/sandbox/root/spree2/app/views/spree/products/_cart_form.html.erb",
 		"/Volumes/sandbox/root/spree2/app/views/spree/checkout/_address.html.erb",
@@ -274,21 +258,7 @@
 		"/Volumes/sandbox/root/skedx/app/assets/javascripts/parameter_signing.js",
 		"/Volumes/sandbox/root/skedx/app/views/wall/_edit_profile.html.haml",
 		"/Volumes/sandbox/root/skedx/app/views/wall/_new_post.html.haml",
-		"/Volumes/sandbox/root/skedx/config/routes.rb",
-		"/Volumes/sandbox/root/skedx/app/assets/javascripts/angularjs/resources/resources.js",
-		"/Volumes/sandbox/root/skedx/app/views/wall/_threads.html.haml",
-		"/Volumes/sandbox/root/skedx/app/views/companies/_edit_all_tags.html.haml",
-		"/Volumes/sandbox/root/skedx/app/views/wall/_wall.html.haml",
-		"/Volumes/sandbox/root/skedx/app/assets/stylesheets/modules/_mini_profile.scss",
-		"/Volumes/sandbox/root/skedx/app/assets/javascripts/company.js",
-		"/Volumes/sandbox/root/skedx/app/assets/stylesheets/modules/_photostream.css.scss",
-		"/Volumes/sandbox/root/skedx/app/assets/stylesheets/modules/_wall.scss",
-		"/Volumes/sandbox/root/skedx/app/assets/stylesheets/_layout.scss",
-		"/Volumes/sandbox/root/skedx/app/assets/javascripts/jstorage.js",
-		"/Volumes/sandbox/root/skedx/app/views/companies/show.html.haml",
-		"/Volumes/sandbox/root/skedx/app/views/wall/show.html.haml",
-		"/Volumes/sandbox/root/skedx/app/assets/javascripts/angularjs/angular-resource.js",
-		"/Volumes/sandbox/root/skedx/app/views/companies/_edit_tags.html.haml"
+		"/Volumes/sandbox/root/skedx/config/routes.rb"
 	],
 	"find":
 	{
@@ -299,6 +269,8 @@
 		"height": 93.0,
 		"where_history":
 		[
+			"/Volumes/sandbox/root/spree2",
+			"/Volumes/sandbox/root/spree2/app",
 			"/Volumes/sandbox/root/spree2/app/views",
 			"<project>",
 			"/Volumes/sandbox/root/spree2/db/migrate",
@@ -364,6 +336,25 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"”",
+			"payu",
+			"init",
+			"transf",
+			"payU",
+			"transferuj",
+			"payu",
+			"billin",
+			"pay",
+			"payu",
+			"transferuj",
+			"trans",
+			"payu",
+			"payui",
+			"payu",
+			"transferuj",
+			"error_url",
+			"transferuj",
+			"number",
 			"google_analytics",
 			"google",
 			":pl",
@@ -472,26 +463,7 @@
 			"availableFilterTag",
 			"push",
 			"autoCom",
-			"handleFilterChange",
-			"$scope.filterItems",
-			"filterItems",
-			"items",
-			"filter",
-			"ng-model",
-			"scope",
-			"new_filter",
-			"api",
-			"id",
-			"filter",
-			"showFilter(",
-			"ng-click",
-			"filter",
-			"error",
-			"scope.refresh",
-			"filter",
-			"filterOptions",
-			"filter",
-			"wallMessageThread.get"
+			"handleFilterChange"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -511,317 +483,8 @@
 	"groups":
 	[
 		{
-			"selected": 3,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/views/spree/shared/_footer.html.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10437,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								187,
-								193
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close"
-							],
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 304,
-						"regions":
-						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										239,
-										255
-									]
-								],
-								"scope": ""
-							}
-						},
-						"selection":
-						[
-							[
-								233,
-								233
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close"
-							],
-							"detect_indentation": false,
-							"line_numbers": false,
-							"output_tag": 1,
-							"result_base_dir": "",
-							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/views/spree/layouts/spree_application.html.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1661,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1580,
-								1580
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close"
-							],
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 221.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/views/spree/shared/_google_analytics.html.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1482,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								231,
-								206
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close"
-							],
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -909,7 +572,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 235.0,
+	"side_bar_width": 230.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

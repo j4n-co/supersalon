@@ -14,6 +14,12 @@ Spree2::Application.routes.draw do
     match '/transferuj/show/:order_id/:payment_method_id' => 'transferuj#show', :as => :transferuj_show, via: [:get, :post]
     match '/transferuj/success' => 'transferuj#success', :as => :transferuj_success, via: [:get, :post]
     match '/transferuj/error' => 'transferuj#error', :as => :transferuj_error, via: [:get, :post]
+
+    match '/payu/show/:order_id/:payment_method_id' => 'payu#show', :as => :payu_show, via: [:get, :post]
+    match '/payu/status' => 'transferuj#status', :as => :payu_status, via: [:get, :post]
+    match '/payu/success' => 'transferuj#success', :as => :payu_success, via: [:get, :post]
+    match '/payu/error' => 'payu_error#error', :as => :payu_error, via: [:get, :post]
+
   end
 
   # The priority is based upon order of creation:
