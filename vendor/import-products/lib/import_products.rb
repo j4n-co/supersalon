@@ -1,0 +1,5 @@
+require 'spree_core'
+require 'delayed_job'
+require 'import_products/engine'
+require 'user_mailer_ext'
+require 'import_job'

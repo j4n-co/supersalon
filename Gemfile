@@ -1,71 +1,81 @@
 source 'https://rubygems.org'
 
-ruby "1.9.3"
+ruby '2.1.0'
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '4.0.2'
 
-gem 'rails', '3.2.13'
-
-
-gem 'yaml_db'
-gem 'jquery-rails'
-
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
-end
-
-#this breaks heroku and BUNDLE_WITHOUT isn't working at all. 
+# Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 gem 'mysql2'
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 4.0.0'
 
-group :development do
-	gem 'debugger'
-	gem 'pry'
-	gem 'guard-livereload'
-	gem 'rack-livereload'
-	gem 'pry-debugger'
-	gem 'heroku_san'
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 1.3.0'
+
+# Use CoffeeScript for .js.coffee assets and views
+gem 'coffee-rails', '~> 4.0.0'
+
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+# gem 'therubyracer', platforms: :ruby
+
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
+
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 1.2'
+
+group :doc do
+  # bundle exec rake doc:rails generates the API under doc/api.
+  gem 'sdoc', require: false
 end
 
-#heroku specific
-group :staging do
-	gem 'thin'
-	gem 'pg'
-	#gem 'heroku_rails_deflate'
-end
+# Use ActiveModel has_secure_password
+# gem 'bcrypt-ruby', '~> 3.1.2'
 
-#digitalOcean specific
-group :production do
-end
+# Use unicorn as the app server
+# gem 'unicorn'
 
-#digitalOcean deployment
-gem 'capistrano'
-gem 'rvm-capistrano'
+# Use Capistrano for deployment
+# gem 'capistrano', group: :development
+
+# Use debugger
+# gem 'debugger', group: [:development, :test]
+gem 'pry'
+gem 'daemons'
+gem 'delayed_job_active_record'
 
 gem 'airbrake'
 
-#SPREE 2.0.3
-gem 'spree', '2.0.3'
+gem 'spree', '2.1.4'
+gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-1-stable'
+gem 'spree_auth_devise', path: 'vendor/spree_auth_devise-2-1-stable' #changing views 
 
-
-gem 'datashift'
-gem 'datashift_spree'
-
-
-gem 'spree_gateway', :github => 'spree/spree_gateway', :branch => '2-0-stable'
-gem "spree_auth_devise", :github => "spree/spree_auth_devise", :branch => '2-0-stable'
-
-#custom gems 
-gem 'spree_static_content', :github => 'spree/spree_static_content', :branch => '2-0-stable'
-gem 'spree_multi_currency', :github => "spree/spree_multi_currency", :branch => 'master'
-gem 'spree_related_products', :github => 'spree/spree_related_products', :branch => 'master'
-gem 'spree_bank_transfer',  :github => 'vinsol/spree_bank_transfer', :branch => 'master'
-gem 'spree_paypal_express', :github => "radar/better_spree_paypal_express", :branch => "2-0-stable"
+#custom gems
+gem 'spree_static_content', 	github: 'spree/spree_static_content', 		:branch => '2-1-stable' #installed
+gem 'spree_related_products', 	github: 'spree/spree_related_products', 	:branch => '2-1-stable' #installed
+gem 'spree_paypal_express', 	github: "radar/better_spree_paypal_express",:branch => "2-1-stable" #installed
+gem 'spree_i18n', 				github: 'spree/spree_i18n', 				:branch => "2-1-stable" #installed
+gem 'spree_social', 			github: 'spree/spree_social', 				:branch => "2-1-stable" #installed
+gem 'spree_print_invoice' , 	github: 'spree/spree_print_invoice', 		:branch => '2-1-stable' #installed
 
 gem "jquery-fileupload-rails"
 
-gem 'spree_print_invoice' , :github => 'spree/spree_print_invoice', :branch => 'master'
+#gem 'spree_image_multi_upload', path: 'vendor/spree_image_multi_upload' #installed in vendor - needs heavy modification
+gem 'spree_multi_currency', 				path: 'vendor/spree_multi_currency' #installed in vendor - modified routes for rails 4
+gem 'spree_sortable_prototype_properties',	path: 'vendor/spree_sortable_prototype_properties' #installed in vendor - no mods needed
+gem 'spree_bank_transfer',					path: 'vendor/spree_bank_transfer' #installed, modified spree from 2.0.5 to 2.1.4
+gem 'spree_ajax_add_to_cart',  				path: 'vendor/spree_ajax_add_to_cart' 	#installed in vendor - need bump in spree from 2.0.0 to 2.1.4, 
+																		#changed deface overide from code[erb-loud] to erb[loud]
+gem 'jquery-dragsort-rails', '~> 1.0.0' # required for spree_sort_products gem
+gem 'spree_sort_products', 					path: 'vendor/spree_sort_products' #changed gem dependancy from spree 2.0.0 to spree 2.1.4
 
-gem 'spree_html_invoice', :path => 'vendor/engines/spree_html_invoice'
+#for default location
+gem 'geocoder'
+gem 'spree_advanced_cart', 					path: 'vendor/spree_advanced_cart' 
+gem 'spree_minicart', 						path: 'vendor/spree_minicart'
+gem 'import_products', 						path: 'vendor/import-products' #major modifications
 
-gem 'spree_i18n', :path => 'vendor/engines/spree_i18n-master'

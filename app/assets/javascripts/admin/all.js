@@ -6,13 +6,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-
-
 //= require admin/spree_multi_currency
 //= require admin/spree_bank_transfer
-//= require jquery-fileupload
-//= require_tree .
-
 //= require admin/spree_backend
 //= require admin/spree_paypal_express
 //= require admin/spree_i18n
+//= require admin/spree_sortable_prototype_properties
+//= require jquery-fileupload
+//= require_tree .

@@ -13,9 +13,16 @@
     <%= order_form.fields_for :line_items do |item_form| %>
       <%= render :partial => 'line_item', :locals => { :variant => item_form.object.variant, :line_item => item_form.object, :item_form => item_form } %>
     <% end %>
-      <td colspan="6" id="subtotal" data-hook>
-        <%= t(:subtotal) %>: <span class="order-total"><%= @order.display_total %></span>
+      <tr>
+      <td colspan="3">
+        <h2><%= t(:subtotal) %></h2>
       </td>
+      <td colspan="3"  id="subtotal" data-hook>
+        <h2>
+           <span class="order-total"><%= @order.display_total %></span>
+        </h2>
+      </td>
+      </tr>
   </tbody>
   <%= render "spree/orders/adjustments" unless @order.adjustments.eligible.blank? %>
 </table>

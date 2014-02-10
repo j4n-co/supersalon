@@ -1,0 +1,10 @@
+// Refresh minicart count
+$("#link-to-cart a").replaceWith('<%= escape_javascript link_to_cart %>')
+
+// Refresh minicart line items
+$("#minicart").replaceWith('<%= escape_javascript render("spree/shared/minicart") %>')
+
+$('body').not('#cart').find('#minicart').show()
+//$("#progress").slideUp();
+
+$('#update-cart').replaceWith('<%= escape_javascript render("spree/orders/edit_order_form") %>')

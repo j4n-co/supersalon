@@ -1,5 +1,6 @@
 <thead>
-  <tr data-hook="cart_adjustments_headers">
+  <tr>
+    <tr data-hook="cart_adjustments_headers">
     <th class="cart-adjustment-header" colspan="6"><%= t(:order_adjustments) %></th>
   </tr>
 </thead>
@@ -7,8 +8,13 @@
   <% @order.adjustments.eligible.each do |adjustment| %>
     <tr>
       <td colspan="4"><%= adjustment.label %></td>
-      <td><%= adjustment.display_amount %></td>
-      <td></td>
+      <% if adjustment.originator_type == "Spree::PromotionAction" %> 
+      <% name = Spree::Promotion.where(id:adjustment.originator_id).first.name %> 
+      <% else %> 
+      <% name = "" %> 
+      <% end %> 
+      <td>(<%= name %>)</td>
+      <td><%= adjustment.display_amount.to_html %></td>
     </tr>
   <% end %>
 </tbody>

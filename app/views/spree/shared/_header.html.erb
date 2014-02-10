@@ -1,33 +1,27 @@
+<%= render :partial => 'spree/shared/top_nav' %>
+
 <header id="header" class="row top" data-hook>
-  <h1 id='big-logo' class="columns four">
-    <%= link_to 'Super Salon', root_path %>
-  </h1>
-  
-	<div id="main-menu" class="menu">
 
-    <h1 id='logo' class="columns">
+  <div class="main-nav-bar">
+    
+    <div class="main-nav-item social_items"> 
+      <ul id="links-in-header"></ul>
+    </div> 
+
+    <%= cache do %>
+  	<div id="main-menu" class="main-nav-item"> 
+      <% if defined?(get_taxonomies) %> 
+        <% get_taxonomies.each do |taxonomy| %>
+          <%= taxons_tree(taxonomy.root, @taxon, Spree::Config[:max_level_in_taxons_menu] || 2) %>
+        <% end %>
+
+      <% end %>
+    </div>
+    <% end %> 
+    
+    <h1 class="main-nav-item logo">
       <%= link_to 'Super Salon', root_path %>
-    </h1> 
-   <% if defined?(get_taxonomies) %> 
-    <% get_taxonomies.each do |taxonomy| %>
-      <%= taxons_tree(taxonomy.root, @taxon, Spree::Config[:max_level_in_taxons_menu] || 2) %>
-    <% end %>
-  <% end %>
+    </h1>
 
-  <ul id="main-nav-bar"></ul>
-
-<div class="top_search_form">
-<%= form_tag products_path, :method => :get do %>
-  <%= search_field_tag :keywords, params[:keywords], :placeholder => t(:search) %>
-  <%= submit_tag t(:search), :name => nil %>
-<% end %>
-</div>
-
-  </ul>
-
-
-  <div class="columns six omega">
-  	<%= render :partial => 'spree/shared/nav_bar' %>
-  </div>
-
+  </div> 
 </header>

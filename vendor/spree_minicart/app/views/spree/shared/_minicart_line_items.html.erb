@@ -1,0 +1,18 @@
+<li class="<%= cycle('', 'alt') %>">
+  <div data-hook="minicart_item_image">
+    <% if variant.images.length == 0 %>
+      <%= link_to large_image(variant.product), variant.product %>
+    <% else %>
+      <%= link_to image_tag(variant.images.first.attachment.url(:large)), variant.product %>
+    <% end %>
+  </div>
+
+  <div class='minicart-actions' data-hook="minicart_item_actions">
+    <div data-hook="minicart_item_quantity">
+      <%= item_form.hidden_field :quantity, :min => 0, :class => "line_item_quantity" %>
+    </div>
+    <div data-hook="minicart_item_delete">
+      <%= link_to raw('&#215;'), '#', :class => 'delete', :id => "delete_#{dom_id(line_item)}" %>
+    </div>
+  </div>
+</li>

@@ -1,8 +1,0 @@
-<%- buttons = Spree::HtmlInvoice::Config[:print_buttons].split('.').map(&:strip) %>
-
-<%-  buttons.each do |button| %>
-  <li>
-    <%= link_to_with_icon 'icon-print', t(button.to_s+".print"), "/admin/invoice/#{@order.number}/#{button}",
-                          :target => "_blank" %>
-  </li>
-<%- end %>

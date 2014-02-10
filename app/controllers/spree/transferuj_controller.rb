@@ -82,13 +82,8 @@ class Spree::TransferujController < Spree::BaseController
     render text: "TRUE"
   end
   
-  def comeback_s2s
-    @a = params[:a]
-    @b = params[:b]
-    @server = params[:server]
-    @server ||= "live"
-    #c = GestPay::CryptRequest.new(@a, @server)
-    t = c.decrypt(@b)
+  def error
+    binding.pry
     if t[:shop_transaction_id] and Order.find_by_number t[:shop_transaction_id]  
       @order = Order.find_by_number t[:shop_transaction_id]  
       @order.payment.started_processing  
@@ -102,7 +97,7 @@ class Spree::TransferujController < Spree::BaseController
         else 
       end      
     else
-      raise "ERRORE, parametro ':shop_transaction_id' errato o assente, l'ordine number=#{t[:shop_transaction_id]} non esiste !"
+      raise "There was an error processing your transaction. Please contact us with the order number=#{t[:shop_transaction_id]} and we'll get it sorted out. "
     end
   end
   

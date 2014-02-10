@@ -10,7 +10,7 @@
     <% end %>
 
     <% if @product.has_variants? %>
-      <% @variants.select(&:available?).each do |v| %>
+      <% @variants.select(&:in_stock?).each do |v| %>
         <% v.images.each do |i| %>
           <% next if @product.images.include?(i) %>
           <li class='vtmb-<%= v.id %> vtmb' id='tmb-<%= i.id %>'>

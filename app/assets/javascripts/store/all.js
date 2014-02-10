@@ -7,7 +7,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require store/spree_frontend
-//= require_tree .
-
+//= require store/checkout
 //= require store/spree_paypal_express
-//= require store/spree_i18n
+//= require store/spree_multi_currency
+//= require store/spree_sortable_prototype_properties
+//= require store/advanced_cart
+//= require store/spree_minicart
+//= require_tree .

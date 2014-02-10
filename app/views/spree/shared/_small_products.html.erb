@@ -11,6 +11,7 @@
 <% end %>
 
 <% if products.any? %>
+<% #binding.pry %>
 <ul class="inline product-listing small-products" data-hook>
   <% products.each_with_index do |product, i| %>
     <% if product.available? %>

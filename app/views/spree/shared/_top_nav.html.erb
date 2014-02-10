@@ -1,0 +1,102 @@
+<nav id="top_nav">
+  <div id="top_nav_content">
+    <span class="close">&#215;</span> 
+    <div class="search">
+      <%= form_tag products_path, :method => :get do %>
+        <%= search_field_tag :keywords, params[:keywords], :placeholder => t(:search) %>
+        <%= submit_tag t(:search), :name => nil %>
+        <p> Press ENTER to search </p> 
+      <% end %>
+    </div> 
+    
+    <div class="newsletter" style="float: left;">
+
+      <h2>Newsletter:</h2>
+
+      <form action="http://supersalon.us7.list-manage1.com/subscribe/post?u=0821932f7fabd3f9016571864&amp;id=12f56b859d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"  target="_blank" >
+        <div id="mce-responses">
+          <div class="response" id="mce-error-response" style="display:none"></div>
+          <div class="response" id="mce-success-response" style="display:none"></div>
+        </div> 
+
+        <input placeholder="your email" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" style="vertical-align:top; ">
+        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="color:black;vertical-align:top;margin-left:1em;"></input>
+
+        <span style="max-width: 44%; display:inline-block; vertical-align:top; margin-left:1em;">
+        Sign up for our newsletter to get occasional mails about new publications and events to be held in our shop.
+        </span>
+      </form>
+    </div> 
+    
+    <div class="login" style="float:left; width:100%;">
+      <h2 style="margin-bottom:5px;">Login</h2>
+      <%= form_for Spree::User.new, :as => :spree_user, :url => spree.create_new_session_path do |f| %>
+        <p style="display:inline-block;margin:0 1em 0 0;">
+        <%= f.label :email, Spree.t(:email) %><br />
+        <%= f.email_field :email, :class => 'title', :tabindex => 1 %>
+        </p>
+        <p style="display:inline-block;margin:0 1em 0 0;">
+        <%= f.label :password, Spree.t(:password) %><br />
+        <%= f.password_field :password, :class => 'title', :tabindex => 2 %>
+        </p>
+        
+        <p style="margin:0;display:inline-block;vertical-align:bottom;">
+        <%= f.submit Spree.t(:login), :class => 'button primary', :tabindex => 3 %>
+        </p>
+        <p style="margin:0px 1em 0px 1em;display:inline-block;vertical-align:bottom;">
+        <span style="font-size: 24px;"> or </span>
+        </p>
+        <p style="margin:0;display:inline-block;vertical-align:bottom;">
+          <button>
+            <%= link_to Spree.t(:create_a_new_account), spree.signup_path %>
+          </button>
+        </p>
+
+
+        <p style="margin-bottom:0;margin-top: 5px;">
+          <%= f.check_box :remember_me  %>
+          <span style="margin-left:0.5em;">
+            <%= f.label :remember_me, Spree.t(:remember_me) %>
+          </span>
+        </p>
+      <% end %>
+    </div>
+
+  </div> 
+
+  <ul id="nav-bar" class="inline">
+    <li data-toggle="search">
+        <label for="keywords">
+          Search
+        </label> 
+    </li>
+
+    <li data-toggle="newsletter">
+      Newsletter
+    </li>
+    <% if spree_current_user %>
+    <li id="link-to-account"><%= link_to 'Account', spree.account_path %> /<%= link_to "Logout", spree.logout_path %>   </li>
+    <% else %>
+    <li id="link-to-login"  data-toggle="login">
+      <%= link_to t(:login), spree.login_path %>  
+    </li>
+    <% end %>
+    <% if supported_currencies.size > 1 && @body_id!="cart" && @body_id!="login" %>
+      <li  id="currency-select" data-hook>
+        <%= form_tag(set_currency_path) do %>
+
+          <% supported_currencies.each do |currency| %> 
+            <%= label :currency, currency, :class => currency.iso_code == current_currency ? 'current' : '';  %>     
+            <%=  radio_button_tag :currency, currency, currency.iso_code == current_currency , :data => { :href => set_currency_path(:format => :json) } %> 
+          <%end %> 
+          <noscript>
+            <%= submit_tag %>
+          </noscript>
+        <% end %>
+      </li>
+    <% end %>
+      <li class="cart-menu-link " id="link-to-cart" data-toggle="minicart">
+        <%= link_to_cart('Cart') %>
+      </li>
+  </ul>
+</nav>

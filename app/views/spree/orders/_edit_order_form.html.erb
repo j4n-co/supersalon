@@ -1,0 +1,14 @@
+<%= form_for @order, :url => update_cart_path, :html => {:id => 'update-cart'}, :remote => true do |order_form| %>
+  <div data-hook="inside_cart_form">
+
+    <div id="cart_items" data-hook="cart_items">
+      <%= render :partial => 'form', :locals => { :order_form => order_form } %>
+    </div>
+    
+    <br>
+
+     <%= order_form.text_field :coupon_code, :size => 15, :placeholder => Spree.t(:coupon_code) %>
+
+  </div>
+
+<% end %>

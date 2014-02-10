@@ -1,0 +1,43 @@
+<div id="minicart" class='minicart' style="float:left;width:100%;">
+
+  <% if current_order.nil? || current_order.line_items.empty? %>
+
+    <div data-hook="empty_minicart">
+      <p><%= Spree.t(:your_cart_is_empty) %></p>
+      <button>
+        <%= link_to Spree.t(:continue_shopping), spree.products_path, :class => 'button continue' %></p>
+      </button>
+    </div>
+
+  <% else %>
+    
+    <%= form_for current_order, :url => spree.update_cart_path, :html => {:id => 'update-minicart'}, :remote => true do |order_form| %>
+      <div data-hook="inside_minicart_form">
+
+        <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %>
+        <ul id='minicart-items' class="clearfix">
+          <%= order_form.fields_for :line_items do |item_form| %>
+            <%= render :partial => 'spree/shared/minicart_line_items', :locals => { :variant => item_form.object.variant, :line_item => item_form.object, :item_form => item_form } if item_form.object.variant %>
+          <% end %>
+        </ul>
+        
+        <div style="text-align:right;margin-bottom: 1em;margin-top: 1em;">
+          <span class="order-total" style="font-size: 24px; margin-right: 1em;">
+            <%= current_order.display_item_total %>
+          </span>
+
+          <button style="margin-right: 1em;">
+            <%= link_to Spree.t('view_shopping_cart'), spree.cart_path, :class => 'cart' %>
+          </button>
+          
+          <button>
+            <%= link_to Spree.t(:checkout), spree.checkout_path, :class => 'button checkout primary', :id => 'checkout-link' %>
+          </button>
+        </div>
+
+      </div>
+    <% end %>
+  
+  <% end %>
+
+</div>

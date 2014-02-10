@@ -1,12 +1,14 @@
 <%#= render :partial => 'taxon', :collection => @taxon.children %>
   
   <% @taxon.children.each do |child_taxon| %> 
+  	<% unless child_taxon.products.active.empty? %> 
   	<div class="taxon-group">	
   		<h1 class="small-product-header" style="margin: 0;">
   			<%= link_to child_taxon.name, seo_url(child_taxon) %>
   		</h1> 
-   		<%= render :partial => 'spree/shared/small_products', :locals => { :products => taxon_preview(child_taxon), :taxon => child_taxon } %>
+   		<%= render :partial => 'spree/shared/small_products', :locals => { :products => taxon_preview(child_taxon, 1000), :taxon => child_taxon } %>
   	</div> 
+  	<% end %>
   <% end %> 
 
 
