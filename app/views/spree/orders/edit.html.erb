@@ -15,9 +15,7 @@
   <div class="outside_cart_form" data-hook="outside_cart_form">
     <div id="empty-cart" data-hook></div>
     
-    <button id="checkout-link" class="button checkout primary" style='float:right;float: right; clear: right;width: 30%; background-color:black;height:2em;font-size:24px;margin-top: 1em;margin-bottom:3em;'>
-      <%= link_to t(:checkout),checkout_path, :name => 'checkout', :style=>'color:white;' %>
-    </button> 
+    <%= link_to t(:checkout),checkout_path, :name => 'checkout', :id=>'checkout-link' %>
 
     <%= render :partial => 'edit_order_form', :locals => { :order => @order } %>
 

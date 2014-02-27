@@ -79,3 +79,12 @@ gem 'spree_advanced_cart', 					path: 'vendor/spree_advanced_cart'
 gem 'spree_minicart', 						path: 'vendor/spree_minicart'
 gem 'import_products', 						path: 'vendor/import-products' #major modifications
 
+
+#payu integration
+gem 'openpayu'
+#gem 'spree_open_payu', 						path: 'spree_open_payu'
+#gem 'faraday'
+#gem 'faraday_middleware'
+#gem 'spree_pay_u', path: 'vendor/spree_pay_u'
+
+#gem "payu_rails", git: "https://github.com/pibako/payu_rails"

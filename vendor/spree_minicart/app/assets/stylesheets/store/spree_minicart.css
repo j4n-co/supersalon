@@ -20,9 +20,21 @@ nav #main-nav-bar li#link-to-cart #minicart a.button {
   color: white !important;
 }
 
-ul#minicart-items {
+ul#minicart-items{
+  text-align: left;
+  float: left;
 }
 
+ul#minicart-items li{
+  max-width: 85px;
+  max-height:85px;
+  font-size: 10px;
+  line-height: 12px;
+  position: relative;
+  border: 2px solid black;
+  margin: 1em 1em 0 1em;
+  overflow: hidden;
+}
 
 ul#minicart-items li img{
   display: block;
@@ -30,27 +42,16 @@ ul#minicart-items li img{
   max-width: 100%;
 }
 
-ul#minicart-items{
-  text-align: left;
 
-}
-
-ul#minicart-items li{
-  max-width: 125px;
-  max-height:125px;
-  font-size: 10px;
-  line-height: 12px;
-  position: relative;
-}
 #link-to-cart span.amount {
   display: none;
 }
 #minicart .minicart-actions {
   display: none;
   position: absolute;
-  top: 0.5em;
+  top: 3px;
   font-size: 24px;
-  right: 0.5em;
+  right: -1px;
 }
 
 #minicart .minicart-actions .delete:hover {

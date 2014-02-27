@@ -14,6 +14,6 @@
  removed = require store/spree_paypal_express
  removed = require store/spree_multi_currency
  removed = require store/spree_sortable_prototype_properties
-  *= require store/advanced_cart
+ *= require store/advanced_cart
  *= require store/spree_minicart
 */

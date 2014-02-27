@@ -396,6 +396,15 @@ ActiveRecord::Schema.define(version: 20140201135961) do
 
   add_index "spree_prices", ["variant_id", "currency"], name: "index_spree_prices_on_variant_id_and_currency", using: :btree
 
+  create_table "spree_product_imports", force: true do |t|
+    t.string   "data_file_file_name"
+    t.string   "data_file_content_type"
+    t.integer  "data_file_file_size"
+    t.datetime "data_file_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "spree_product_option_types", force: true do |t|
     t.integer  "position"
     t.integer  "product_id"

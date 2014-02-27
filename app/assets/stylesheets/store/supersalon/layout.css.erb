@@ -1,6 +1,6 @@
 
 input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
-    border: 2px solid black;
+    border: none;
     height: 20px;
     max-width: 98%;
     padding-left: 0.4em;
@@ -36,15 +36,25 @@ td {
 	padding-bottom: 0;
 }
 
-input[type='submit'], button{
+input[type='submit'], button, .button{
 	border: outset 2px black;
 	padding-top: 0.4em;
 	letter-spacing: 1px;
 	padding-left: 0.6em;
 	padding-right: 0.6em;
-	background-color: white;
+	background-color: transparent;
 }
 
+button.big, .button.big{
+	font-size: 24px;
+	padding: 0.5em 1em 0.2em 1em;
+	background-color: transparent;
+	line-height: 0.5em; 
+	margin-bottom: 1em;
+}
+button.big:last-child, .button.big:last-child{
+	margin-bottom: 0; 
+}
 input[type='submit']:hover, button:hover{
 	border-style: inset;
 	border-color: grey;
@@ -57,7 +67,29 @@ padding-top: 0.5em;
 text-align: center;
 border: 2px solid black;
 }
+table.transparent,
+table.transparent tbody, 
+table.transparent tr,
+table.transparent tr:first-child,
+table.transparent tr:last-child,
+table.transparent td{
+	border: none;
+}
+table.shipping-methods label{
+	cursor: pointer; 
+	width: 100%;
+}
+table.shipping-methods tr{
+	cursor: pointer; 
+}
 
+
+table.shipping-methods tr:hover{
+	background-color: white; 
+}
+.large-text{
+	font-size: 1.2em; 
+}
 tr .delete{
 	visibility: hidden;
 }
@@ -119,6 +151,13 @@ a {
 	padding: 0;
 	margin: 0 auto;
 	max-width: 1024px;
+}
+
+.alert{
+	color: maroon;
+}
+h2.alert{
+	margin-top:0; 
 }
 #wrapper{
 	overflow: hidden;
@@ -213,9 +252,6 @@ a {
   -ms-transition: none;
   transition: none;
   display: none;
-  /*
-  background: url('/assets/lupa.png') no-repeat center center transparent; 
-*/
 }
 
 #keywords::-webkit-input-placeholder{
@@ -271,8 +307,13 @@ margin: 0 auto;
 position: fixed;
 top: 0;
 left: 0;
-}
+border-bottom: 2px solid #E9E7E7;
+transition: border 0.3s ease-in;
 
+}
+#top_nav.active{
+	border-bottom: 2px solid black; 
+}
 #top_nav *{
 color: #383838;
 max-width: 1024px;
@@ -384,9 +425,9 @@ ul#nav-bar li{
 #top_nav_content .close{
 	font-size: 52px;
 	position: absolute;
-	top: 26px;
-	right: 12px;
-	color: #FFF;
+	top: 22px;
+	right: 0px;
+	color: black;
 	z-index: 5;
 	cursor: pointer;
 }
@@ -404,7 +445,7 @@ ul#nav-bar li{
 }
 input[type=text], input[type=email], input[type=password] {
 	height: 20px;
-	border: 2px solid black;
+	border: none;
 	max-width: 98%;
 }
 .related_products{
@@ -574,6 +615,17 @@ padding-left: 0;
 vertical-align: middle;
 text-align: left;
 padding-top: 0.7em;
+}
+table.order-summary tbody,
+table.order-summary tr:first-child{
+	border-top: none;
+}
+table.order-summary tr td:first-child{
+	text-align: left;
+}
+
+table.order-summary tr td:last-child{
+	text-align: right;
 }
 .taxons-list-children{
 	position: fixed;
@@ -987,15 +1039,17 @@ table tr:first-child{
 	text-align: right;
 }
 
-.progress-steps{
-
-}
-
 .progress-steps li{
 	display: inline-block;
 	margin-right: 2em;
 }
-
+.progress-steps li span{
+	color: LightGrey;
+}
+.progress-steps li.current-first span,
+.progress-steps li.current span{
+	color: black;
+}
 
 .progress-steps li.current, .progress-steps li.current-first{
 	border-bottom: 1px solid;
@@ -1051,6 +1105,7 @@ table.bank-transfer-table tr:first-child{
 
 .pagination{
  text-align: center;
+ margin-top: 1em;
 }
 
 .pagination .next, .pagination .prev, 
@@ -1100,6 +1155,7 @@ table.bank-transfer-table tr:first-child{
 .pagination span{
 	display: inline-block;
 	background-size: auto 0.8em;
+	font-size: 22px; 
 }
 
 
@@ -1162,43 +1218,55 @@ table#shipping_costs th.price{
 }
 
 #checkout .field{
-	float: left;
-	margin-left: 1em;
-	height: 2em;
-	width: 30%;
 	position: relative;
 }
 #checkout .field.radios{
 	height: auto;
 }
+.progress-steps{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.progress-steps span{
+	font-size: 24px;
+}
+
 #checkout .field input[type=text],
 #checkout .field input[type=tel],
 #checkout .field input[type=email]{
 	width: 100%;
 	border: none;
-	border-bottom: 2px solid;
 	font-size: 24px;
 }
+
+#checkout .field input.error{
+	border: 1px solid #FF4767;
+}
+
 #checkout .field label{
 	color: gray;
 	font-size: 11px;
 	text-transform: uppercase;	
 }
+#checkout .field label.error{
+	color: #FF4767;
+}
 #checkout .field select{
  		width: 100%;
  }
 
- .shipment{
- 	float: left;
- 	clear: both;
- }
-
+table.stock-contents{
+	margin-bottom: 0em;
+	table-layout: auto;
+}
 #checkout-summary {
 	width: 29%;
 }
 
 #checkout legend{
-	font-size: 24px;
+	font-size: 18px;
 	text-align: left;
 }
 
@@ -1212,7 +1280,7 @@ table#shipping_costs th.price{
 .edit_order fieldset#shipping{
 	margin-bottom: 0;
 }
-.billing_fieldset_wrapper select{
+.billing_fieldset_wrapper select, select{
 	height: 2em;
 	background-color: transparent;
 	border: 2px solid;
@@ -1221,23 +1289,128 @@ table#shipping_costs th.price{
 	border-radius: 0;
 	padding-left: 0.5em;
 }
-
+.select_wrapper{
+	display: inline-block;
+	position: relative;
+	width: 90%;
+	margin-bottom: 1em;
+}
+.select_wrapper select{
+	width: 100%;
+	text-align: center;
+	cursor: pointer; 
+	padding-top: 0.3em;
+}
+.select_wrapper:hover{
+	background-color: black; 
+	color: white;
+}
+.select_wrapper:hover select {
+	color: white;
+}
+.select_wrapper select option{
+	text-align: center;
+}
 .billing_fieldset_wrapper #bcountry-selection:after{
 	content: "\25BC";
 	position: absolute;
 	right: 3%;
-	top: 92%;
+	top: 58%;
 	z-index: 1;
 }
-
+.select_wrapper:after{
+	content: "\25BC";
+	position: absolute;
+	right: 3%;
+	top: 0.6em;
+	z-index: 1;	
+}
 #checkout .form-buttons{
 	text-align: right;
 	padding: 0.35em 0.625em 0.75em;
 }
 #checkout .form-buttons input[type=submit]{
-	background-color: black;
 	font-size: 18px;
-	color: white;
 	margin-left: 10px;
 	margin-right: 26px;
 }
+#checkout .form-buttons input[type=submit]:hover{
+	background-color: black;
+	color: white;
+}
+
+
+body#cart,
+body#cart .main-nav-bar,
+body#cart #main-menu,
+body#cart .taxons-list,
+body#cart .taxons-list-children {
+	background-color:#E9E7E7;
+}
+
+body#cart input[type="number"], 
+body#cart input[type="text"]{
+	border: none;
+} 
+
+#estimate_shipping_costs #country_id{
+	border: none;
+}
+
+body#cart input[type='submit']{
+	background-color: transparent;
+	color: black;
+	font-size:18px;
+}
+
+body#cart #content a#checkout-link{
+	font-size:24px;
+	color:black;
+	padding-top: 0.5em;
+	padding-bottom:0.3em;
+	width: 30%; 
+	float:right;
+	clear: right;
+	background-color: transparent;
+	border: 2px solid black;
+	text-align: center;
+	line-height: 1em;
+}
+body#cart #content a#checkout-link:hover{
+	background-color: black;
+	color: white;
+}
+.checkout-form-wrapper{
+	text-align: center;
+}
+.checkout-form-wrapper.multiple_columns_2 .checkout-form{
+	width: 800px;
+	vertical-align: top; 
+}
+.checkout-form-wrapper.multiple_columns_2 .shipment{
+	width: 40%;
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 4%;
+	border: 2px solid black;
+}
+
+.shipment{
+	border: 2px solid black;
+}
+.checkout-form-wrapper #checkout-summary{
+	float: none;
+}
+
+.checkout-form{
+	width: 400px;
+	display: inline-block;
+}
+
+#shipping_costs{
+	margin-bottom: 2em;
+}
+
+
+
+

@@ -26,7 +26,7 @@ module Spree2
 
     config.after_initialize do
       Rails.configuration.spree.payment_methods << Spree::BillingIntegration::Transferuj
-      #Rails.configuration.spree.payment_methods << Spree::BillingIntegration::Payu
+      Rails.configuration.spree.payment_methods << Spree::BillingIntegration::PayU
     end
 
     # Settings in config/environments/* take precedence over those specified here.

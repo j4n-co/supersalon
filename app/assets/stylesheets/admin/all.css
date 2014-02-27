@@ -14,17 +14,6 @@
  *= require admin/spree_paypal_express
 */
 
-/* temp removed require jquery.fileupload-ui */
-
-/*
-.icon_link:before{
-	display: block;
-}
-#admin-menu li{
-	position: relative;
-}
-
-#admin-menu li.selected{
-	background-color: #9FC820;
-}
+/* temp removed require jquery.fileupload-ui  
 */
+

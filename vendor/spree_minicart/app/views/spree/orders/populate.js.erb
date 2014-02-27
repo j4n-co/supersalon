@@ -6,6 +6,7 @@ $("#link-to-cart a").replaceWith('<%= escape_javascript link_to_cart %>')
 $("#minicart").replaceWith('<%= escape_javascript render("spree/shared/minicart") %>')
 
 $('body').not('#cart').find('#minicart').slideDown()
+$('body').not('#cart').find('#top_nav').addClass('active')
 
 // Sliding down minicart
 //$("#link-to-cart #minicart").slideDown()

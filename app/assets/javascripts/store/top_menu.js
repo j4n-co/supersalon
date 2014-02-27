@@ -21,11 +21,14 @@ $(document).ready(function(){
 	})
 
 	$('#nav-bar li').on('click', function(){
+		
+		if( $('#top_nav_content').children(':visible').length == 0 ) {
+			$('#top_nav').addClass('active')
+		}
 		var toggle = $(this).data('toggle')
 		var toggleItem = $('#top_nav_content').children('.'+toggle)
 		toggleItem.slideDown()
 		toggleItem.siblings().not('.close').slideUp();
-		console.log(toggleItem.siblings().not('.close'))
 		$('#top_nav_content .close').show()
 		
 		if ( $(this).attr('id') == 'currency-select' ) {
@@ -43,6 +46,7 @@ $(document).ready(function(){
 	})
 	
 	$('#top_nav_content .close').on('click', function(){
+		$('#top_nav').removeClass('active')
 		$('#top_nav_content .close').hide()
 		$('#top_nav_content').children().slideUp()
 	})

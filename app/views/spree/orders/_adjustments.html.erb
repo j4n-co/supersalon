@@ -11,9 +11,9 @@
       <% if adjustment.originator_type == "Spree::PromotionAction" %> 
       <% name = Spree::Promotion.where(id:adjustment.originator_id).first.name %> 
       <% else %> 
-      <% name = "" %> 
+      <% name = false %> 
       <% end %> 
-      <td>(<%= name %>)</td>
+      <td><%= name ? "("+name+")" : ""; %></td>
       <td><%= adjustment.display_amount.to_html %></td>
     </tr>
   <% end %>

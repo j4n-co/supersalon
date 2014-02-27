@@ -26,7 +26,10 @@
         <% unless defined? @page %> 
           <%= render :partial => 'spree/shared/taxonomies' %>
           <%= render :partial => 'spree/shared/search' %>
-          <%= breadcrumbs(@taxon) %>
+          
+          <% unless @body_id == 'cart' %> 
+            <%= breadcrumbs(@taxon) %>
+          <% end %> 
         
         <% else %> 
           <div class="columns twelve alpha omega row"></div>

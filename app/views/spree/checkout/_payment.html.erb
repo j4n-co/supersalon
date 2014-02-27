@@ -1,3 +1,9 @@
+<div class="columns alpha four" data-hook="order-ship-address" style="text-align:left; ">
+  <h6><%= Spree.t(:shipping_address) %> <%= link_to "(#{Spree.t(:edit)})", checkout_state_path(:address) unless @order.completed? %></h6>
+  
+  <%= render :partial => 'spree/shared/address', :locals => { :address => @order.ship_address } %>
+</div>
+
 <fieldset id="payment" data-hook>
   <legend align="center"><%= Spree.t(:payment_information) %></legend>
   <div data-hook="checkout_payment_step">
@@ -34,6 +40,6 @@
 <br class="space" />
 
 <div class="form-buttons" data-hook="buttons">
-  <%= submit_tag Spree.t(:save_and_continue), :class => 'continue button primary' %>
+  <%= submit_tag 'Continue to payment', :class => 'continue button primary' %>
   <script>Spree.disableSaveOnClick();</script>
 </div>

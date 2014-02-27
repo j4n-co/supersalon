@@ -15,10 +15,10 @@ Spree2::Application.routes.draw do
     match '/transferuj/success' => 'transferuj#success', :as => :transferuj_success, via: [:get, :post]
     match '/transferuj/error' => 'transferuj#error', :as => :transferuj_error, via: [:get, :post]
 
-    match '/payu/show/:order_id/:payment_method_id' => 'payu#show', :as => :payu_show, via: [:get, :post]
-    match '/payu/status' => 'transferuj#status', :as => :payu_status, via: [:get, :post]
-    match '/payu/success' => 'transferuj#success', :as => :payu_success, via: [:get, :post]
-    match '/payu/error' => 'payu_error#error', :as => :payu_error, via: [:get, :post]
+    post '/payu/report' => 'payu#report'
+    get '/payu/error' => 'payu#error'
+    get "/payu/ok" => "payu#ok"
+    get "/payu/create_order" => "payu#create_order"
 
   end
 

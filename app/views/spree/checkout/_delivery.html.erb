@@ -1,14 +1,24 @@
+
 <fieldset id='shipping_method' data-hook>
-  <legend align="center"><%= Spree.t(:delivery) %></legend>
   <div class="inner" data-hook="shipping_method_inner">
     <div id="methods">
       <%= form.fields_for :shipments do |ship_form| %>
 
+        <% on_backorder = ship_form.object.manifest.map{|item| item.states['on_hand'] }.include?(nil) %> 
         <div class="shipment">
-          <h3 class="stock-location" data-hook="stock-location">
+          <h1 class="stock-location" data-hook="stock-location">
             <%= Spree.t(:package_from) %>
             <strong class="stock-location-name" data-hook="stock-location-name"><%= ship_form.object.stock_location.name %></strong>
-          </h3>
+          </h1>
+          <% if on_backorder %> 
+          <h2 class="alert" >(This shipment contains items that are on backorder, and may take 2-4 weeks to arrive)  </h2>
+          <% end %> 
+          <h3 class="stock-shipping-method-title"><%= Spree.t(:shipping_method) %></h3>
+            
+          <% shipping_methods = ship_form.object.shipping_rates.with_shipping_method.reverse %> 
+          <div class="select_wrapper">
+          <%= ship_form.collection_select(:selected_shipping_rate_id, shipping_methods, :id, :name_with_price) %> 
+          </div>
 
           <table class="stock-contents" data-hook="stock-contents">
             <colgroup>
@@ -27,7 +37,7 @@
               <% ship_form.object.manifest.each do |item| %>
                 <tr class="stock-item">
                   <td class="item-image"><%= mini_image(item.variant) %></td>
-                  <td class="item-name"><%= item.variant.name %></td>
+                  <td class="item-name"><%= item.variant.name %><%= item.states['on_hand'] ? '' : ' <span class="alert">(on backorder)</span>'.html_safe ; %> </td>
                   <td class="item-qty"><%= item.quantity %></td>
                   <td class="item-price"><%= display_price(item.variant) %></td>
                 </tr>
@@ -35,18 +45,6 @@
             </tbody>
           </table>
 
-          <h3 class="stock-shipping-method-title"><%= Spree.t(:shipping_method) %></h3>
-          <ul class="shipping-methods">
-            <% ship_form.object.shipping_rates.with_shipping_method.each do |rate| %>
-              <li class="shipping-method">
-                <label>
-                  <%= ship_form.radio_button :selected_shipping_rate_id, rate.id %>
-                  <span class="rate-name"><%= rate.name %></span>
-                  <span class="rate-cost"><%= rate.display_cost %></span>
-                </label>
-              </li>
-            <% end %>
-          </ul>
         </div>
 
       <% end %>
@@ -83,6 +81,12 @@
         </div>
       <% end %>
 
+
+
+      <br/>
+      <div id="delivery_order_summary">
+        <%= render :partial => 'delivery_order_summary', :locals => { :order => @order } %>
+      </div>
     </div>
     <% if Spree::Config[:shipping_instructions] %>
       <p id="minstrs" data-hook>
@@ -95,6 +99,7 @@
 
 <br />
 
-<div class="form-buttons" data-hook="buttons">
-  <%= submit_tag Spree.t(:save_and_continue), :class => 'continue button primary' %>
+
+<div class="form-buttons" data-hook="buttons" style="width:400px;margin:0 auto; display:block;">
+  <%= submit_tag Spree.t(:save_and_continue), :class => 'continue button primary', :style=>"width:100%; font-size: 24px;" %>
 </div>
