@@ -288,7 +288,7 @@ GEM
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
-    net-ssh (2.8.0)
+    net-ssh (2.7.0)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
     nokogiri (1.6.1)
@@ -382,6 +382,8 @@ GEM
       polyamorous (~> 0.6.0)
     rdoc (4.1.1)
       json (~> 1.4)
+    rvm-capistrano (1.5.1)
+      capistrano (~> 2.15.4)
     sass (3.2.14)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -504,9 +506,11 @@ DEPENDENCIES
   jquery-fileupload-rails
   jquery-rails
   mysql2
+  net-ssh (= 2.7.0)
   openpayu
   pry
   rails (= 4.0.2)
+  rvm-capistrano
   sass-rails (~> 4.0.0)
   sdoc
   spree (= 2.1.4)

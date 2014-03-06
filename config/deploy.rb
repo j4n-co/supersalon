@@ -18,8 +18,9 @@ set :scm, :git
 set :repository, "git@github.com:j4n-co/supersalon.git" 
 #set :deploy_via, :copy 
 set :user, "root"
+set :password, "supersalon"
 
-set :server_ip, "37.139.10.22"
+set :server_ip, "supersalon.org"
 server server_ip, :app, :web, :primary => true
 set :rails_env, 'production'
 
