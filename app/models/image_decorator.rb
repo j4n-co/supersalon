@@ -6,3 +6,9 @@ Spree::Image.class_eval do
     :large => '600x600>'  # light box image
   }
 end
+
+# after you redeploy, 
+# convert all images to jpegs
+# :mini => ['48x48>',:jpg]
+# and run Spree::Image.all.each {|image| image.attachment.reprocess! && image.save} 
+# from the console. 

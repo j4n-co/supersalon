@@ -1,11 +1,43 @@
-<div class="columns alpha four" data-hook="order-ship-address" style="text-align:left; ">
-  <h6><%= Spree.t(:shipping_address) %> <%= link_to "(#{Spree.t(:edit)})", checkout_state_path(:address) unless @order.completed? %></h6>
-  
-  <%= render :partial => 'spree/shared/address', :locals => { :address => @order.ship_address } %>
-</div>
+<% @checkout_form_class = 'payment' %> 
 
-<fieldset id="payment" data-hook>
-  <legend align="center"><%= Spree.t(:payment_information) %></legend>
+<!-- left block -->
+<div style="width: 45%; display: inline-block;vertical-align: top;">
+
+  <div data-hook="order-ship-address" style="text-align:left;">
+    <h1 style="margin-bottom: 0.5em;">
+      <%= Spree.t(:shipping_address) %>
+    </h1>
+    <%= render :partial => 'spree/shared/address', :locals => { :address => @order.ship_address } %>
+  </div>
+
+  <!-- order summary -->
+  <div class="order_summary" style="">
+    <h1 style="margin-bottom: 0.5em; text-align: left; ">
+      Order Summary
+    </h1>
+
+  <table class="payment_line_items">
+    <% @order.line_items.each do |item| %>
+      <tr class="stock-item">
+        <td class="item-image"><%= mini_image(item.variant) %></td>
+        <td class="item-name"><%= item.variant.name %> </td>
+        <td class="item-qty"><%= item.quantity %></td>
+        <td class="item-price"><%= display_price(item.variant) %></td>
+      </tr>
+    <% end %>
+  </table>
+  <%= render :partial => 'summary', :locals => { :order => @order, :payment_page => true  } %>
+  </div>
+
+</div>
+<!--  END left block -->
+
+<!-- Right block -->
+<div id="payment" style="display: inline-block; width: 45%; margin-left:5%;">
+<fieldset data-hook style="margin: 0; padding: 0; text-align: left; ">
+  <h1>
+    <%= Spree.t(:payment_information) %>
+  </h1>
   <div data-hook="checkout_payment_step">
     <div id="payment-method-fields" data-hook>
       <% @order.available_payment_methods.each do |method| %>
@@ -35,11 +67,13 @@
       </p>
     <% end %>
   </div>
+
+  <div class="form-buttons" data-hook="buttons">
+    <%= submit_tag 'Continue to payment', :class => 'continue button primary', :style=>'font-size: 24px;' %>
+    <script>Spree.disableSaveOnClick();</script>
+  </div>
+
 </fieldset>
+</div> 
+<!-- END Right block -->
 
-<br class="space" />
-
-<div class="form-buttons" data-hook="buttons">
-  <%= submit_tag 'Continue to payment', :class => 'continue button primary' %>
-  <script>Spree.disableSaveOnClick();</script>
-</div>

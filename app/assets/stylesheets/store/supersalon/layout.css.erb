@@ -36,6 +36,10 @@ td {
 	padding-bottom: 0;
 }
 
+img{
+	max-width: 100%; 
+}
+
 input[type='submit'], button, .button{
 	border: outset 2px black;
 	padding-top: 0.4em;
@@ -82,7 +86,18 @@ table.shipping-methods label{
 table.shipping-methods tr{
 	cursor: pointer; 
 }
+table.payment_line_items {
+	text-align: left;
+	table-layout: auto;
+}
 
+table.payment_line_items tr td:last-child{
+	text-align: right;
+}
+
+table.payment_line_items tr:last-child{
+	border: none;
+}
 
 table.shipping-methods tr:hover{
 	background-color: white; 
@@ -1044,7 +1059,7 @@ table tr:first-child{
 	margin-right: 2em;
 }
 .progress-steps li span{
-	color: LightGrey;
+	color: white;
 }
 .progress-steps li.current-first span,
 .progress-steps li.current span{
@@ -1090,18 +1105,15 @@ table tr:first-child{
 }
 
 .bank-transfer-table{
-	width: 50%;
+	border: 2px solid;
+	table-layout: auto; 
 }
 
-.bank-transfer-table th{
-	
-}
+
 table.bank-transfer-table tr:first-child{
 	border-top: none; 
 }
-.bank-transfer-table tr{
-	border-bottom: none;
-}
+
 
 .pagination{
  text-align: center;
@@ -1383,7 +1395,7 @@ body#cart #content a#checkout-link:hover{
 .checkout-form-wrapper{
 	text-align: center;
 }
-.checkout-form-wrapper.multiple_columns_2 .checkout-form{
+.checkout-form-wrapper.multiple_columns_2 .checkout-form, .checkout-form-wrapper.payment .checkout-form{
 	width: 800px;
 	vertical-align: top; 
 }
@@ -1393,6 +1405,11 @@ body#cart #content a#checkout-link:hover{
 	vertical-align: top;
 	margin: 0 4%;
 	border: 2px solid black;
+}
+
+.checkout-form-wrapper.payment .edit_order fieldset#payment{
+	width: 40%;
+	display: inline-block;
 }
 
 .shipment{
@@ -1411,6 +1428,7 @@ body#cart #content a#checkout-link:hover{
 	margin-bottom: 2em;
 }
 
-
-
-
+#payment #payment-method-fields p{
+	margin-bottom: 0 !important; 
+	margin-top: 0 !important; 
+}

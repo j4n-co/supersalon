@@ -8,7 +8,7 @@
     <div data-hook="checkout_progress"><%= checkout_progress %></div>
   </div>
   
-  <div class="checkout-form-wrapper <%= (@multiple_columns > 1) && (@order.state == 'delivery') ? 'multiple_columns_'+@multiple_columns.to_s : '' ; %> " data-hook="checkout_content" >
+  <div class="checkout-form-wrapper <%= (@multiple_columns > 1) && (@order.state == 'delivery' ) ? 'multiple_columns_'+@multiple_columns.to_s : @order.state ; %> " data-hook="checkout_content" >
     <div class="checkout-form" data-hook="checkout_form_wrapper">
       <%= form_for @order, :url => update_checkout_path(@order.state), :html => { :id => "checkout_form_#{@order.state}" } do |form| %>
         <% unless @order.email? %>
@@ -21,7 +21,7 @@
       <% end %>
     </div>    
     
-    <% unless ["address", "confirm", "delivery"].include?(@order.state) %>
+    <% unless ["address", "confirm", "delivery", 'payment'].include?(@order.state) %>
       <div id="checkout-summary" data-hook="checkout_summary_box">
       
         <%= render :partial => 'summary', :locals => { :order => @order } %>

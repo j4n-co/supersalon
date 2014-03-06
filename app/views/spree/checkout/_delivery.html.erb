@@ -17,7 +17,7 @@
             
           <% shipping_methods = ship_form.object.shipping_rates.with_shipping_method.reverse %> 
           <div class="select_wrapper">
-          <%= ship_form.collection_select(:selected_shipping_rate_id, shipping_methods, :id, :name_with_price) %> 
+          <%= ship_form.collection_select(:selected_shipping_rate_id, shipping_methods, :id, :name_with_price ) %> 
           </div>
 
           <table class="stock-contents" data-hook="stock-contents">

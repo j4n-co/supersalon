@@ -3,10 +3,10 @@
   <% if current_order.nil? || current_order.line_items.empty? %>
 
     <div data-hook="empty_minicart">
-      <p><%= Spree.t(:your_cart_is_empty) %></p>
-      <button>
-        <%= link_to Spree.t(:continue_shopping), spree.products_path, :class => 'button continue' %></p>
-      </button>
+      <p>
+        <%= Spree.t(:your_cart_is_empty) %>
+      </p>
+      <%= link_to Spree.t(:continue_shopping), spree.products_path, :class => 'button continue' %>
     </div>
 
   <% else %>
@@ -20,7 +20,7 @@
             <%= link_to Spree.t('view_shopping_cart'), spree.cart_path, :class => 'cart' %>
           </button>
           <br/>          
-            <%= link_to Spree.t(:checkout), spree.checkout_path, :class => 'button checkout primary big', :id => 'checkout-link', :style=>'float:right;' %>
+            <%= link_to Spree.t(:checkout), spree.checkout_path, :class => 'button checkout big', :id => 'checkout-link', :style=>'float:right; width: 98px;' %>
         </div>
 
         <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %>

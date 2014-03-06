@@ -1,0 +1,28 @@
+@media (max-width: 1024px) {
+  .product-list-item {
+    margin-right: 5.4%;
+    width: 18%;
+  }
+
+  #products {
+    margin-right: -8%;
+  }
+  
+  .product-image {
+    width: 100%;
+  }
+  .product-image img{
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 835px) {
+  .product-list-item {
+    margin-right: 5.4%;
+    width: 18%;
+  }
+
+  #products {
+    margin-right: -8%;
+  }
+}
