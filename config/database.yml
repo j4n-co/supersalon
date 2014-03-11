@@ -6,11 +6,11 @@
 
 # was   database: supersalon
 development:
-  adapter: mysql2 
-  database: supersalon_production
+  adapter: postgresql
+  database: supersalon
   host: localhost
-  username: root
-  password: rootytooty
+  encoding: utf8
+  username: postgres
   timeout: 5000
 
 #development:
@@ -35,9 +35,9 @@ test:
 #  timeout: 5000
 
 production:
-  adapter: mysql2 
+  adapter: postgresql
   database: supersalon
-  username: rails
-  password: Foyhir89iv
   host: localhost
+  encoding: utf8
+  username: postgres
   timeout: 5000
