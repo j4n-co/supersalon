@@ -40,4 +40,5 @@ production:
   host: localhost
   encoding: utf8
   username: postgres
+  password: 
   timeout: 5000
