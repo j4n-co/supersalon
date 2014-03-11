@@ -9,7 +9,7 @@ development:
   adapter: postgresql
   database: supersalon
   host: localhost
-  encoding: utf8
+  encoding: unicode
   username: postgres
   timeout: 5000
 
@@ -35,10 +35,9 @@ test:
 #  timeout: 5000
 
 production:
-  adapter: postgresql
+  adapter: mysql2 
   database: supersalon
+  username: rails
+  password: Foyhir89iv
   host: localhost
-  encoding: utf8
-  username: postgres
-  password: 
   timeout: 5000
