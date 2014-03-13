@@ -6,12 +6,11 @@
 
 # was   database: supersalon
 development:
-  adapter: postgresql
-  database: supersalon
+  adapter: mysql2 
+  database: supersalon_production
   host: localhost
-  encoding: unicode
-  username: postgres
-  timeout: 5000
+  username: root
+  password: rootytooty
 
 #development:
 #  adapter: sqlite3

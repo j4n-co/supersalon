@@ -83,7 +83,6 @@ class Spree::TransferujController < Spree::BaseController
   end
   
   def error
-    binding.pry
     if t[:shop_transaction_id] and Order.find_by_number t[:shop_transaction_id]  
       @order = Order.find_by_number t[:shop_transaction_id]  
       @order.payment.started_processing  
