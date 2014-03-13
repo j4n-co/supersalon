@@ -17,9 +17,9 @@ Spree2::Application.routes.draw do
     get "/payu/ok" => "payu#ok"
     get "/payu/create_order" => "payu#create_order"
 
-    get '/transferuj/show/:order_id/:payment_method_id' => 'transferuj#show', :as => :transferuj_show, via: :get
-    get '/transferuj/success' => 'transferuj#success', :as => :transferuj_success, via: [:get, :post]
-    get '/transferuj/error' => 'transferuj#error', :as => :transferuj_error, via: [:get, :post]
+    #get '/transferuj/show/:order_id/:payment_method_id' => 'transferuj#show', :as => :transferuj_show, via: :get
+    #get '/transferuj/success' => 'transferuj#success', :as => :transferuj_success, via: [:get, :post]
+    #get '/transferuj/error' => 'transferuj#error', :as => :transferuj_error, via: [:get, :post]
 
 
   end
