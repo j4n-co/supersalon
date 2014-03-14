@@ -4,12 +4,14 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *
 
+
  *= require_self
  *= require_tree .
 
  *= require store/advanced_cart
  *= require store/spree_minicart
 */
+
 /*
  removed = require store/spree_paypal_express
  removed = require store/spree_multi_currency
