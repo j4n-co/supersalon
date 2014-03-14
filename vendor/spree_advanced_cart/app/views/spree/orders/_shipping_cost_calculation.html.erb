@@ -1,4 +1,5 @@
-<% ip = request.location.country %>
+<% ip = request.try(:location) %>
+<% ip = ip.try(:country) %> 
 
 <% if ip == 'Reserved' || ip.nil? %> 
 	<% c = Spree::Country.where(name:'Poland').first %> 
