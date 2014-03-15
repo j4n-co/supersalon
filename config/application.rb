@@ -77,6 +77,9 @@ module Spree2
     # Enable the asset pipeline
     config.assets.enabled = true
 
+    config.assets.compress = true
+    config.assets.js_compressor  = :uglifier
+    config.assets.css_compressor = :scss
 
     #config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 

@@ -25,7 +25,9 @@
         end %>  
       <li id="product_<%= product.id %>" class="product-list-item" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
           <div class="product-image">
-            <%= link_to large_image(product, :itemprop => "image"), product, :itemprop => 'url' %>
+            <%= link_to product, :itemprop => 'url'  do  %> 
+              <%= large_image(product, :itemprop => "image") %>
+            <% end %> 
           </div>
           <div class="product-name">
             <%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %>

@@ -57,7 +57,6 @@ class Spree::PayuController < Spree::BaseController
     ts =  Time.now.to_i.to_s
     #sig = md5 (pos_id + session_id + value1 + value 2 + ... + valuen + ts + key )
     #binding.pry
-    binding.pry
 
     order = {
       pos_id: @payu.preferences[:pos_id],
