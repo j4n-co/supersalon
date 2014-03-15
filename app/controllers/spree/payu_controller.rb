@@ -85,6 +85,9 @@ class Spree::PayuController < Spree::BaseController
   def ok
     @order = Spree::Order.where(:number => params[:order_id]).first
     if @order.payments.last.state != 'completed'
+      @order.state = 'complete'
+      @order.payment_total = @order.total
+      @order.payment_state = 'paid'
       @order.payments.last.complete!
       @order.finalize!
     end
