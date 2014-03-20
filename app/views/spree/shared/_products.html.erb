@@ -1,6 +1,8 @@
 <%
   paginated_products = @searcher.retrieve_products if params.key?(:keywords)
   paginated_products ||= products
+  #products = products.sort_by{|p| p.available_on}
+
 %>
 <% if products.empty? %>
   <div class="columns ten alpha">
@@ -50,7 +52,9 @@
           <%= render :partial => 'spree/products/simple_cart_form', :locals => {:product => product}%>
       </li>
 
-    <% end %>
+    <% else %>
+    <% binding.pry %> 
+    <% end %> 
   <% end %>
   <% reset_cycle("classes") %>
 </ul>

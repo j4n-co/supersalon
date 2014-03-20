@@ -84,6 +84,7 @@ gem 'spree_advanced_cart', 					path: 'vendor/spree_advanced_cart'
 gem 'spree_minicart', 						path: 'vendor/spree_minicart'
 gem 'import_products', 						path: 'vendor/import-products' #major modifications
 
+gem 'sort_products_by_available_on',	path: 'vendor/sort_products_by_available_on'
 
 #payu integration
 gem 'openpayu'

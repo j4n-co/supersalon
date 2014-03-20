@@ -74,6 +74,12 @@ PATH
       spree_core (>= 0.30.1)
 
 PATH
+  remote: vendor/sort_products_by_available_on
+  specs:
+    sort_products_by_available_on (0.0.1)
+      rails (~> 4.0.2)
+
+PATH
   remote: vendor/spree_advanced_cart
   specs:
     spree_advanced_cart (2.0.0)
@@ -515,6 +521,7 @@ DEPENDENCIES
   rvm-capistrano
   sass-rails (~> 4.0.0)
   sdoc
+  sort_products_by_available_on!
   spree (= 2.1.4)
   spree_advanced_cart!
   spree_ajax_add_to_cart!

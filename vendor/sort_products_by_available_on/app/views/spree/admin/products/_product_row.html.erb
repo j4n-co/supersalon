@@ -1,0 +1,15 @@
+<tr <%== "style='color: red;'" if product.deleted? %> id="<%= spree_dom_id product %>" data-hook="admin_products_index_rows" class="<%= cycle('odd', 'even') %>">
+  <td class="align-center"><%= product.sku rescue '' %></td>
+  <td class="align-center"><%= mini_image(product) %></td>
+  <td><%= link_to product.try(:name), edit_admin_product_path(product) %></td>
+  <td class="align-center"><%= product.display_price.to_html rescue '' %></td>
+  <td class="align-center no-wrap"><%= product.created_at.strftime('%b %d, %Y') rescue '' %></td>
+  <td class="align-center no-wrap"><%= product.available_on.strftime('%b %d, %Y') rescue '' %></td>
+  <td class="actions no-wrap" data-hook="admin_products_index_row_actions">
+    <%= link_to_edit product, :no_text => true, :class => 'edit' if can?(:edit, product) && !product.deleted? %>
+    &nbsp;
+    <%= link_to_clone product, :no_text => true, :class => 'clone' if can?(:clone, product) %>
+    &nbsp;
+    <%= link_to_delete product, :no_text => true if can?(:delete, product) && !product.deleted? %>
+  </td>
+</tr>
