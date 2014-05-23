@@ -1,0 +1,16 @@
+<h3><%= Spree.t('shipment_mailer.shipped_email.dear_customer') %></h3>
+
+<p><%= Spree.t('shipment_mailer.shipped_email.instructions') %></p>
+
+<div class="email-divider"></div>
+<p><%= Spree.t('shipment_mailer.shipped_email.shipment_summary') %></p>
+<div class="email-divider"></div>
+<% @shipment.manifest.each do |item| %>
+  <%= item.variant.sku %> <%= item.variant.product.name %> <%= item.variant.options_text %>
+<% end %>
+<div class="email-divider"></div>
+
+<p><strong><%= Spree.t('shipment_mailer.shipped_email.track_information', :tracking => @shipment.tracking)     if @shipment.tracking %></strong></p>
+<p><strong><%= Spree.t('shipment_mailer.shipped_email.track_link',        :url      => @shipment.tracking_url) if @shipment.tracking_url %></strong></p>
+
+<p><%= Spree.t('shipment_mailer.shipped_email.thanks') %></p>
