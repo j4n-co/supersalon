@@ -1,0 +1,82 @@
+$email-primary: black;
+$email-secondary: #000;
+$email-background: white;
+$email-font: "Helvetica", Arial, sans-serif;
+$email-padding: 0;
+$email-font-size: 16px;
+
+#header {
+  background-color: $email-background;
+  padding: $email-padding;
+}
+
+#content-wrapper{
+  padding: $email-padding;
+}
+
+#content-box {
+  border-collapse: collapse;
+}
+
+#content {
+  padding: $email-padding;
+  font-size: $email-font-size;
+}
+
+#footer {
+  background: white;
+  color: black;
+  padding: 20px;
+}
+#footer a{
+  color: black; 
+}
+p, table, tr, td {
+  color: $email-primary;
+  font-family: $email-font;
+}
+table{
+  border-collapse:collapse;
+}
+td {
+  padding-right: 12px; 
+  padding-bottom: 6px; 
+  padding-top: 6px;
+}
+.order-total{
+  color: white; 
+  background-color: black; 
+}
+.white{
+  color: white; 
+}
+.bottom-border{
+  border-bottom: 1px solid black; 
+}
+
+.top-border{
+  border-top: 1px solid black; 
+}
+a {
+  color: $email-primary;
+  &:hover {
+    text-decoration: underline;
+  }
+
+.divider {
+  
+  }
+
+.inline-table {
+  
+  }
+
+h1, h2, h3, h4, h5 {
+  font-family: $email-font;
+}
+
+.btn {
+  
+  }
+
+}

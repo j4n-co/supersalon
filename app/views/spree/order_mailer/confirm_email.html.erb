@@ -1,0 +1,109 @@
+<h2><%= Spree.t('order_mailer.confirm_email.dear_customer') %> <%= @order.name %></h2>
+
+<p><%= Spree.t('order_mailer.confirm_email.thanks') %></p>
+
+<p><%= Spree.t('order_mailer.confirm_email.instructions') %></p>
+
+
+<h3>
+	<%= Spree.t('order_mailer.confirm_email.order_summary') %>
+</h3>
+
+
+<table class="email-order-items">
+	<tr> 
+		<td class="bottom-border">
+			<strong>Item Name</strong>
+		</td>
+		<td class="bottom-border">
+			<strong>Item Price</strong>
+		</td>
+		<td class="bottom-border">
+			<strong>Quantity</strong>
+		</td>
+		<td class="bottom-border"> 
+			<strong>Total</strong>
+		</td>
+	</tr>
+<% @order.line_items.each do |item| %>
+	<tr>
+		<td>
+			<%= raw(item.variant.product.name) %> <%= if (raw(item.variant.options_text).blank?) then '' else '-'+raw(item.variant.options_text) end -%> 
+		</td>
+		<td> 
+			<%=item.single_money%>
+		</td>
+		<td> 
+			<%=item.quantity%>
+		</td>
+		<td>
+			<%= item.display_amount %>
+		</td>
+	</tr>
+<% end %>
+	<tr> 
+	<% @order.adjustments.eligible.each do |adjustment| %>
+		<td colspan="3" class="top-border"> 
+		<strong><%= raw(adjustment.label) %></strong>
+		<% if (adjustment.source_type == "Spree::Shipment") %> 
+			- <%= adjustment.source.shipping_method.name %> 
+		<% end %> 
+		</td>
+		<td class="top-border"> 
+		<%= adjustment.display_amount %>
+		</td>
+	<% end %>
+	</tr>
+	<tr class="order-total"> 
+		<td colspan="3">	
+			<strong class="white">
+				<%= Spree.t('order_mailer.confirm_email.total') %> 
+			</strong>
+		</td>
+		<td class="white"> 
+			<%= @order.display_total %> 
+		</td>
+	</tr>
+</table>
+
+<h3>
+	<%= Spree.t('payment_method')%>
+</h3>
+
+<p>
+	<%= Spree.t('order_mailer.confirm_email.selected_payment_method', :payment_method => @order.payments.last.payment_source.name ) %>
+</p>
+<% if (@order.payments.last.payment_source.type == 'Spree::PaymentMethod::BankTransfer' ) %>
+
+	<% if (banks = Spree::Bank.active).any? %>
+		<%banks = banks.where(:currency => @order.currency) %> 
+		<% banks.each do |bank| %>
+			<em>Please make a bank transfer to the following account. 
+			<br/>Your order will be processed after we receive this transaction.</em>
+			<p>
+			<%= bank.person_name %>
+			<%= raw(bank.address) %>
+			</p>
+			<p>
+			Title: order <%= @order.number %>
+			</p>
+			<p>
+			IBAN: <strong><%= bank.account_no %></strong>
+			</p>  
+			<p>
+			Amount: <strong><%= @order.display_total %></strong>
+			</p>
+		<% end %>
+	<% end %>
+
+<% end %>  
+
+<p>
+	<%= Spree.t('order_mailer.confirm_email.payment_status', :status => @order.payment_state) %>
+</p>
+<p>
+	<em><%= Spree.t('order_mailer.confirm_email.shipping_notification') %></em> 
+</p>
+
+
+<em><%= Spree.t('order_mailer.confirm_email.assistance') %></em>

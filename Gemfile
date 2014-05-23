@@ -68,6 +68,7 @@ gem 'spree_social', 			github: 'spree/spree_social', 				:branch => "2-1-stable"
 gem 'spree_print_invoice' , 	github: 'spree/spree_print_invoice', 		:branch => '2-1-stable' #installed
 
 gem "jquery-fileupload-rails"
+gem 'premailer-rails' #used with spree_simple_html_emails gems
 
 #gem 'spree_image_multi_upload', path: 'vendor/spree_image_multi_upload' #installed in vendor - needs heavy modification
 gem 'spree_multi_currency', 				path: 'vendor/spree_multi_currency' #installed in vendor - modified routes for rails 4
@@ -84,7 +85,10 @@ gem 'spree_advanced_cart', 					path: 'vendor/spree_advanced_cart'
 gem 'spree_minicart', 						path: 'vendor/spree_minicart'
 gem 'import_products', 						path: 'vendor/import-products' #major modifications
 
-gem 'sort_products_by_available_on',	path: 'vendor/sort_products_by_available_on'
+gem 'sort_products_by_available_on',		path: 'vendor/sort_products_by_available_on'
+
+gem 'spree_simple_html_emails', 			path: 'vendor/spree_simple_html_emails' #typo in generator
+
 
 #payu integration
 gem 'openpayu'
