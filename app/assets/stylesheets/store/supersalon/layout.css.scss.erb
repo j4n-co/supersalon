@@ -184,6 +184,7 @@ a {
 	box-sizing: border-box;
 	margin: 0 auto;
 	overflow: hidden;
+	position: relative;
 }
 
 .container {
@@ -192,6 +193,16 @@ a {
 	padding: 0;
 	margin: 0 auto;
 	max-width: 1024px;
+}
+#top_nav.active{
+}
+
+#top_nav.active #top_nav_content{
+	max-height: 150px;
+}
+#top_nav .newsletter-text{
+	max-width: 400px; 
+	margin: 12px auto 0;
 }
 
 .alert{
@@ -323,7 +334,11 @@ h2.alert{
   -ms-transition: none;
   transition: none;		
 }
-
+#top_nav #nav-bar li.promo-ad{
+	color: #777; 
+	padding-left: 0; 
+	float: left; 
+}
 .menu_item.omega{
 	margin-right: 0;
 }
@@ -456,9 +471,7 @@ ul#nav-bar li{
 .no-float{
 	float: none !important;
 }
-#top_nav_content{
-	position: relative;
-}
+
 #top_nav_content > div{
 	display: none;
 }

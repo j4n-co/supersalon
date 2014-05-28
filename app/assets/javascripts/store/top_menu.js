@@ -20,6 +20,13 @@ $(document).ready(function(){
 		$('#link-to-cart').trigger('click')
 	})
 
+    $('#content').on('click', function(event){
+    	//debugger
+    	$('#top_nav').removeClass('active')
+		$('#top_nav_content .close').hide()
+		$('#top_nav_content').children().slideUp()
+    })
+
 	$('#nav-bar li').on('click', function(){
 		
 		if( $('#top_nav_content').children(':visible').length == 0 ) {

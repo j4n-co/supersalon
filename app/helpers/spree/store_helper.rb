@@ -11,5 +11,9 @@ module Spree
       @taxonomies ||= Spree::Taxonomy.includes(root: :children)
     end
 
+    def active_promos 
+    	@active_promos = Spree::Promotion.active.where(:advertise => true) 
+    end
+
   end
 end
