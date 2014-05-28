@@ -45,6 +45,10 @@ group :development do
 	gem 'capistrano', '2.15.4'
 	gem 'rvm-capistrano'
 	gem 'net-ssh', '2.7.0'
+	gem 'guard-rails', group: :development
+	gem 'guard-livereload', group: :development
+	gem 'rack-livereload', group: :development
+	gem 'guard-bundler', group: :development
 end
 
 # Use debugger

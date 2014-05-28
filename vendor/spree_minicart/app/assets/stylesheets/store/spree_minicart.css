@@ -10,7 +10,35 @@
   position: fixed;
   left:50%;
 }
+#minicart{
+  float:left;
+  width:100%;
+}
 
+.cart-title{
+  text-align: center;
+  font-size: 42px;
+  line-height: 32px; 
+  margin-bottom: 6px; 
+  margin-top: 24px;
+}
+.minicart .order-total{
+  font-size: 24px;
+  margin-right: 1em;
+  float:left;
+  clear:right;
+  line-height: 10px;
+}
+
+.empty-cart{
+  text-align: center;
+}
+
+.empty-cart h2{
+  margin: 0;
+  margin-top: -8px; 
+  margin-bottom: 12px; 
+}
 nav #main-nav-bar li#link-to-cart #minicart a {
   font-size: 12px
 }
@@ -21,8 +49,9 @@ nav #main-nav-bar li#link-to-cart #minicart a.button {
 }
 
 ul#minicart-items{
-  text-align: left;
-  float: left;
+  text-align: center;
+  width: 100%;
+  position: absolute;
 }
 
 ul#minicart-items li{
@@ -32,12 +61,23 @@ ul#minicart-items li{
   line-height: 12px;
   position: relative;
   border: 2px solid black;
-  margin: 1em 1em 0 1em;
+  /*margin: 1em 1em 0 1em;*/
+  margin: 0;
   overflow: hidden;
+  display: inline-block;
+}
+.minicart_item_image{
+  width: 85px;
+  height: 85px;
+  display: inline-block;
 }
 
+.minicart_item_image img{
+  height: 100%;
+}
+ul#minicart-items .item
 ul#minicart-items li img{
-  display: block;
+  display: inline-block;
   max-height: 100%;
   max-width: 100%;
 }
@@ -56,4 +96,20 @@ ul#minicart-items li img{
 
 #minicart .minicart-actions .delete:hover {
   color: maroon;
+}
+
+
+.minicart-buttons{
+  text-align: right;
+  margin-bottom: 0px;
+  float: right;
+  z-index: 1;
+  position: relative;
+}
+
+.minicart-buttons .button{
+  float:right; 
+  width: 98px;
+  clear: right;
+  margin-bottom: 14px;
 }

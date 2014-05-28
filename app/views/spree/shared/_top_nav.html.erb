@@ -9,11 +9,11 @@
       <% end %>
     </div> 
     
-    <div class="newsletter" style="float: left;">
+    <div class="newsletter" style="float: left; width: 100%; ">
 
-      <h2>Newsletter:</h2>
+      <p class="cart-title">Newsletter:</p>
 
-      <form action="http://supersalon.us7.list-manage1.com/subscribe/post?u=0821932f7fabd3f9016571864&amp;id=12f56b859d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"  target="_blank" >
+      <form action="http://supersalon.us7.list-manage1.com/subscribe/post?u=0821932f7fabd3f9016571864&amp;id=12f56b859d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"  target="_blank" style="text-align: center;" >
         <div id="mce-responses">
           <div class="response" id="mce-error-response" style="display:none"></div>
           <div class="response" id="mce-success-response" style="display:none"></div>
@@ -21,39 +21,30 @@
 
         <input placeholder="your email" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" style="vertical-align:top; ">
         <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="color:black;vertical-align:top;margin-left:1em;"></input>
-
-        <span style="max-width: 44%; display:inline-block; vertical-align:top; margin-left:1em;">
-        Sign up for our newsletter to get occasional mails about new publications and events to be held in our shop.
-        </span>
       </form>
+      <p style="text-align: center;">
+        Sign up for our newsletter to get occasional mails about new publications and events to be held in our shop.
+      </p>
+
     </div> 
     
-    <div class="login" style="float:left; width:100%;">
-      <h2 style="margin-bottom:5px;">Login</h2>
+    <div class="login" style="float:left; width:100%; text-align: center;">
+      <p class="cart-title">Login</p>
       <%= form_for Spree::User.new, :as => :spree_user, :url => spree.create_new_session_path do |f| %>
         <p style="display:inline-block;margin:0 1em 0 0;">
-        <%= f.label :email, Spree.t(:email) %><br />
-        <%= f.email_field :email, :class => 'title', :tabindex => 1 %>
+        <%= f.email_field :email, :class => 'title', :tabindex => 1, :placeholder =>  Spree.t(:email) %> %>
         </p>
         <p style="display:inline-block;margin:0 1em 0 0;">
-        <%= f.label :password, Spree.t(:password) %><br />
-        <%= f.password_field :password, :class => 'title', :tabindex => 2 %>
+        <%= f.password_field :password, :class => 'title', :tabindex => 2, :placeholder =>  Spree.t(:password) %>
         </p>
-        
-        <p style="margin:0;display:inline-block;vertical-align:bottom;">
-        <%= f.submit Spree.t(:login), :class => 'button primary', :tabindex => 3 %>
+        <p style="display:inline-block;margin:0 1em 0 0;">
+          <%= f.submit Spree.t(:login), :class => 'button primary', :tabindex => 3 %>
         </p>
-        <p style="margin:0px 1em 0px 1em;display:inline-block;vertical-align:bottom;">
-        <span style="font-size: 24px;"> or </span>
-        </p>
-        <p style="margin:0;display:inline-block;vertical-align:bottom;">
-          <button>
-            <%= link_to Spree.t(:create_a_new_account), spree.signup_path %>
-          </button>
+        <p>
+          or <%= link_to Spree.t(:create_a_new_account), spree.signup_path, :style=>"text-decoration: underline;" %>
         </p>
 
-
-        <p style="margin-bottom:0;margin-top: 5px;">
+        <p style="margin-bottom:0;margin-top: 5px; display: none;">
           <%= f.check_box :remember_me  %>
           <span style="margin-left:0.5em;">
             <%= f.label :remember_me, Spree.t(:remember_me) %>

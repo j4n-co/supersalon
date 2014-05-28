@@ -1,11 +1,15 @@
-<div id="minicart" class='minicart' style="float:left;width:100%;">
-
+<div id="minicart" class='minicart'>
+  
+  <p class="cart-title">
+    <%= Spree.t(:cart) %>
+  </p>
+  
   <% if current_order.nil? || current_order.line_items.empty? %>
 
-    <div data-hook="empty_minicart">
-      <p>
+    <div class="empty-cart" data-hook="empty_minicart">
+      <h3>
         <%= Spree.t(:your_cart_is_empty) %>
-      </p>
+      </h3>
       <%= link_to Spree.t(:continue_shopping), spree.products_path, :class => 'button continue' %>
     </div>
 
@@ -14,23 +18,19 @@
     <%= form_for current_order, :url => spree.update_cart_path, :html => {:id => 'update-minicart'}, :remote => true do |order_form| %>
       <div data-hook="inside_minicart_form">
 
-        <div style="text-align:right;margin-bottom: 0;margin-top: 4em;float: right;">
-
-          <button class="big" style="float:right; width:150px; ">
-            <%= link_to Spree.t('view_shopping_cart'), spree.cart_path, :class => 'cart' %>
-          </button>
-          <br/>          
-            <%= link_to Spree.t(:checkout), spree.checkout_path, :class => 'button checkout big', :id => 'checkout-link', :style=>'float:right; width: 98px;' %>
+        <div class="minicart-buttons">
+            <%= link_to Spree.t('view_shopping_cart'), spree.cart_path, :class => 'button checkout big' %>      
+            <%= link_to Spree.t(:checkout), spree.checkout_path, :class => 'button checkout big', :id => 'checkout-link'%>
         </div>
 
         <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %>
-        <ul id='minicart-items' class="clearfix">
+        <ul id='minicart-items'>
           <%= order_form.fields_for :line_items do |item_form| %>
             <%= render :partial => 'spree/shared/minicart_line_items', :locals => { :variant => item_form.object.variant, :line_item => item_form.object, :item_form => item_form } if item_form.object.variant %>
           <% end %>
         </ul>
 
-        <span class="order-total" style="font-size: 24px; margin-right: 1em;float:left; clear:right;">
+        <span class="order-total">
           <%= current_order.display_item_total %>
         </span>
 
