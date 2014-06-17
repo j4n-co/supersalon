@@ -1,0 +1,82 @@
+#footer{
+	border-top: 2px solid black;
+	padding-top: 2em;
+	max-width: 1024px;
+	margin: 0 auto;
+	margin-top: 2em;
+}
+
+#footer img{
+	max-width: 100%;
+}
+
+.footer-content{
+	max-width: 1024px;
+}
+.footer-header{
+	font-family: 'Calibre-Medium';
+	font-weight: normal;
+	margin-bottom: 0.5em;
+	margin-top: 0;
+}	
+
+.footer_links {
+float: left;
+vertical-align: top;
+margin-right: 8%;
+max-width: 21%;
+}
+
+.footer_links.mailing-list{
+	margin-right: 0;
+}
+
+.footer_links.mailing-list input[type='email']{
+	padding: 0.4em;
+	margin-bottom: 1em;
+	margin-top: 0.2em;
+}
+
+.footer_links.mailing-list #mc-embedded-subscribe{
+	background-color: white;
+}
+
+.footer_links.shop > li{
+	display: inline;	
+	padding-right: 0.2em;
+}
+
+.footer_links.shop > li a:before,
+.footer_links.shop > li a:after{
+	color: white;
+	content: "[";
+}
+.footer_links.shop > li:hover a:before{
+	content: "[";
+	color: black;
+}
+.footer_links.shop > li:hover a:after{
+	content: "]";
+	color: black;
+}
+.footer_links.legal > li:hover a{
+	text-decoration: underline;
+}
+
+
+#map-canvas{
+	float: left;
+	margin-right: 3em;
+	position: relative;
+	width: 50%; 
+	height: 150px;
+	overflow: visible;
+}
+#map-canvas iframe {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	top: 0px;
+	left: 0px;
+	margin: 0;
+}

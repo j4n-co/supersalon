@@ -81,7 +81,9 @@ module Spree2
     config.assets.js_compressor  = :uglifier
     config.assets.css_compressor = :scss
 
-    #config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+    # Precompile additional assets
+    config.assets.precompile += %w( .svg .eot .woff .ttf )
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'

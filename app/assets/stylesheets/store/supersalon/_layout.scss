@@ -1,0 +1,158 @@
+#header{
+	border-bottom: 2px solid black; 
+	position: fixed;
+	width: 100%; 
+	margin: 0 auto;
+	z-index: 5;
+	background-color: white; 
+	background-color: rgba(255,255,255,0.9);
+	max-width: 1025px; 
+	top: 24px;
+}
+
+.container {
+	position: relative;
+	width: auto;
+	padding: 0;
+	margin: 0 auto;
+	max-width: 1024px;
+}
+
+#wrapper{
+	overflow: hidden;
+}
+
+#content{
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	transition: all 0.3s;
+	padding-top: 150px;
+}
+
+
+#header.scrolled #logo{
+	top: 20px;
+}
+
+.no-float{
+	float: none !important;
+}
+
+#sidebar{
+	float: left;
+	width: 150px;
+}
+
+.baseline_wrapper{
+	position: absolute;
+	bottom: 0;
+}
+
+.overflow_wrapper{
+	overflow: hidden;
+}
+
+.add-to-cart{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.add-to-cart .cart_button{
+	background-color: transparent;
+}
+
+.right{
+	float: right;
+}
+
+.search_form{
+	float: right;
+}
+
+
+.cart-item-description{
+	max-width: 300px;
+}
+.cart_buttons{
+	margin-bottom: 1em;
+	width: 90%;
+	margin: 0 auto;
+}
+
+#cart_items{
+	width: 60%;
+}
+
+#estimate_shipping_costs{
+	width: 30%;
+	float: right;
+	margin: 0;
+}
+#estimate_shipping_costs h3{
+	margin-top: 0;
+}
+#empty-cart{
+	margin-top: 2em;
+	float: left;
+}
+#clear_cart_link{
+	margin: 0;
+}
+
+.cart_buttons .checkout.button{
+	background-color: black;
+	color: white;
+	margin-left: 2em;
+}
+
+#subtotal {
+	text-align: right;
+}
+
+
+.out-of-stock{
+	display: inline-block;
+	color: grey;
+	padding-top: 0.2em;
+	letter-spacing: 1px;
+	padding-left: 0.6em;
+	padding-right: 0.6em;
+	padding-bottom: 0.1em;
+	text-transform: capitalize;
+	font-weight: normal; 
+}
+.product_description{
+	border-top: 2px solid; 
+	padding-top: 0px;
+	padding-top: 1em;
+}
+
+.product_description p {
+	margin-top: 0;
+	margin-bottom: 1.5em;
+}
+
+#account{
+	text-align: right;
+	width: 48%;
+	float: left;
+}
+
+#guest_checkout{
+	text-align: left;
+	width: 48%;
+	float: right;
+}
+
+#password-credentials p{
+	margin: 0;
+	margin-bottom: 1em !important;
+	/*text-align: right;*/
+}
+.existing-login{
+	text-align: center;
+}
+
+

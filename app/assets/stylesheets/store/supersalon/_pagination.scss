@@ -1,0 +1,66 @@
+
+.pagination{
+	text-align: center;
+	margin-top: 1em;
+	clear: both;
+}
+
+.pagination span{
+	display: inline-block;
+	background-size: auto 0.8em;
+	font-size: 22px; 
+}
+
+.pagination a{
+	color: transparent;
+}
+
+.pagination .page a{
+	color: black; 
+}
+.pagination .page:hover{
+	color: black; 
+	border-bottom: 2px solid;
+}
+
+.pagination .page.current {
+	color: black; 
+	border-bottom: 2px solid;
+
+}
+
+.pagination .next, 
+.pagination .prev, 
+.pagination .last, 
+.pagination .first{
+	background: image-url("arrows.png") no-repeat 0 0 transparent;
+	width: 30px;
+	opacity: 1;
+}
+.pagination .next:hover, 
+.pagination .prev:hover,
+.pagination .last:hover, 
+.pagination .first:hover{
+	opacity: 0.5;
+}
+//background sprite
+.pagination .next{
+	background-position: -99px 0px;
+}
+.pagination .prev{
+	background-position: -51px 0px;
+}
+
+.pagination .last{
+	background-position: -153px 0px;
+	width: 30px;
+}
+
+.pagination .first{
+	background-position: 5px 0px;
+	width: 30px;
+}
+
+
+
+

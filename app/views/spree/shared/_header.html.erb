@@ -9,7 +9,7 @@
     </div> 
 
     <%= cache do %>
-  	<div id="main-menu" class="main-nav-item"> 
+  	<div class="main-taxon-menu"> 
       <% if defined?(get_taxonomies) %> 
         <% get_taxonomies.each do |taxonomy| %>
           <%= taxons_tree(taxonomy.root, @taxon, Spree::Config[:max_level_in_taxons_menu] || 2) %>

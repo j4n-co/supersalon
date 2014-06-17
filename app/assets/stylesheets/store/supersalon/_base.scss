@@ -1,0 +1,180 @@
+/*-- body --*/
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+body{
+	font-size: 15px;
+	line-height: 19px;
+	font-family: 'Calibre-Medium', Arial, helvetica, sans-serif;
+	letter-spacing: 1px;
+	/*min-width: 917px;*/
+	padding: 5px;
+}
+
+/*-- typography --*/
+
+h1,h2,h3,h4,h5,h6{
+	font-weight: normal;
+}
+
+h1{
+	font-size: 25px;
+	letter-spacing: 1px;
+	line-height: 1.2em;
+	margin-bottom: 0.5em;
+}
+
+h6{
+	font-size: 12px;
+	margin-top: 1em;
+	margin-bottom: 0.2em;
+}
+
+/*-- inline elements --*/
+
+img{
+	max-width: 100%; 
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+.large-text{
+	font-size: 1.2em; 
+}
+
+
+/*-- lists --*/ 
+
+ul{
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none; 
+}
+
+
+/*-- form elements --*/
+input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
+    border: none;
+    height: 20px;
+    max-width: 98%;
+    padding-left: 0.4em;
+    padding-top: 0.4em;
+    letter-spacing: 1px;
+}
+
+
+input[type='submit'], button, .button{
+	border: outset 2px black;
+	padding-top: 0.4em;
+	letter-spacing: 1px;
+	padding-left: 0.6em;
+	padding-right: 0.6em;
+	background-color: transparent;
+}
+
+button.big, .button.big{
+	font-size: 24px;
+	padding: 0.5em 1em 0.2em 1em;
+	background-color: transparent;
+	line-height: 0.5em; 
+	margin-bottom: 1em;
+}
+button.big:last-child, .button.big:last-child{
+	margin-bottom: 0; 
+}
+input[type='submit']:hover, button:hover{
+	border-style: inset;
+	border-color: grey;
+}
+input[type="number"]{
+	width: 3em;
+	margin-left: 1em;
+	padding: 0.2em;
+	padding-top: 0.5em;
+	text-align: center;
+	border: 2px solid black;
+}
+
+/*table elements --*/ 
+
+table{
+	table-layout: fixed;
+	width: 100%;
+}
+table thead tr{
+	border-bottom: 2px solid black;
+}
+
+table tr:first-child{
+	border-top: 2px solid black;	
+}
+
+table th {
+    padding: 0.5em;
+    text-align: left;
+    font-weight: normal;
+    text-transform: capitalize;
+}
+
+table th {
+	text-align: left;
+	padding: 0.5em;
+}
+td {
+	padding: 0.5em;
+	padding-bottom: 0;
+}
+
+table.transparent,
+table.transparent tbody, 
+table.transparent tr,
+table.transparent tr:first-child,
+table.transparent tr:last-child,
+table.transparent td{
+	border: none;
+}
+table.shipping-methods label{
+	cursor: pointer; 
+	width: 100%;
+}
+table.shipping-methods tr{
+	cursor: pointer; 
+}
+table.payment_line_items {
+	text-align: left;
+	table-layout: auto;
+}
+
+table.payment_line_items tr td:last-child{
+	text-align: right;
+}
+
+table.payment_line_items tr:last-child{
+	border: none;
+}
+
+table.shipping-methods tr:hover{
+	background-color: white; 
+}
+
+tr .delete{
+	visibility: hidden;
+}
+tr:hover .delete{
+	visibility: visible;
+}
+table h1, table h2{
+	margin: 0;
+}
+table tr:last-child{
+	border-bottom: 2px solid;
+}
+
+

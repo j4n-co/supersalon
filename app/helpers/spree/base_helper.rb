@@ -166,7 +166,7 @@ module Spree
 
         end 
         
-        css_class = (current_taxon && current_taxon.self_and_ancestors.include?(root_taxon)) ? 'current root_taxon_link menu_item' : 'root_taxon_link menu_item'
+        css_class = (current_taxon && current_taxon.self_and_ancestors.include?(root_taxon)) ? 'current root-taxon-link ' : 'root-taxon-link'
 
         unless  taxon_child_product_count == 0
 

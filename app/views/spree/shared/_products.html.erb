@@ -1,9 +1,8 @@
 <%
   paginated_products = @searcher.retrieve_products if params.key?(:keywords)
   paginated_products ||= products
-  #products = products.sort_by{|p| p.available_on}
-
 %>
+
 <% if products.empty? %>
   <div class="columns ten alpha">
     <h3>
@@ -26,39 +25,34 @@
           css_class = ''
         end %>  
       <li id="product_<%= product.id %>" class="product-list-item" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
-          <div class="product-image">
-            <%= link_to product, :itemprop => 'url'  do  %> 
-              <%= large_image(product, :itemprop => "image") %>
-            <% end %> 
-          </div>
-          <div class="product-name">
-            <%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %>
-            <% author_prop = product.properties.where(:name => 'Author').first %> 
-            <% unless author_prop.nil? or author_prop.blank? %>
-              <% author = product.product_properties.where(:property_id => author_prop.id).first %> 
-              <% unless author.value.blank? %> 
-                <span>
-                / <%= author.value %> 
-                </span>
-                <% end %> 
-            <% end %> 
-          </div>
- 
-            <div class="product-price"> 
-              <%= product.price_in(current_currency).display_price %>
-            </div>
-          
+        <div class="product-image">
+          <%= link_to product, :itemprop => 'url'  do  %> 
+            <%= large_image(product, :itemprop => "image") %>
+          <% end %> 
+        </div>
+        <div class="product-name">
+          <%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %>
+          <% author_prop = product.properties.where(:name => 'Author').first %> 
+          <% unless author_prop.nil? or author_prop.blank? %>
+            <% author = product.product_properties.where(:property_id => author_prop.id).first %> 
+            <% unless author.value.blank? %> 
+              <span>
+              / <%= author.value %> 
+              </span>
+              <% end %> 
+          <% end %> 
+        </div>
 
-          <%= render :partial => 'spree/products/simple_cart_form', :locals => {:product => product}%>
+        <div class="product-price"> 
+          <%= product.price_in(current_currency).display_price %>
+        </div>
+        <%= render :partial => 'spree/products/simple_cart_form', :locals => {:product => product}%>
       </li>
-
-    <% else %>
-    <% binding.pry %> 
     <% end %> 
   <% end %>
   <% reset_cycle("classes") %>
 </ul>
 <% end %> 
 <% if paginated_products.respond_to?(:num_pages) %>
-  <%= paginate paginated_products %>
+  <%= paginate paginated_products, :window => 9 %>
 <% end %>

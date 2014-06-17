@@ -16,6 +16,24 @@
   }
 }
 
+@media all and (max-width:928px){
+  .related_products{
+    width: auto;
+    clear: both;
+    float: left;
+  }
+  p {
+    margin-bottom: 0 !important;
+    margin-top: 40px;
+  }
+  p.row {
+    margin-top: 0;
+    width: 160px;
+    float: left;
+    margin-right: 90px;   
+  }
+}
+
 @media (max-width: 835px) {
   .product-list-item {
     margin-right: 5.4%;

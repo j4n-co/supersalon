@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'Calibre-Medium';
+  src: asset-url('Calibre-Medium.eot'); /* IE9 Compat Modes */
+  src: asset-url('Calibre-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       asset-url('Calibre-Medium.woff') format('woff'), /* Modern Browsers */
+       asset-url('Calibre-Medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+       asset-url('Calibre-Medium.svg#svgFontName') format('svg'); /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Calibre-Medium-Rotate';
+  src: asset-url('Calibre-Medium-Rotate.eot'); /* IE9 Compat Modes */
+  src: asset-url('Calibre-Medium-Rotate.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       asset-url('Calibre-Medium-Rotate.woff') format('woff'), /* Modern Browsers */
+       asset-url('Calibre-Medium-Rotate.ttf')  format('truetype'), /* Safari, Android, iOS */
+       asset-url('Calibre-Medium-Rotate.svg#svgFontName') format('svg'); /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}

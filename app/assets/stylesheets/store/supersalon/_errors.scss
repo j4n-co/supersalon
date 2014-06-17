@@ -1,0 +1,13 @@
+.alert{
+	color: maroon;
+}
+h2.alert{
+	margin-top:0; 
+}
+
+.flash.error, .errorExplanation, .flash.registration_error{
+	background-color: #FFE2E7;
+	padding: 1em;
+	color: #800000;
+	margin: 1em;
+}

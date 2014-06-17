@@ -1,0 +1,102 @@
+
+#breadcrumbs {
+	color: #ACACAC;
+	font-size: 12px;
+	margin-bottom: 1.5em;
+}
+
+#breadcrumbs li{
+	display: inline;
+}
+
+#breadcrumbs a {
+	color: #ACACAC;
+	text-transform: uppercase;
+}
+
+#breadcrumbs a:hover {color: #000;}
+
+.small_product_container {
+	display: block;
+	float: left;
+	margin-right: 5em;
+}
+
+.small_products {
+	margin-right: 0;
+}
+
+.product-listing {
+	display: block;
+	margin-right: -90px;
+	overflow: hidden;
+}
+
+.product-listing li {
+	line-height: 16px;
+	min-height: 280px;
+	position: relative;
+}
+
+//taxon index pages
+
+.small-product-header {
+	font-size: 25px;
+	font-weight: 400;
+	margin-bottom: 1em;
+	margin-top: 0;
+}
+
+
+.small-product-header:hover {
+	text-decoration: underline;
+}
+
+
+.small_product_container {
+	display: block;
+	float: left;
+	margin-right: 5em;
+}
+
+.small_products {
+	margin-right: 0;
+}
+
+.small-products.product-listing li {
+	margin-bottom: 0;
+	margin-right: 0;
+}
+
+.small-products.product-listing .product-image a {
+	height: 100px;
+	width: 100px;
+}
+
+.small-products.product-listing .product-image {
+	height: 100px;
+	text-align: left;
+	width: 100px;
+}
+.small-products.product-listing .product-image img {
+	height: 100%;
+	width: auto;
+}
+
+.small-products.product-listing .product-list-item {
+	height: 100px;
+	margin-bottom: 1em;
+	margin-top: 0;
+	min-height: 100px;
+	width: 100px;
+}
+
+
+.product-list-item {
+	display: inline-block;
+	width: 200px;
+	position:relative;
+	vertical-align: top;
+	margin-right: 71px;
+	margin-bottom: 40px;
+}
