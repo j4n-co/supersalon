@@ -16,29 +16,50 @@
 
 #breadcrumbs a:hover {color: #000;}
 
-.small_product_container {
-	display: block;
-	float: left;
-	margin-right: 5em;
-}
 
-.small_products {
-	margin-right: 0;
-}
-
+//default index item style
 .product-listing {
 	display: block;
 	margin-right: -90px;
 	overflow: hidden;
 }
 
-.product-listing li {
+
+.product-list-item {
+	display: inline-block;
+	width: 200px;
+	position:relative;
+	vertical-align: top;
+	margin-right: 71px;
+	margin-bottom: 40px;
 	line-height: 16px;
 	min-height: 280px;
 	position: relative;
+
+}
+.product-image{
+	position: relative;
+}
+
+.product-list-item-details{
+	position: absolute;
+	bottom: 0;
+	background-color: rgba(255, 255, 255, 0.8);
+	padding: 2em 1em; 
+	width: 100%; 
+	opacity: 0; 
+}
+
+.product-list-item:hover .product-list-item-details{
+	opacity: 1; 
+}
+
+.product-price{
+	margin: 1em 0; 
 }
 
 //taxon index pages
+
 
 .small-product-header {
 	font-size: 25px;
@@ -91,12 +112,3 @@
 	width: 100px;
 }
 
-
-.product-list-item {
-	display: inline-block;
-	width: 200px;
-	position:relative;
-	vertical-align: top;
-	margin-right: 71px;
-	margin-bottom: 40px;
-}

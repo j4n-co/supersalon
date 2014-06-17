@@ -4,8 +4,10 @@
       <tbody>
         <% unless @product_properties.empty? %>  
         <% @product_properties.each do |product_property| %>
-          <% css_class = cycle('even', 'odd', :name => "properties") %>
-          <tr class="<%= css_class %>">
+          <% if product_property.property.presentation  == "Availability" %> 
+            <% product_property.value = @product.master.stock_items.first().count_on_hand %> 
+          <% end %> 
+          <tr>
             <td><%= product_property.property.presentation %>: <%= product_property.value %></td>
           </tr>
         <% end %>

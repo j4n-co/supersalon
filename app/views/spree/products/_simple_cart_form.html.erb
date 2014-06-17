@@ -14,7 +14,9 @@
               <%= t(:add_to_cart) %>
             <% end %>
           <% else %>
-            <strong class="out-of-stock"><%= t(:out_of_stock) %></strong>
+            <%= button_tag :class => 'large primary cart_button out-of-stock', :type => :submit, :disabled => true do %>
+              <%= t(:out_of_stock) %>
+            <% end %>
           <% end %>
         </div>
     

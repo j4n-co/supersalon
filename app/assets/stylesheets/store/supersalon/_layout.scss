@@ -113,15 +113,12 @@
 
 
 .out-of-stock{
-	display: inline-block;
 	color: grey;
-	padding-top: 0.2em;
-	letter-spacing: 1px;
-	padding-left: 0.6em;
-	padding-right: 0.6em;
-	padding-bottom: 0.1em;
-	text-transform: capitalize;
-	font-weight: normal; 
+	border-color: transparent;
+	cursor: default;
+}
+.out-of-stock:hover{
+	border-color: transparent;
 }
 .product_description{
 	border-top: 2px solid; 
