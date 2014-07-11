@@ -24,26 +24,29 @@
             <%= large_image(product, :itemprop => "image") %>
           <% end %> 
 
-        <div class="product-list-item-details">
-          <div class="product-name">
-            <%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %>
-            <% author_prop = product.properties.where(:name => 'Author').first %> 
-            <% unless author_prop.nil? or author_prop.blank? %>
-              <% author = product.product_properties.where(:property_id => author_prop.id).first %> 
-              <% unless author.value.blank? %> 
-                <span>
-                / <%= author.value %> 
-                </span>
-                <% end %> 
-            <% end %> 
-          </div>
+          <div class="product-list-item-details">
+            <div class="product-name">
+              <%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %>
+              <% author_prop = product.properties.where(:name => 'Author').first %> 
+              <% unless author_prop.nil? or author_prop.blank? %>
+                <% author = product.product_properties.where(:property_id => author_prop.id).first %> 
+                <% unless author.value.blank? %> 
+                  <span>
+                  / <%= author.value %> 
+                  </span>
+                  <% end %> 
+              <% end %> 
+            </div>
 
-          <div class="product-price"> 
-            <%= product.price_in(current_currency).display_price %>
+            <div itemprop="offers" itemscope itemtype="http://data-vocabulary.org/Offer" class="product-price"> 
+              <%= product.price_in(current_currency).display_price %>
+              <meta itemprop="priceCurrency" content="<%=current_currency%>" />
+              <meta itemprop="price" content="<%=product.price%>" />
+            </div>
           </div>
-        </div>
           
         </div>
+
         <%= render :partial => 'spree/products/simple_cart_form', :locals => {:product => product}%>
       </li>
     <% end %> 

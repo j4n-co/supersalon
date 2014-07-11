@@ -60,13 +60,15 @@ li {
 
 
 /*-- form elements --*/
-input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
+input[type="text"], input[type="email"], input[type="password"], input[type="tel"], .text-input {
     border: none;
-    height: 20px;
+    height: 32px;
     max-width: 98%;
     padding-left: 0.4em;
     padding-top: 0.4em;
     letter-spacing: 1px;
+    margin-right: 12px; 
+    vertical-align: top; 
 }
 
 
@@ -77,6 +79,8 @@ input[type='submit'], button, .button{
 	padding-left: 0.6em;
 	padding-right: 0.6em;
 	background-color: transparent;
+	color: black; 
+	vertical-align: top; 
 }
 
 button.big, .button.big{

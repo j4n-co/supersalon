@@ -1,14 +1,21 @@
 
 
-    <table id="product-properties" class="table-display" data-hook>
+    <table id="product-properties" class="table-display" data-hook itemprop="offers" itemscope itemtype="http://schema.org/Offer">
       <tbody>
         <% unless @product_properties.empty? %>  
         <% @product_properties.each do |product_property| %>
-          <% if product_property.property.presentation  == "Availability" %> 
-            <% product_property.value = @product.master.stock_items.first().count_on_hand %> 
-          <% end %> 
           <tr>
-            <td><%= product_property.property.presentation %>: <%= product_property.value %></td>
+
+            <% if product_property.property.presentation  == "Availability" %> 
+              <td itemprop="availability" itemtype="http://schema.org/Availability" content="http://schema.org/<%=product_property.value.split.map(&:capitalize).join('')%>"> 
+                <%= product_property.property.presentation %>: <%= @product.master.stock_items.first().count_on_hand %> 
+              </td>
+            <% else %> 
+              <td> 
+                <%= product_property.property.presentation %>: <%= product_property.value %>
+              </td>
+            <% end %> 
+
           </tr>
         <% end %>
         <% reset_cycle('properties') %>

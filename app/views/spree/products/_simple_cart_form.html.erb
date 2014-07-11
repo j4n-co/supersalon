@@ -3,7 +3,7 @@
   end %> 
 
 <%= form_for :order, :url => populate_orders_path, :remote => true,:html=>{:class=>'add_to_cart_form'} do |f| %>
-  <div id="inside-product-cart-form" data-hook="inside_product_cart_form" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+  <div id="inside-product-cart-form" data-hook="inside_product_cart_form">
     
     <% if @product.price_in(current_currency) and !@product.price.nil? %>
       <%= hidden_field_tag "variants[#{@product.master.id}]", 1%>

@@ -18,19 +18,19 @@
 
     </div>
     
-    <div class="vcard footer_links" style="width:13%;">
+    <div class="footer_links" style="width:13%;" id="footer-address" itemscope itemtype="http://schema.org/LocalBusiness">
       <!-- <span class="fn"><a class="url" href="#">Super Salon:</a></span> --> 
-      <div class="adr">
+      <div  itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
         <!-- <span class="fn">Krzysztof Kowalski</span><br> --> 
-        <h4 class="footer-header"> Shop: </h4> 
-        <span class="street-address">Chmielna 10</span><br>
-        <span class="postal-code">00-020</span>
-        <span class="region">Warszawa</span><br>
-        <span>Mon – Sat / 11 – 19</span><br/>
-        <span class="tel">(+48) 22 468 16 19</span>
-        <span class='email'>shop@supersalon.org</span>
+        <h4 class="footer-header"><span class="name">Super Salon</span> Shop: </h4> 
+        <span itemprop="streetAddress">Chmielna 10</span><br>
+        <span itemprop="postalCode">00-020</span>
+        <span itemprop="addressLocality">Warszawa</span><br>
+        <meta itemprop="addressCountry" content="PL" itemtype="http://schema.org/Country"/>
       </div>
-
+        <span itemprop="openingHours" itemref="footer-address" content="Mo-Sa 11:00-19:00">Mon – Sat / 11 – 19</span><br/>
+        <span itemprop="telephone">(+48) 22 468 16 19</span>
+        <span itemprop='email'>shop@supersalon.org</span>
       <br>
 
 

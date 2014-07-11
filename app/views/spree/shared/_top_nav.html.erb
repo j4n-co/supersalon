@@ -18,8 +18,8 @@
           <div class="response" id="mce-success-response" style="display:none"></div>
         </div> 
 
-        <input placeholder="your email" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" style="vertical-align:top; ">
-        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="color:black;vertical-align:top;margin-left:1em;"></input>
+        <input placeholder="your email" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></input>
       </form>
       <p class="newsletter-text" style="text-align: center;">
         Sign up for our newsletter to get occasional mails about new publications and events to be held in our shop.
@@ -27,16 +27,12 @@
 
     </div> 
     
-    <div class="login" style="float:left; width:100%; text-align: center;">
+    <div class="login">
       <p class="cart-title">Login</p>
       <%= form_for Spree::User.new, :as => :spree_user, :url => spree.create_new_session_path do |f| %>
-        <p style="display:inline-block;margin:0 1em 0 0;">
-        <%= f.email_field :email, :class => 'title', :tabindex => 1, :placeholder =>  Spree.t(:email) %> %>
-        </p>
-        <p style="display:inline-block;margin:0 1em 0 0;">
-        <%= f.password_field :password, :class => 'title', :tabindex => 2, :placeholder =>  Spree.t(:password) %>
-        </p>
-        <p style="display:inline-block;margin:0 1em 0 0;">
+        <p>
+          <%= f.email_field :email, :class => 'title', :tabindex => 1, :placeholder =>  Spree.t(:email) %> %>
+          <%= f.password_field :password, :class => 'title', :tabindex => 2, :placeholder =>  Spree.t(:password) %>
           <%= f.submit Spree.t(:login), :class => 'button primary', :tabindex => 3 %>
         </p>
         <p>

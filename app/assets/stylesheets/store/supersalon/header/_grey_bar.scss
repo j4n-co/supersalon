@@ -55,9 +55,14 @@ max-width: 1024px;
 	margin: 12px auto 0;
 }
 
+
+#top_nav_content .search {
+	text-align: center;
+}
+
 #keywords {
 	padding-top: 0.5em;
-	text-align: left;
+	text-align: center;
 	border: none;
 	font-size: 15px;
 	font-family: 'Calibre-Medium';
@@ -145,3 +150,27 @@ max-width: 1024px;
 }
 
 
+//newsletter
+.newsletter{
+	//email input 
+	.email{
+		height: 31px; 
+	}
+}
+
+//login
+.login{
+	float:left; 
+	width:100%; 
+	text-align: center;
+
+	.new_spree_user{
+		p {
+			
+			input[type='text']{
+
+			}
+		}
+
+	}
+}

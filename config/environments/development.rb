@@ -35,7 +35,7 @@ Spree2::Application.configure do
   #config.assets.css_compressor = :sass
 
   # Expands the lines which load the assets
-  config.assets.debug = false
+  config.assets.debug = true 
   
   config.assets.prefix = "/dev-assets"
 
