@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140201135961) do
+ActiveRecord::Schema.define(version: 20140730104735) do
 
   create_table "spree_activator_translations", force: true do |t|
     t.integer  "spree_activator_id"
@@ -124,6 +124,20 @@ ActiveRecord::Schema.define(version: 20140201135961) do
   add_index "spree_banks", ["active"], name: "index_spree_banks_on_active", using: :btree
   add_index "spree_banks", ["name", "account_no"], name: "index_spree_banks_on_name_and_account_no", unique: true, using: :btree
 
+  create_table "spree_blog_entries", force: true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "permalink"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "visible",      default: false
+    t.datetime "published_at"
+    t.text     "summary"
+    t.integer  "author_id"
+  end
+
+  add_index "spree_blog_entries", ["author_id"], name: "index_spree_blog_entries_on_author_id", using: :btree
+
   create_table "spree_calculators", force: true do |t|
     t.string   "type"
     t.integer  "calculable_id"
@@ -215,7 +229,7 @@ ActiveRecord::Schema.define(version: 20140201135961) do
     t.integer  "variant_id"
     t.integer  "order_id"
     t.integer  "quantity",                                 null: false
-    t.decimal  "price",           precision: 10, scale: 0, null: false
+    t.decimal  "price",           precision: 10, scale: 2
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
     t.string   "currency"
@@ -390,7 +404,7 @@ ActiveRecord::Schema.define(version: 20140201135961) do
 
   create_table "spree_prices", force: true do |t|
     t.integer "variant_id",                          null: false
-    t.decimal "amount",     precision: 10, scale: 0
+    t.decimal "amount",     precision: 10, scale: 2
     t.string  "currency"
   end
 
@@ -858,6 +872,10 @@ ActiveRecord::Schema.define(version: 20140201135961) do
     t.datetime "updated_at",                                     null: false
     t.string   "spree_api_key",          limit: 48
     t.datetime "remember_created_at"
+    t.string   "nickname"
+    t.string   "website_url"
+    t.string   "google_plus_url"
+    t.text     "bio_info"
   end
 
   add_index "spree_users", ["email"], name: "email_idx_unique", unique: true, using: :btree
@@ -865,14 +883,14 @@ ActiveRecord::Schema.define(version: 20140201135961) do
 
   create_table "spree_variants", force: true do |t|
     t.string   "sku",                                      default: "",    null: false
-    t.decimal  "weight",          precision: 10, scale: 0
-    t.decimal  "height",          precision: 10, scale: 0
-    t.decimal  "width",           precision: 10, scale: 0
-    t.decimal  "depth",           precision: 10, scale: 0
+    t.decimal  "weight",          precision: 10, scale: 2
+    t.decimal  "height",          precision: 10, scale: 2
+    t.decimal  "width",           precision: 10, scale: 2
+    t.decimal  "depth",           precision: 10, scale: 2
     t.datetime "deleted_at"
     t.boolean  "is_master",                                default: false
     t.integer  "product_id"
-    t.decimal  "cost_price",      precision: 10, scale: 0
+    t.decimal  "cost_price",      precision: 10, scale: 2
     t.integer  "position"
     t.string   "cost_currency"
     t.boolean  "track_inventory",                          default: true
@@ -897,6 +915,23 @@ ActiveRecord::Schema.define(version: 20140201135961) do
     t.integer  "zone_members_count", default: 0
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
+  end
+
+  create_table "taggings", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       limit: 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
+
+  create_table "tags", force: true do |t|
+    t.string "name"
   end
 
 end

@@ -70,6 +70,8 @@ gem 'spree_paypal_express', 	github: "radar/better_spree_paypal_express",:branch
 gem 'spree_i18n', 				github: 'spree/spree_i18n', 				:branch => "2-1-stable" #installed
 gem 'spree_social', 			github: 'spree/spree_social', 				:branch => "2-1-stable" #installed
 gem 'spree_print_invoice' , 	github: 'spree/spree_print_invoice', 		:branch => '2-1-stable' #installed
+gem 'spree_blogging_spree', 	github: 'stefansenk/spree-blogging-spree', 	:branch => "2-1-stable" #installed
+
 
 gem "jquery-fileupload-rails"
 gem 'premailer-rails' #used with spree_simple_html_emails gems
