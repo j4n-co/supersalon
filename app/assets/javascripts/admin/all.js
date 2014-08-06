@@ -14,3 +14,4 @@
 //= require admin/spree_sortable_prototype_properties
 //= require jquery-fileupload
 //= require_tree .
+//= require admin/spree_editor

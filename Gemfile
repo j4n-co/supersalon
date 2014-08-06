@@ -71,6 +71,8 @@ gem 'spree_i18n', 				github: 'spree/spree_i18n', 				:branch => "2-1-stable" #i
 gem 'spree_social', 			github: 'spree/spree_social', 				:branch => "2-1-stable" #installed
 gem 'spree_print_invoice' , 	github: 'spree/spree_print_invoice', 		:branch => '2-1-stable' #installed
 gem 'spree_blogging_spree', 	github: 'stefansenk/spree-blogging-spree', 	:branch => "2-1-stable" #installed
+gem 'spree_editor', 			github: 'spree/spree_editor', 				:branch => '2-1-stable' #installed
+gem 'tinymce-rails-langs'
 
 
 gem "jquery-fileupload-rails"

@@ -13,8 +13,10 @@
  *= require admin/spree_i18n
  *= require admin/spree_paypal_express
  *= require admin/sort_products_by_available_on
+ *= require admin/spree_editor
 */
 
 /* temp removed require jquery.fileupload-ui  
+ *= require admin/spree_editor
 */
 
