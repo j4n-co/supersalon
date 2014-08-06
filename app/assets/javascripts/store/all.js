@@ -13,4 +13,5 @@
 //= require store/spree_sortable_prototype_properties
 //= require store/advanced_cart
 //= require store/spree_minicart
+//= require store/spree_i18n
 //= require_tree .
