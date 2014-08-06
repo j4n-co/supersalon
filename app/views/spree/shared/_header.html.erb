@@ -8,7 +8,7 @@
       <ul id="links-in-header"></ul>
     </div> 
 
-    <%= cache do %>
+    <%#= cache do %>
   	<div class="main-taxon-menu"> 
       <% if defined?(get_taxonomies) %> 
         <% get_taxonomies.each do |taxonomy| %>
@@ -17,7 +17,7 @@
 
       <% end %>
     </div>
-    <% end %> 
+    <%# end %> 
     
     <h1 class="main-nav-item logo">
       <%= link_to 'Super Salon', root_path %>
