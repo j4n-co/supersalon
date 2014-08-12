@@ -79,7 +79,9 @@ gem "jquery-fileupload-rails"
 gem 'premailer-rails' #used with spree_simple_html_emails gems
 
 #gem 'spree_image_multi_upload', path: 'vendor/spree_image_multi_upload' #installed in vendor - needs heavy modification
-gem 'spree_multi_currency', 				path: 'vendor/spree_multi_currency' #installed in vendor - modified routes for rails 4
+#gem 'spree_multi_currency', 				path: 'vendor/spree_multi_currency' #installed in vendor - modified routes for rails 4
+gem 'spree_multi_currency', 				github: 'joshblour/spree_multi_currency', :branch => '2-1-stable' #installed in vendor - modified routes for rails 4
+
 gem 'spree_sortable_prototype_properties',	path: 'vendor/spree_sortable_prototype_properties' #installed in vendor - no mods needed
 gem 'spree_bank_transfer',					path: 'vendor/spree_bank_transfer' #installed, modified spree from 2.0.5 to 2.1.4
 gem 'spree_ajax_add_to_cart',  				path: 'vendor/spree_ajax_add_to_cart' 	#installed in vendor - need bump in spree from 2.0.0 to 2.1.4, 
