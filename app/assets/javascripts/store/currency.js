@@ -2,7 +2,7 @@
   $(function() {
     return $('#currency-select input[type=radio]').change(function() {
       return $.ajax({
-        type: 'GET',
+        type: 'POST',
         url: $(this).data('href'),
         data: {
           currency: $(this).val()
