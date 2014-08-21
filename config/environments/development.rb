@@ -10,6 +10,9 @@ Spree2::Application.configure do
   # config.whiny_nils = true
   config.eager_load = false
 
+  config.logger = Logger.new(STDOUT)
+  config.logger.level = Logger.const_get('DEBUG')
+  
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false

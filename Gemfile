@@ -59,6 +59,8 @@ gem 'delayed_job_active_record'
 
 gem 'airbrake'
 
+gem 'unicorn-worker-killer'
+
 gem 'spree', '2.1.4'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-1-stable'
 gem 'spree_auth_devise', path: 'vendor/spree_auth_devise-2-1-stable' #changing views 
