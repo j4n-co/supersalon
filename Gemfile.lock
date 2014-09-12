@@ -324,6 +324,7 @@ GEM
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
+    jemalloc (1.0.0)
     jquery-dragsort-rails (1.0.0)
       actionpack (>= 3.1)
       railties (>= 3.1)
@@ -599,6 +600,7 @@ DEPENDENCIES
   guard-rails
   import_products!
   jbuilder (~> 1.2)
+  jemalloc
   jquery-dragsort-rails (~> 1.0.0)
   jquery-fileupload-rails
   jquery-rails

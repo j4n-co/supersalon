@@ -9,9 +9,6 @@ Spree2::Application.configure do
   # Log error messages when you accidentally call methods on nil.
   # config.whiny_nils = true
   config.eager_load = false
-
-  config.logger = Logger.new(STDOUT)
-  config.logger.level = Logger.const_get('DEBUG')
   
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
