@@ -4,8 +4,8 @@ workers 2
 preload_app!
 
 rackup      DefaultRackup
-port        ENV['PORT']     || 3000
-environment ENV['RACK_ENV'] || 'development'
+port        ENV['PORT']     || 8080
+environment ENV['RACK_ENV'] || 'production'
 
 
 on_worker_boot do

@@ -43,7 +43,7 @@ end
 namespace :deploy do
 
   task :restart, :roles => :app, :except => { :no_release => true } do
-    run "bundle exec foreman start -p 8080"
+    run "RAILS_ENV=production bundle exec foreman start"
   end
 
   task :rechown, :roles => :app, :except => { :no_release => true } do
