@@ -43,7 +43,7 @@ end
 namespace :deploy do
 
   task :restart, :roles => :app, :except => { :no_release => true } do
-    run "service unicorn restart"
+    run "bundle exec foreman start -p 8080"
   end
 
   task :rechown, :roles => :app, :except => { :no_release => true } do

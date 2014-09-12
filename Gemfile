@@ -51,6 +51,10 @@ group :development do
 	gem 'guard-bundler', group: :development
 end
 
+gem 'puma'
+gem 'foreman'
+gem "rack-timeout"
+
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'pry'
@@ -58,9 +62,6 @@ gem 'daemons'
 gem 'delayed_job_active_record'
 
 gem 'airbrake'
-
-#didn't work 
-#gem 'unicorn-worker-killer'
 
 gem 'spree', '2.1.4'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-1-stable'
