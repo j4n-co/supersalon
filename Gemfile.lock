@@ -276,7 +276,6 @@ GEM
       warden (~> 1.2.3)
     devise-encryptable (0.1.2)
       devise (>= 2.1.0)
-    dotenv (0.7.0)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
@@ -287,9 +286,6 @@ GEM
       multipart-post (>= 1.2, < 3)
     ffaker (1.23.0)
     ffi (1.9.3)
-    foreman (0.64.0)
-      dotenv (~> 0.7.0)
-      thor (>= 0.13.6)
     formatador (0.2.5)
     geocoder (1.1.9)
     globalize (4.0.0)
@@ -422,7 +418,6 @@ GEM
       xml-simple
     paypal-sdk-merchant (1.106.1)
       paypal-sdk-core (~> 0.2.3)
-    pg (0.17.1)
     polyamorous (0.6.4)
       activerecord (>= 3.0)
     polyglot (0.3.3)
@@ -443,8 +438,6 @@ GEM
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
-    puma (2.9.0)
-      rack (>= 1.1, < 2.0)
     rabl (0.8.4)
       activesupport (>= 2.3.14)
     rack (1.5.2)
@@ -452,7 +445,6 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
-    rack-timeout (0.0.4)
     rails (4.0.2)
       actionmailer (= 4.0.2)
       actionpack (= 4.0.2)
@@ -478,6 +470,23 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.1.1)
       json (~> 1.4)
+    redis (3.1.0)
+    redis-actionpack (4.0.0)
+      actionpack (~> 4)
+      redis-rack (~> 1.5.0)
+      redis-store (~> 1.1.0)
+    redis-activesupport (4.0.0)
+      activesupport (~> 4)
+      redis-store (~> 1.1.0)
+    redis-rack (1.5.0)
+      rack (~> 1.5)
+      redis-store (~> 1.1.0)
+    redis-rails (4.0.0)
+      redis-actionpack (~> 4)
+      redis-activesupport (~> 4)
+      redis-store (~> 1.1.0)
+    redis-store (1.1.4)
+      redis (>= 2.2)
     rvm-capistrano (1.5.1)
       capistrano (~> 2.15.4)
     sass (3.2.14)
@@ -600,7 +609,6 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   daemons
   delayed_job_active_record
-  foreman
   geocoder
   guard-bundler
   guard-livereload
@@ -613,13 +621,12 @@ DEPENDENCIES
   mysql2
   net-ssh (= 2.7.0)
   openpayu
-  pg
   premailer-rails
   pry
-  puma
   rack-livereload
-  rack-timeout
   rails (= 4.0.2)
+  redis
+  redis-rails
   rvm-capistrano
   sass-rails (~> 4.0.0)
   sdoc

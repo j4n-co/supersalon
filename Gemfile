@@ -7,7 +7,8 @@ gem 'rails', '4.0.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 gem 'mysql2'
-gem 'pg'
+gem 'redis'
+gem 'redis-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -41,7 +42,8 @@ end
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-group :development do 
+group :development do
+	gem 'pry'
 	gem 'capistrano', '2.15.4'
 	gem 'rvm-capistrano'
 	gem 'net-ssh', '2.7.0'
@@ -51,13 +53,8 @@ group :development do
 	gem 'guard-bundler', group: :development
 end
 
-gem 'puma'
-gem 'foreman'
-gem "rack-timeout"
-
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-gem 'pry'
 gem 'daemons'
 gem 'delayed_job_active_record'
 
