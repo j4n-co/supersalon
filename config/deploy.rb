@@ -43,7 +43,7 @@ end
 namespace :deploy do
 
   task :restart, :roles => :app, :except => { :no_release => true } do
-    run "RAILS_ENV=production bundle exec foreman start"
+    run "service unicorn restart"
   end
 
   task :rechown, :roles => :app, :except => { :no_release => true } do
