@@ -14,6 +14,7 @@
 /log/*.log
 /tmp
 .DS_Store
+.AppleDouble
 ._*
 *.sublime-project
 *.sublime-workspace
