@@ -1,18 +1,18 @@
 <% ip = request.try(:location) %>
 <% ip = ip.try(:country) %> 
 
-<% if ip == 'Reserved' || ip.nil? %> 
-	<% c = Spree::Country.where(name:'Poland').first %> 
+<% if ip == 'Reserved' || ip.nil? || ip.blank? %> 
+	<% default_country = Spree::Country.where(name:'Poland').first %> 
 <% else %> 
-	<% c = Spree::Country.where(name:ip).first %> 
+	<% default_country = Spree::Country.where(name:ip).first %> 
 <% end %> 
-
-<% if Spree::AdvancedCart::Config[:enable_shipping_cost_calculation] %>
+ 
+ <% if Spree::AdvancedCart::Config[:enable_shipping_cost_calculation] && available_countries %>
   <div id="estimate_shipping_costs" class="links columns ten alpha">
     <h3><%= Spree.t(:calc_estimated_shipping_cost) %></h3>
     <%= form_tag estimate_shipping_cost_path, :remote => true, :method => :get do %>
       <%= label_tag Spree.t(:enter_zipcode) %>: 
-      <%= select_tag 'country_id', options_from_collection_for_select( available_countries, :id, :name, c.id) %>
+      <%= select_tag 'country_id', options_from_collection_for_select( available_countries, :id, :name, default_country.id) %>
       <span class="ajax_loader"><%= image_tag 'spinner.gif', :alt => Spree.t('loading') %></span>
       <%= submit_tag Spree.t("actions.calc") %>
 
