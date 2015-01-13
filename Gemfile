@@ -100,7 +100,9 @@ gem 'import_products', 						path: 'vendor/import-products' #major modifications
 
 gem 'sort_products_by_available_on',		path: 'vendor/sort_products_by_available_on'
 
-gem 'spree_simple_html_emails', 			path: './vendor/spree_simple_html_emails' #typo in generator
+gem 'spree_simple_html_emails', 			path: 'vendor/spree_simple_html_emails' #typo in generator
+
+gem 'spree_promotion_zones_rule', 			path: 'vendor/spree_promotion_zones_rule' #typo in generator
 
 
 #payu integration

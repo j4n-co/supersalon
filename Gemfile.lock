@@ -150,6 +150,12 @@ PATH
       spree_sample (~> 2.0)
 
 PATH
+  remote: vendor/spree_promotion_zones_rule
+  specs:
+    spree_promotion_zones_rule (2.1.4)
+      spree_core (~> 2.1.4)
+
+PATH
   remote: vendor/spree_simple_html_emails
   specs:
     spree_simple_html_emails (2.1)
@@ -646,6 +652,7 @@ DEPENDENCIES
   spree_multi_currency!
   spree_paypal_express!
   spree_print_invoice!
+  spree_promotion_zones_rule!
   spree_related_products!
   spree_simple_html_emails!
   spree_social!

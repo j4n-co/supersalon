@@ -11,4 +11,5 @@
  *= require store/spree_minicart
  *= stub store/spree_simple_html_emails
 
+ *= require spree/frontend/spree_promotion_zones_rule
 */

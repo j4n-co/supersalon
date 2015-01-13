@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140806151335) do
+ActiveRecord::Schema.define(version: 20150113102306) do
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -180,6 +180,14 @@ ActiveRecord::Schema.define(version: 20140806151335) do
     t.boolean  "states_required", default: false
     t.datetime "updated_at"
   end
+
+  create_table "spree_countries_promotion_rules", id: false, force: true do |t|
+    t.integer "country_id"
+    t.integer "promotion_rule_id"
+  end
+
+  add_index "spree_countries_promotion_rules", ["country_id"], name: "index_countries_promotion_rules_country_id", using: :btree
+  add_index "spree_countries_promotion_rules", ["promotion_rule_id"], name: "index_countries_promotion_rules_promotion_rule_id", using: :btree
 
   create_table "spree_credit_cards", force: true do |t|
     t.string   "month"
@@ -932,6 +940,14 @@ ActiveRecord::Schema.define(version: 20140806151335) do
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
   end
+
+  create_table "spree_zones_promotion_rules", force: true do |t|
+    t.integer "zone_id"
+    t.integer "promotion_rule_id"
+  end
+
+  add_index "spree_zones_promotion_rules", ["promotion_rule_id"], name: "index_spree_zones_promotion_rules_on_promotion_rule_id", using: :btree
+  add_index "spree_zones_promotion_rules", ["zone_id"], name: "index_spree_zones_promotion_rules_on_zone_id", using: :btree
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"

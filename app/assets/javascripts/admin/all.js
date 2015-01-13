@@ -15,3 +15,4 @@
 //= require jquery-fileupload
 //= require_tree .
 //= require admin/spree_editor
+//= require spree/backend/spree_promotion_zones_rule

@@ -15,3 +15,4 @@
 //= require store/spree_minicart
 //= require store/spree_i18n
 //= require_tree .
+//= require spree/frontend/spree_promotion_zones_rule
