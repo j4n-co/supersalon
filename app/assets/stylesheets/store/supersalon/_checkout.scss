@@ -111,7 +111,7 @@ body#cart #content a#checkout-link:hover {
 .select_wrapper select option {text-align: center;}
 
 .billing_fieldset_wrapper #bcountry-selection:after {
-	content: "25BC";
+	content: "\25BC";
 	position: absolute;
 	right: 3%;
 	top: 58%;
@@ -119,7 +119,7 @@ body#cart #content a#checkout-link:hover {
 }
 
 .select_wrapper:after {
-	content: "25BC";
+	content: "\25BC";
 	position: absolute;
 	right: 3%;
 	top: 0.6em;
