@@ -104,6 +104,9 @@ gem 'spree_simple_html_emails', 			path: 'vendor/spree_simple_html_emails' #typo
 
 gem 'spree_promotion_zones_rule', 			path: 'vendor/spree_promotion_zones_rule' #typo in generator
 
+gem 'sunspot_rails'
+gem 'sunspot_solr'
+gem 'spree_solr', path:'vendor/spree_solr'
 
 #payu integration
 gem 'openpayu'

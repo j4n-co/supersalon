@@ -3,7 +3,7 @@ Spree::HomeController.class_eval do
     respond_to :html
 
     def index
-      @searcher = build_searcher(params)
-      @products = @searcher.retrieve_products.order(available_on: :desc,created_at: :desc )
+      @searcher = build_searcher(:order_by=>'available_on', :page => params[:page] )
+      @products = @searcher.retrieve_products
     end
 end

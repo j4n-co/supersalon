@@ -10,7 +10,10 @@ Spree::TaxonsController.class_eval do
       @taxon = Spree::Taxon.find_by_permalink!(params[:id])
       return unless @taxon
 
-      @searcher = Spree::Config.searcher_class.new(params.merge(:taxon => @taxon.id))
+      #@searcher = Spree::Config.searcher_class.new(params.merge(:taxon => @taxon.id))
+      
+      @searcher = build_searcher(:order_by=>'available_on', :page => params[:page], :taxon => @taxon.id )
+
       @searcher.current_user = try_spree_current_user
       @searcher.current_currency = current_currency
       @products = @searcher.retrieve_products

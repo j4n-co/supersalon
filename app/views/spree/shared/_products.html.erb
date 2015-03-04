@@ -1,6 +1,6 @@
 <%
-  paginated_products = @searcher.retrieve_products if params.key?(:keywords)
-  paginated_products ||= products
+#  paginated_products = @searcher.retrieve_products if params.key?(:keywords)
+#  paginated_products ||= products
 %>
 
 <% if products.empty? %>
@@ -44,7 +44,6 @@
               <meta itemprop="price" content="<%=product.price%>" />
             </div>
           </div>
-          
         </div>
 
         <%= render :partial => 'spree/products/simple_cart_form', :locals => {:product => product}%>
@@ -54,6 +53,6 @@
   <% reset_cycle("classes") %>
 </ul>
 <% end %> 
-<% if paginated_products.respond_to?(:num_pages) %>
-  <%= paginate paginated_products, :window => 9 %>
+<% if products.respond_to?(:num_pages) %>
+  <%= paginate products, :window => 9 %>
 <% end %>
