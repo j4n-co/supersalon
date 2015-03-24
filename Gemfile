@@ -72,6 +72,8 @@ gem 'spree', '2.1.4'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-1-stable'
 gem 'spree_auth_devise', path: 'vendor/spree_auth_devise-2-1-stable' #changing views 
 
+gem 'globalize', '~> 4.0.3'
+
 #custom gems
 gem 'spree_static_content', 	github: 'spree/spree_static_content', 		:branch => '2-1-stable' #installed
 gem 'spree_related_products', 	github: 'spree/spree_related_products', 	:branch => '2-1-stable' #installed

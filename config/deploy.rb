@@ -2,7 +2,7 @@ require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'
 # require 'mina/rbenv'  # for rbenv support. (http://rbenv.org)
-# require 'mina/rvm'    # for rvm support. (http://rvm.io)
+require 'mina/rvm'    # for rvm support. (http://rvm.io)
 
 # Basic settings:
 #   domain       - The hostname to SSH to.
@@ -12,7 +12,7 @@ require 'mina/git'
 
 set :domain, '128.199.57.94'
 set :deploy_to, '/root/rails'
-set :repository, 'git@github.com:j4n-co/supersalon.git'
+set :repository, 'https://github.com/j4n-co/supersalon.git'
 set :branch, 'master'
 
 # For system-wide RVM install.
@@ -68,6 +68,9 @@ task :deploy => :environment do
     to :launch do
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
       queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
+      run "RAILS_ENV=production bundle exec rake sunspot:solr:start"
+      run "RAILS_ENV=production bundle exec rake sunspot:solr:reindex"
+      run "service nginx restart"
     end
   end
 end
