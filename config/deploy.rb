@@ -1,78 +1,81 @@
-require "rvm/capistrano"
-require 'bundler/capistrano'
-require './config/boot'
-require 'airbrake/capistrano'
+require 'mina/bundler'
+require 'mina/rails'
+require 'mina/git'
+# require 'mina/rbenv'  # for rbenv support. (http://rbenv.org)
+# require 'mina/rvm'    # for rvm support. (http://rvm.io)
 
-set :port, 22
-set :deploy_to, "/home/rails/"
-set :use_sudo, false
+# Basic settings:
+#   domain       - The hostname to SSH to.
+#   deploy_to    - Path to deploy into.
+#   repository   - Git repo to clone from. (needed by mina/git)
+#   branch       - Branch name to deploy. (needed by mina/git)
 
-default_run_options[:pty] = true
-ssh_options[:forward_agent] = true
+set :domain, '128.199.57.94'
+set :deploy_to, '/root/rails'
+set :repository, 'git@github.com:j4n-co/supersalon.git'
+set :branch, 'master'
 
-after "deploy", "deploy:cleanup", "deploy:rechown", "deploy:restart" # keep only the last 5 releases
+# For system-wide RVM install.
+#   set :rvm_path, '/usr/local/rvm/bin/rvm'
 
+# Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
+# They will be linked in the 'deploy:link_shared_paths' step.
+set :shared_paths, ['config/database.yml', 'log']
 
-#local deploy to DigitalOcean
-set :scm, :git 
-set :repository, "git@github.com:j4n-co/supersalon.git" 
-#set :deploy_via, :copy 
-set :user, "root"
-set :password, "supersalon"
+# Optional settings:
+   set :user, 'root'    # Username in the server to SSH to.
+   set :identity_file, '/home/jan/.ssh/supersalon_ubuntu-14.04' 
+#   set :port, '30000'     # SSH port number.
+#   set :forward_agent, true     # SSH forward_agent.
 
-set :server_ip, "supersalon.org"
-server server_ip, :app, :web, :primary => true
-set :rails_env, 'production'
+# This task is the environment that is loaded for most commands, such as
+# `mina deploy` or `mina rake`.
+task :environment do
+  # If you're using rbenv, use this to load the rbenv environment.
+  # Be sure to commit your .ruby-version or .rbenv-version to your repository.
+  # invoke :'rbenv:load'
 
-set :keep_releases, 3
-
-set :rvm_type, :user
-set :rvm_type, :system
-
-set :bundle_flags, "--deployment --verbose"
-
-#set :bundle_without, [:development, :test, :acceptance]
-
-role :db, server_ip, :primary => true 
-
-
-before "deploy:start" do
-  deploy.migrate
+  # For those using RVM, use this to load an RVM version@gemset.
+  # invoke :'rvm:use[ruby-1.9.3-p125@default]'
 end
 
-namespace :deploy do
+# Put any custom mkdir's in here for when `mina setup` is ran.
+# For Rails apps, we'll make some of the shared paths that are shared between
+# all releases.
+task :setup => :environment do
+  queue! %[mkdir -p "#{deploy_to}/#{shared_path}/log"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/log"]
 
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run "service unicorn restart"
-  end
+  queue! %[mkdir -p "#{deploy_to}/#{shared_path}/config"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/config"]
 
-  task :rechown, :roles => :app, :except => { :no_release => true } do
-    run "chown -R rails:www-data /home/rails"
-  end
-  
-  #namespace :assets do
-  #  
-  #  task :precompile, :roles => :web, :except => { :no_release => true } do
-  #    run "cd #{current_path} && #{rake} RAILS_ENV=#{rails_env} RAILS_GROUPS=assets assets:precompile --trace"
-  #  end
-  #
-  #end
-
+  queue! %[touch "#{deploy_to}/#{shared_path}/config/database.yml"]
+  queue  %[echo "-----> Be sure to edit '#{deploy_to}/#{shared_path}/config/database.yml'."]
 end
 
-# set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
+desc "Deploys the current version to the server."
+task :deploy => :environment do
+  deploy do
+    # Put things that will set up an empty directory into a fully set-up
+    # instance of your project.
+    invoke :'git:clone'
+    invoke :'deploy:link_shared_paths'
+    invoke :'bundle:install'
+    invoke :'rails:db_migrate'
+    invoke :'rails:assets_precompile'
+    invoke :'deploy:cleanup'
 
-#role :web, "your web-server here"                          # Your HTTP server, Apache/etc
-#role :app, "your app-server here"                          # This may be the same as your `Web` server
-#role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
+    to :launch do
+      queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
+      queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
+    end
+  end
+end
 
-# If you are using Passenger mod_rails uncomment this:
-# namespace :deploy do
-#   task :start do ; end
-#   task :stop do ; end
-#   task :restart, :roles => :app, :except => { :no_release => true } do
-#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-#   end
-# end
+# For help in making your deploy script, see the Mina documentation:
+#
+#  - http://nadarei.co/mina
+#  - http://nadarei.co/mina/tasks
+#  - http://nadarei.co/mina/settings
+#  - http://nadarei.co/mina/helpers
 

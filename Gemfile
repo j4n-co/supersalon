@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.1'
+ruby '2.2.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
@@ -46,8 +46,14 @@ end
 # Use Capistrano for deployment
 group :development do
 	gem 'pry'
-	gem 'capistrano', '2.15.4'
-	gem 'rvm-capistrano'
+	
+	gem 'capistrano', '~> 3.3.0'
+	gem 'capistrano-rails', '~> 1.1', require: false
+	gem 'capistrano-bundler', '~> 1.1'
+	gem 'capistrano-rvm'
+	gem 'capistrano-passenger'
+
+	gem 'rvm-capistrano', require: false
 	gem 'net-ssh', '2.7.0'
 	gem 'guard-rails', group: :development
 	gem 'guard-livereload', group: :development
