@@ -7,11 +7,11 @@
 # was   database: supersalon
 development:
   adapter: mysql2 
-  database: supersalon_production
+  database: supersalon
+  username: rails
+  password: Foyhir89iv
   host: localhost
-  username: root
-  password: rootytooty
-
+  timeout: 5000
 #development:
 #  adapter: sqlite3
 #  database: db/production.sqlite3
