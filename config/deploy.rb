@@ -65,15 +65,17 @@ task :deploy => :environment do
     invoke :'rails:db_migrate'
     #invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
-    invoke 'start_sunspot'
-    invoke 'force_precompile'
-    invoke 'restart'
+
+
 
     to :launch do
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/cache"
       queue "chmod 777 #{deploy_to}/#{current_path}/tmp/cache"
       queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
+      invoke 'start_sunspot'
+      invoke 'force_precompile'
+      invoke 'restart'
     end
   end
 end
