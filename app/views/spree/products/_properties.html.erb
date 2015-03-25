@@ -20,12 +20,14 @@
         <% end %>
         <% reset_cycle('properties') %>
         <% end %>
+        <% if @product.price_in(current_currency).amount %>
+
           <tr>
             <td>
-              <% if @product.price_in(current_currency) and !@product.price.nil? %>
                 <span itemprop="price"><%= @product.price_in(current_currency).display_price %></span>
-              <% end %>
             </td>
           </tr>
+          <% end %>
+
       </tbody>
     </table>

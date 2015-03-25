@@ -16,6 +16,13 @@ module Spree
       string :taxon_names, :multiple => true
       integer :taxons_ids, :multiple => true
       integer :id
+
+      Spree::Config.supported_currencies.split(',').each do |currency|  
+        double :"price_in_#{currency}" do
+          price_in(currency).amount
+        end
+      end
+    
     end
 
     Facets = %w(

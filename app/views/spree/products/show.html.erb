@@ -51,10 +51,19 @@
               <div class="row">
                 <%= render :partial => 'properties' %>
               </div>
-
+              
+              <% if @product.price_in(current_currency).amount %>
               <div id="cart-form" class="row" data-hook="cart_form">
                 <%= render :partial => 'cart_form' %>
               </div>
+              <% else  %>
+              <%#= render :partial => 'shared/switch_currency_button' %>
+              <%= form_tag(set_currency_path, :id=>'currency_button') do %>
+                <%= hidden_field :currency,'PLN' %>
+                <%= submit_tag 'Item only available in PLN' %>
+              <% end %> 
+                
+              <% end %>
           </div>   
         
         </div>

@@ -6,9 +6,13 @@ module Spree
 
       def initialize(params)
         page = (params[:page].to_i <= 0) ? 1 : params[:page].to_i
-        @search_result = Spree::Product.solr_search do
-          fulltext params[:keywords]
 
+        @current_currency = Spree::Config[:currency]
+
+        @search_result = Spree::Product.solr_search do
+          
+          fulltext params[:keywords]
+          
           # SEARCH BY TAXON
           if params[:taxon].present?
             with(:taxons_ids, params[:taxon])
@@ -17,6 +21,14 @@ module Spree
           # ORDER FILTERS
           if params[:order_by].present?
             order_by params[:order_by].to_sym, params[:order_sort].present? ? params[:order_sort].to_sym : :desc
+          end
+          
+          if params[:current_currency].present?
+            with(:"price_in_#{params[:current_currency]}").greater_than 0 
+          else 
+            if @current_currency
+              with(:"price_in_#{@current_currency}").greater_than 0               
+            end 
           end
 
           Spree::Search::Filters.instance.query_filters.each do |filter|

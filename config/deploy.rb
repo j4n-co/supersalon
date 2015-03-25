@@ -58,14 +58,15 @@ task :deploy => :environment do
   deploy do
     # Put things that will set up an empty directory into a fully set-up
     # instance of your project.
-    # invoke 'stop_sunspot'
+    invoke 'stop_sunspot'
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
     invoke :'rails:db_migrate'
-    invoke :'rails:assets_precompile'
+    #invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
     invoke 'start_sunspot'
+    invoke 'force_precompile'
     invoke 'restart'
 
     to :launch do
@@ -77,13 +78,21 @@ task :deploy => :environment do
   end
 end
 
+task :stop_sunspot do
+  if File.exists?('/root/rails/current/solr/pids/production/sunspot-solr-production.pid')
+    queue "cd /root/rails/current ; RAILS_ENV=production bundle exec rake sunspot:solr:stop"
+  end
+end
+
 task :start_sunspot do
+  
   queue "cd #{deploy_to}/current ; RAILS_ENV=production bundle exec rake sunspot:solr:start"
   queue "cd #{deploy_to}/current ; RAILS_ENV=production bundle exec rake sunspot:solr:reindex"
 end
 
-task :stop_sunspot do
-  queue "cd #{deploy_to}/current ; RAILS_ENV=production bundle exec rake sunspot:solr:stop"
+
+task :force_precompile do 
+  queue "cd /root/rails/current ; RAILS_ENV=production bundle exec rake assets:precompile"
 end
 
 task :restart do

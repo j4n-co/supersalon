@@ -57,4 +57,18 @@ $(document).ready(function(){
 		$('#top_nav_content .close').hide()
 		$('#top_nav_content').children().slideUp()
 	})
+
+
+	$('#currency_button').submit(function(e) {
+	  e.preventDefault(); 
+	  $.ajax({
+	    type: 'POST',
+	    url: $(this).attr('action'),
+	    data: {
+	      currency: 'PLN'
+	    }
+	  }).done(function() {
+	    return window.location.reload();
+	  });
+	});
 })

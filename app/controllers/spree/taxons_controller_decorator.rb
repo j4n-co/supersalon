@@ -12,7 +12,7 @@ Spree::TaxonsController.class_eval do
 
       #@searcher = Spree::Config.searcher_class.new(params.merge(:taxon => @taxon.id))
       
-      @searcher = build_searcher(:order_by=>'available_on', :page => params[:page], :taxon => @taxon.id )
+      @searcher = build_searcher(:order_by=>'available_on', :page => params[:page], :taxon => @taxon.id, :current_currency => current_currency )
 
       @searcher.current_user = try_spree_current_user
       @searcher.current_currency = current_currency
