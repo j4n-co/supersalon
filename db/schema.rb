@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150113102306) do
+ActiveRecord::Schema.define(version: 20150330183350) do
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -181,14 +181,6 @@ ActiveRecord::Schema.define(version: 20150113102306) do
     t.datetime "updated_at"
   end
 
-  create_table "spree_countries_promotion_rules", id: false, force: true do |t|
-    t.integer "country_id"
-    t.integer "promotion_rule_id"
-  end
-
-  add_index "spree_countries_promotion_rules", ["country_id"], name: "index_countries_promotion_rules_country_id", using: :btree
-  add_index "spree_countries_promotion_rules", ["promotion_rule_id"], name: "index_countries_promotion_rules_promotion_rule_id", using: :btree
-
   create_table "spree_credit_cards", force: true do |t|
     t.string   "month"
     t.string   "year"
@@ -316,15 +308,15 @@ ActiveRecord::Schema.define(version: 20150113102306) do
 
   create_table "spree_orders", force: true do |t|
     t.string   "number",               limit: 32
-    t.decimal  "item_total",                      precision: 10, scale: 0, default: 0,       null: false
-    t.decimal  "total",                           precision: 10, scale: 0, default: 0,       null: false
+    t.decimal  "item_total",                      precision: 10, scale: 2
+    t.decimal  "total",                           precision: 10, scale: 2
     t.string   "state"
-    t.decimal  "adjustment_total",                precision: 10, scale: 0, default: 0,       null: false
+    t.decimal  "adjustment_total",                precision: 10, scale: 2
     t.integer  "user_id"
     t.datetime "completed_at"
     t.integer  "bill_address_id"
     t.integer  "ship_address_id"
-    t.decimal  "payment_total",                   precision: 10, scale: 0, default: 0
+    t.decimal  "payment_total",                   precision: 10, scale: 2
     t.integer  "shipping_method_id"
     t.string   "shipment_state"
     t.string   "payment_state"
@@ -660,6 +652,7 @@ ActiveRecord::Schema.define(version: 20150113102306) do
     t.datetime "updated_at",   null: false
     t.string   "tracking_url"
     t.string   "admin_name"
+    t.integer  "sorted_order"
   end
 
   create_table "spree_shipping_methods_zones", id: false, force: true do |t|

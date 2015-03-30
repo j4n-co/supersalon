@@ -46,7 +46,6 @@ end
 # Use Capistrano for deployment
 group :development do
 	gem 'pry'
-	
 	gem 'capistrano', '~> 3.3.0'
 	gem 'capistrano-rails', '~> 1.1', require: false
 	gem 'capistrano-bundler', '~> 1.1'
@@ -121,4 +120,8 @@ gem 'spree_solr', path:'vendor/spree_solr'
 gem 'openpayu'
 
 gem 'spree_devise_simple_weight_calculator', path: 'vendor/spree_devise_simple_weight_calculator' #added currency preference. 
+
+#custom 
+gem 'spree_sorted_shipping_methods', path: 'vendor/spree_sorted_shipping_methods' #custom spree extension for sorting shipping.  
+
 

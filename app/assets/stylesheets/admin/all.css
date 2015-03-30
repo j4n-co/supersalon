@@ -15,10 +15,12 @@
  *= require admin/sort_products_by_available_on
  *= require admin/spree_editor
  *= require spree/backend/spree_promotion_zones_rule
+ *= require admin/spree_sorted_shipping_methods
 */
 
 /* temp removed require jquery.fileupload-ui  
  *= require admin/spree_editor
  *= require spree/backend/spree_promotion_zones_rule
+ *= require admin/spree_sorted_shipping_methods
 */
 

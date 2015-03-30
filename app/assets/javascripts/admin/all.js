@@ -16,3 +16,4 @@
 //= require_tree .
 //= require admin/spree_editor
 //= require spree/backend/spree_promotion_zones_rule
+//= require admin/spree_sorted_shipping_methods

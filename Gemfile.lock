@@ -181,6 +181,12 @@ PATH
     spree_sortable_prototype_properties (2.1.2.beta)
       spree_core (~> 2.1.2.beta)
 
+PATH
+  remote: vendor/spree_sorted_shipping_methods
+  specs:
+    spree_sorted_shipping_methods (2.1.4)
+      spree_core (~> 2.1.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -690,6 +696,7 @@ DEPENDENCIES
   spree_solr!
   spree_sort_products!
   spree_sortable_prototype_properties!
+  spree_sorted_shipping_methods!
   spree_static_content!
   sqlite3
   sunspot_rails

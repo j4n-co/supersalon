@@ -15,7 +15,7 @@
           <% end %> 
           <h3 class="stock-shipping-method-title"><%= Spree.t(:shipping_method) %></h3>
             
-          <% shipping_methods = ship_form.object.shipping_rates.with_shipping_method %> 
+          <% shipping_methods = ship_form.object.shipping_rates.with_shipping_method.sort_by!{ |r| r.shipping_method.position } %> 
           
           <% shipping_methods.each do |rt| %>
             <div class="radio_wrapper">

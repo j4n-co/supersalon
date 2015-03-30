@@ -81,7 +81,8 @@ task :deploy => :environment do
 end
 
 task :stop_sunspot do
-  if File.exists?('/root/rails/current/solr/pids/production/sunspot-solr-production.pid').to be_truthy
+  queue 'sudo service nginx stop'
+  if File.exists?('/root/rails/current/solr/pids/production/sunspot-solr-production.pid')
     queue "cd /root/rails/current ; RAILS_ENV=production bundle exec rake sunspot:solr:stop"
   end
 end
@@ -98,7 +99,7 @@ task :force_precompile do
 end
 
 task :restart do
-      queue 'sudo service nginx restart'
+      queue 'sudo service nginx start'
 end
 
 # For help in making your deploy script, see the Mina documentation:
