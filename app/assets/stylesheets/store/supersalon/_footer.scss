@@ -16,6 +16,14 @@
 	text-align: center; 
 	table {
 		border: none; 
+		width: auto !important; 
+	}
+	table * {
+		border:none !important; 
+	}
+	table td{
+		padding-top: 0; 
+		vertical-align: top; 
 	}
 	a {
 		border-bottom: 2px transparent; 
@@ -46,11 +54,7 @@
 		max-width: 50%;
 		height: 130px;
 	}
-	#footer-address{
-		-webkit-columns: auto 2;
-		   -moz-columns: auto 2;
-		        columns: auto 2;
-	}
+
 	.footer-column {
 		vertical-align: top;
 		padding-left: 2em; 
