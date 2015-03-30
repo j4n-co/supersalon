@@ -81,7 +81,7 @@ task :deploy => :environment do
 end
 
 task :stop_sunspot do
-  if File.exists?('/root/rails/current/solr/pids/production/sunspot-solr-production.pid')
+  if File.exists?('/root/rails/current/solr/pids/production/sunspot-solr-production.pid').to be_truthy
     queue "cd /root/rails/current ; RAILS_ENV=production bundle exec rake sunspot:solr:stop"
   end
 end
