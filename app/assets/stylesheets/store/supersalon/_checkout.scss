@@ -87,11 +87,13 @@ body#cart #content a#checkout-link:hover {
 	color: white;
 }
 
-.select_wrapper {
+.select_wrapper, .radio_wrapper {
 	display: inline-block;
 	position: relative;
 	width: 90%;
 	margin-bottom: 1em;
+	text-align: left; 
+	cursor: pointer; 
 }
 
 .select_wrapper select {

@@ -6,7 +6,7 @@
     
     if (delivery_form.is('*')) {
 
-      delivery_form.find('select').change(function(){
+      delivery_form.find('input').change(function(){
         
         $.ajax({
                type: delivery_form.attr('method'),

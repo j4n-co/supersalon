@@ -120,7 +120,5 @@ gem 'spree_solr', path:'vendor/spree_solr'
 #payu integration
 gem 'openpayu'
 
-#adding currency. 
-gem 'spree_devise_simple_weight_calculator', path: 'vendor/spree_devise_simple_weight_calculator'
-
+gem 'spree_devise_simple_weight_calculator', path: 'vendor/spree_devise_simple_weight_calculator' #added currency preference. 
 

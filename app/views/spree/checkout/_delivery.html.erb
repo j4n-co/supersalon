@@ -16,9 +16,15 @@
           <h3 class="stock-shipping-method-title"><%= Spree.t(:shipping_method) %></h3>
             
           <% shipping_methods = ship_form.object.shipping_rates.with_shipping_method.reverse %> 
-          <div class="select_wrapper">
-          <%= ship_form.collection_select(:selected_shipping_rate_id, shipping_methods, :id, :name_with_price ) %> 
-          </div>
+          
+          <% shipping_methods.each do |rt| %>
+            <div class="radio_wrapper">
+              <%= ship_form.radio_button :selected_shipping_rate_id, rt.id %>
+              <%= ship_form.label 'selected_shipping_rate_id'+'_'+rt.id.to_s, rt.name_with_price %>
+            </div>
+          <% end %>
+
+          <%#= ship_form.collection_select(:selected_shipping_rate_id, shipping_methods, :id, :name_with_price ) %> 
 
           <table class="stock-contents" data-hook="stock-contents">
             <colgroup>
