@@ -1,64 +1,48 @@
 <footer id="footer">
 
-  <div id="sidebar"></div>
   <div class="footer-content">
 
 
-    <div id="map-canvas">
+    <div class="footer-column" id="map-canvas">
         
         <div class="map-content">
-            <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Super+Salon,+Chmielna,+Warsaw,+Poland&amp;aq=0&amp;oq=super+salon+warszaw&amp;sll=47.696454,13.345766&amp;sspn=5.07307,10.316162&amp;ie=UTF8&amp;hq=Super+Salon,&amp;hnear=Chmielna,+Warszawa,+Poland&amp;ll=52.23326,21.017497&amp;spn=0.004508,0.010074&amp;t=m&amp;z=13&amp;iwloc=A&amp;cid=3528684786255712438&amp;output=embed&amp;iwloc=near"></iframe>
-            <br />
-            <small>
-                <a style="color:black;" href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Super+Salon,+Chmielna,+Warsaw,+Poland&amp;aq=0&amp;oq=super+salon+warszaw&amp;sll=47.696454,13.345766&amp;sspn=5.07307,10.316162&amp;ie=UTF8&amp;hq=Super+Salon,&amp;hnear=Chmielna,+Warszawa,+Poland&amp;ll=52.23326,21.017497&amp;spn=0.004508,0.010074&amp;t=m&amp;z=14&amp;iwloc=A&amp;cid=3528684786255712438" style="color:#0000FF;text-align:left">
-                View Larger Map
-                </a>
-            </small>
+            <a href="https://www.google.com/maps/place/Super+Salon/@52.2332101,21.0173606,18z/data=!4m6!1m3!3m2!1s0x471eccf431583953:0x30f8681e0918d0b6!2sSuper+Salon!3m1!1s0x471eccf431583953:0x30f8681e0918d0b6">
+            <%= image_tag("map-supersalon.jpg") %>
+            </a> 
         </div>
 
     </div>
     
-    <div class="footer_links" style="width:13%;" id="footer-address" itemscope itemtype="http://schema.org/LocalBusiness">
-      <!-- <span class="fn"><a class="url" href="#">Super Salon:</a></span> --> 
-      <div  itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-        <!-- <span class="fn">Krzysztof Kowalski</span><br> --> 
-        <h4 class="footer-header"><span class="name">Super Salon</span> Shop: </h4> 
-        <span itemprop="streetAddress">Chmielna 10</span><br>
-        <span itemprop="postalCode">00-020</span>
-        <span itemprop="addressLocality">Warszawa</span><br>
-        <meta itemprop="addressCountry" content="PL" itemtype="http://schema.org/Country"/>
+    <div class="footer-column" itemscope itemtype="http://schema.org/LocalBusiness">
+        <h4> Super Salon Shop </h4>
+        <div id="footer-address">
+            <%= render_snippet('footer-text') %> 
+        </div>
+    </div>
+    
+    <% if SpreeI18n::Config.supported_locales.size > 1 %>
+      <div id="locale-select" style="display:none;" data-hook>
+        <%= form_tag(set_locale_path) do %>
+          <label for="locale"><%= Spree.t(:'i18n.language') %>:</label>
+          <%= select_tag(:locale, options_for_select(supported_locales_options, I18n.locale),
+                         :data => { :href => set_locale_path }) %>
+          <noscript>
+            <%= submit_tag %>
+          </noscript>
+        <% end %>
       </div>
-        <span itemprop="openingHours" itemref="footer-address" content="Mo-Sa 11:00-19:00">Mon – Sat / 11 – 19</span><br/>
-        <span itemprop="telephone">(+48) 22 468 16 19</span>
-        <span itemprop='email'>shop@supersalon.org</span>
-      <br>
+    <% end %>
 
-
-      <% if SpreeI18n::Config.supported_locales.size > 1 %>
-        <div id="locale-select" style="float: right; margin-right: 10px;" data-hook>
-          <%= form_tag(set_locale_path) do %>
-            <label for="locale"><%= Spree.t(:'i18n.language') %>:</label>
-            <%= select_tag(:locale, options_for_select(supported_locales_options, I18n.locale),
-                           :data => { :href => set_locale_path }) %>
-            <noscript>
-              <%= submit_tag %>
-            </noscript>
-          <% end %>
-        </div>
-      <% end %>
-
-    </div>
-    
-    <div id="footer-pages-deface" class="footer_links legal">
-      <h4 class="footer-header"><a href="/info">Info:</a></h4>
-      <!-- insert_bottom '#main-nav-bar' -->
+    <div id="footer-pages-deface" class="footer-column legal">
+      <h4 class="footer-header">Info</h4>
     </div>
  	  
-    <div id="mailing_list" style="width:25%;" class="footer_links mailing-list">
+
+</div>
+
+</footer>
+
 <!-- Begin MailChimp Signup Form -->
-
-<!-- <script src="http://malsup.github.com/jquery.form.js"></script> -->
-
 <script type="text/javascript">
 var fnames = new Array();var ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';
 try {
@@ -228,10 +212,5 @@ function mce_success_cb(resp){
 }
 
 </script>
-<!--End mc_embed_signup--> 
-    </div>
-</div>
-<p style="float:left;width:100%;margin-top:2em;">
-  <%#= image_tag("transferuj-full-1000x51.png") %> 
-</p>
-</footer>
+<!--End mailchimp mc_embed_signup--> 
+

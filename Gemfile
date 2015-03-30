@@ -81,7 +81,8 @@ gem 'spree_paypal_express', 	github: "radar/better_spree_paypal_express",:branch
 gem 'spree_i18n', 				github: 'spree/spree_i18n', 				:branch => "2-1-stable" #installed
 gem 'spree_social', 			github: 'spree/spree_social', 				:branch => "2-1-stable" #installed
 gem 'spree_print_invoice' , 	github: 'spree/spree_print_invoice', 		:branch => '2-1-stable' #installed
-gem 'spree_blogging_spree', 	github: 'stefansenk/spree-blogging-spree', 	:branch => "2-1-stable" #installed
+#using tumblr for blogging instead
+#gem 'spree_blogging_spree', 	github: 'stefansenk/spree-blogging-spree', 	:branch => "2-1-stable" #installed
 gem 'spree_editor', 			github: 'spree/spree_editor', 				:branch => '2-1-stable' #installed
 gem 'tinymce-rails-langs'
 
@@ -118,9 +119,8 @@ gem 'spree_solr', path:'vendor/spree_solr'
 
 #payu integration
 gem 'openpayu'
-#gem 'spree_open_payu', 						path: 'spree_open_payu'
-#gem 'faraday'
-#gem 'faraday_middleware'
-#gem 'spree_pay_u', path: 'vendor/spree_pay_u'
 
-#gem "payu_rails", git: "https://github.com/pibako/payu_rails"
+#adding currency. 
+gem 'spree_devise_simple_weight_calculator', path: 'vendor/spree_devise_simple_weight_calculator'
+
+
