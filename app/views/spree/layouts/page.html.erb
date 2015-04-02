@@ -1,0 +1,59 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if gt IE 9]><!--><html lang="<%= I18n.locale %>"><!--<![endif]-->
+  <head data-hook="inside_head">
+    <%= render :partial => 'spree/shared/head' %>
+  </head>
+  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+    <div class="container_20 container">
+
+      <%= render :partial => 'spree/shared/header' %>
+      <%#from multi-currency plugin %>
+
+      <div id="content" class="static-page-content" data-hook>
+
+        <%= flash_messages %>
+        
+        <% unless defined? @page %> 
+          <%= render :partial => 'spree/shared/taxonomies' %>
+          <%= render :partial => 'spree/shared/search' %>
+
+        <aside id="sidebar" class="columns three" data-hook>
+            <% if content_for?(:sidebar) %>  
+              <%= render :partial => 'spree/shared/sidebar' %>
+            <% end %> 
+        </aside>
+
+          <% unless @body_id == 'cart' %> 
+            <%= breadcrumbs(@taxon) %>
+          <% end %> 
+        
+
+        <% else %> 
+          <div class="columns twelve alpha omega row"></div>
+          <%= render :partial => 'spree/shared/search' %>
+        <% end %> 
+
+        <%= yield %>
+      </div>
+
+ 
+      <% if params[:show] == 'grid' %> 
+      <%= render :partial => 'spree/layouts/grid_overlay' %>
+      <% end %>
+
+    </div>
+
+
+    <%= render :partial => 'spree/shared/footer' %>
+
+    <%= render :partial => 'spree/shared/google_analytics' %>
+    
+    <%= yield :social_scripts %>
+
+
+  </body>
+</html>
