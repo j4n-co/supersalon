@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150330183350) do
+ActiveRecord::Schema.define(version: 20150506151048) do
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -331,6 +331,7 @@ ActiveRecord::Schema.define(version: 20150330183350) do
     t.decimal  "tax_total",                       precision: 10, scale: 2, default: 0.0,     null: false
     t.integer  "invoice_number"
     t.date     "invoice_date"
+    t.boolean  "agreed_to_terms",                                          default: false
   end
 
   add_index "spree_orders", ["completed_at"], name: "index_spree_orders_on_completed_at", using: :btree
@@ -652,7 +653,7 @@ ActiveRecord::Schema.define(version: 20150330183350) do
     t.datetime "updated_at",   null: false
     t.string   "tracking_url"
     t.string   "admin_name"
-    t.integer  "sorted_order"
+    t.integer  "position"
   end
 
   create_table "spree_shipping_methods_zones", id: false, force: true do |t|

@@ -1092,7 +1092,7 @@ en:
     updating: Updating
     usage_limit: Usage Limit
     use_as_shipping_address: Use as Shipping Address
-    use_billing_address: Use Billing Address
+    use_billing_address: Ship to Billing Address
     use_different_shipping_address: "Use Different Shipping Address"
     use_new_cc: "Use a new card"
     use_s3: "Use Amazon S3 For Images"

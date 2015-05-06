@@ -93,6 +93,9 @@ gem 'premailer-rails' #used with spree_simple_html_emails gems
 #gem 'spree_multi_currency', 				path: 'vendor/spree_multi_currency' #installed in vendor - modified routes for rails 4
 gem 'spree_multi_currency', 				github: 'joshblour/spree_multi_currency', :branch => '2-1-stable' #installed in vendor - modified routes for rails 4
 
+#change
+gem 'spree_terms_and_conditions', github: 'sytzeloor/spree_agree_to_terms', :branch => '2-1-stable'
+
 gem 'spree_sortable_prototype_properties',	path: 'vendor/spree_sortable_prototype_properties' #installed in vendor - no mods needed
 gem 'spree_bank_transfer',					path: 'vendor/spree_bank_transfer' #installed, modified spree from 2.0.5 to 2.1.4
 gem 'spree_ajax_add_to_cart',  				path: 'vendor/spree_ajax_add_to_cart' 	#installed in vendor - need bump in spree from 2.0.0 to 2.1.4, 
@@ -123,5 +126,4 @@ gem 'spree_devise_simple_weight_calculator', path: 'vendor/spree_devise_simple_w
 
 #custom 
 gem 'spree_sorted_shipping_methods', path: 'vendor/spree_sorted_shipping_methods' #custom spree extension for sorting shipping.  
-
 

@@ -80,6 +80,14 @@ GIT
       spree_core (~> 2.1.0)
 
 GIT
+  remote: git://github.com/sytzeloor/spree_agree_to_terms.git
+  revision: 6acdad988dbe5a998122fdfd1b27701477624014
+  branch: 2-1-stable
+  specs:
+    spree_agree_to_terms (2.1.3)
+      spree_core (~> 2.1.3)
+
+GIT
   remote: https://github.com/spree/spree_gateway.git
   revision: ab4dcb885418d01931897895cb1b2fd682009d15
   branch: 2-1-stable
@@ -678,6 +686,7 @@ DEPENDENCIES
   sort_products_by_available_on!
   spree (= 2.1.4)
   spree_advanced_cart!
+  spree_agree_to_terms!
   spree_ajax_add_to_cart!
   spree_auth_devise!
   spree_bank_transfer!

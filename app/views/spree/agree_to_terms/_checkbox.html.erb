@@ -1,0 +1,9 @@
+<hr />
+<div id="agree_to_terms" style="text-align:center;">
+	<%= label_tag :order_agreed_to_terms, :class=>'required' do%>
+	<span class="required">I agree to the <%= link_to 'terms of service', Spree::AgreeToTerms::Config[:agree_to_terms_url], :class=>'required terms' %>*</span>	
+	<%#Spree::AgreeToTerms::Config[:agree_to_terms_label]%> 
+	<% end %>
+
+    <%= order_form.check_box(:agreed_to_terms) %>
+</div>

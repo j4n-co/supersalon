@@ -11,20 +11,33 @@
   <fieldset id="shipping" data-hook>
     <%= form.fields_for :ship_address do |ship_form| %>
       <legend align="center"><%= Spree.t(:shipping_address) %></legend>
-      <p class="field checkbox" data-hook="use_billing" style="width: 100%;">
+      <div class="field checkbox" data-hook="use_billing" style="width: 100%;">
         <%= check_box_tag 'order[use_billing]', '1', @order.shipping_eq_billing_address? %>
         <%= label_tag :order_use_billing, Spree.t(:use_billing_address), :id => 'use_billing' %>
-      </p>
-      <br>
+      </div>
       <%= render :partial => 'spree/address/form', :locals => { :form => ship_form, :address_type => 'shipping', :address => @order.ship_address } %>
     <% end %>
+
+    <span class="field" data-hook="save_user_address">
+      <%= check_box_tag 'save_user_address', '1', try_spree_current_user.respond_to?(:persist_order_address) %>
+      <%= label_tag :save_user_address, Spree.t(:save_my_address) %>
+    </span>
+
   </fieldset>
+
+
 </div>
+
+
 <div class="form-buttons" data-hook="buttons">
-  <span data-hook="save_user_address">
-    &nbsp; &nbsp;
-    <%= check_box_tag 'save_user_address', '1', try_spree_current_user.respond_to?(:persist_order_address) %>
-    <%= label_tag :save_user_address, Spree.t(:save_my_address) %>
-  </span>
+
+  <div class="field" style="margin-bottom:2em;">
+    <%= render :partial =>'spree/agree_to_terms/checkbox', :locals => { :order_form => form}%>
+  </div>
+
   <%= submit_tag Spree.t(:save_and_continue), :class => 'continue button primary', :id=>"commit" %>
+
+  <div style="margin-top:2em;">
+  (<span class="required">*</span>) are required fields
+  </div>
 </div>

@@ -16,6 +16,16 @@ body#cart input[type='submit'] {
 	font-size: 18px;
 }
 
+body#cart span.required{
+	color: #BD0021; 
+}
+
+
+body#cart a.terms{
+	text-decoration: underline; 
+	color: #BD0021;
+}
+
 body#cart #content a#checkout-link {
 	font-size: 24px;
 	color: black;
@@ -72,7 +82,7 @@ body#cart #content a#checkout-link:hover {
 }
 
 #checkout .form-buttons {
-	text-align: right;
+	//text-align: right;
 	padding: 0.35em 0.625em 0.75em;
 }
 
