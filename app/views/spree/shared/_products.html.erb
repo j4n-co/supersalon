@@ -39,9 +39,21 @@
             </div>
 
             <div itemprop="offers" itemscope itemtype="http://data-vocabulary.org/Offer" class="product-price"> 
-              <%= product.price_in(current_currency).display_price %>
-              <meta itemprop="priceCurrency" content="<%=current_currency%>" />
-              <meta itemprop="price" content="<%=product.price%>" />
+              <% if product.on_sale? %> 
+                <span class="sale-price"> 
+                <%= product.price_in(current_currency).display_price %>
+                <span> 
+                <span class="original-price"> 
+                <%= product.original_price %> 
+                </span>
+                <meta itemprop="priceCurrency" content="<%=current_currency%>" />
+                <meta itemprop="price" content="<%=product.price%>" />
+
+              <% else %> 
+                <%= product.price_in(current_currency).display_price %>
+                <meta itemprop="priceCurrency" content="<%=current_currency%>" />
+                <meta itemprop="price" content="<%=product.price%>" />
+              <% end %> 
             </div>
           </div>
         </div>

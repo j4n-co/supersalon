@@ -112,3 +112,22 @@
 	width: 100px;
 }
 
+.sale-price{
+	color: red; 
+}
+.original-price{
+	position: relative; 
+	color: #888;   
+	margin-left: 10px; 
+}
+.original-price:after{
+	content: " ";
+	width: 120%;
+	height: 3px;
+	display: inline-block;
+	position: absolute;
+	top: 29%;
+	left: -10%;
+	background-color: #888;
+	opacity: 0.5; 
+}

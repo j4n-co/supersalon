@@ -74,7 +74,7 @@ gem 'spree_auth_devise', path: 'vendor/spree_auth_devise-2-1-stable' #changing v
 gem 'globalize', '~> 4.0.3'
 
 #custom gems
-gem 'spree_static_content', 	github: 'spree/spree_static_content', 		:branch => '2-1-stable' #installed
+#gem 'spree_static_content', 	github: 'spree/spree_static_content', 		:branch => '2-1-stable' #installed
 gem 'spree_related_products', 	github: 'spree/spree_related_products', 	:branch => '2-1-stable' #installed
 gem 'spree_paypal_express', 	github: "radar/better_spree_paypal_express",:branch => "2-1-stable" #installed
 gem 'spree_i18n', 				github: 'spree/spree_i18n', 				:branch => "2-1-stable" #installed
@@ -94,7 +94,7 @@ gem 'premailer-rails' #used with spree_simple_html_emails gems
 gem 'spree_multi_currency', 				github: 'joshblour/spree_multi_currency', :branch => '2-1-stable' #installed in vendor - modified routes for rails 4
 
 #change
-gem 'spree_terms_and_conditions', github: 'sytzeloor/spree_agree_to_terms', :branch => '2-1-stable'
+gem 'spree_agree_to_terms', github:'sytzeloor/spree_agree_to_terms', :branch => '2-1-stable'
 
 gem 'spree_sortable_prototype_properties',	path: 'vendor/spree_sortable_prototype_properties' #installed in vendor - no mods needed
 gem 'spree_bank_transfer',					path: 'vendor/spree_bank_transfer' #installed, modified spree from 2.0.5 to 2.1.4
@@ -119,6 +119,9 @@ gem 'sunspot_rails'
 gem 'sunspot_solr'
 gem 'spree_solr', path:'vendor/spree_solr'
 
+#static content and blog
+gem 'spree_essential_content', :github => 'FineLineAutomation/spree_essential_content', :branch => '2-1-stable'
+
 #payu integration
 gem 'openpayu'
 
@@ -126,4 +129,8 @@ gem 'spree_devise_simple_weight_calculator', path: 'vendor/spree_devise_simple_w
 
 #custom 
 gem 'spree_sorted_shipping_methods', path: 'vendor/spree_sorted_shipping_methods' #custom spree extension for sorting shipping.  
+
+#sales
+gem 'spree_sales', :path => 'vendor/spree_sales-2-1-stable'
+#gem 'spree_sale_prices', path: 'vendor/spree_sale_prices'
 

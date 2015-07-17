@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150506151048) do
+ActiveRecord::Schema.define(version: 20150717115612) do
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -154,6 +154,13 @@ ActiveRecord::Schema.define(version: 20150506151048) do
 
   add_index "spree_blog_entries", ["author_id"], name: "index_spree_blog_entries_on_author_id", using: :btree
 
+  create_table "spree_blogs", force: true do |t|
+    t.string   "name"
+    t.string   "permalink"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "spree_calculators", force: true do |t|
     t.string   "type"
     t.integer  "calculable_id"
@@ -170,6 +177,23 @@ ActiveRecord::Schema.define(version: 20150506151048) do
   end
 
   add_index "spree_configurations", ["name", "type"], name: "index_spree_configurations_on_name_and_type", using: :btree
+
+  create_table "spree_contents", force: true do |t|
+    t.integer  "page_id"
+    t.string   "title"
+    t.text     "body"
+    t.string   "link"
+    t.string   "link_text"
+    t.string   "context"
+    t.boolean  "hide_title",              default: false
+    t.integer  "position",                default: 999
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "spree_countries", force: true do |t|
     t.string   "iso_name"
@@ -348,16 +372,43 @@ ActiveRecord::Schema.define(version: 20150506151048) do
     t.boolean  "show_in_footer",           default: false, null: false
     t.string   "foreign_link"
     t.integer  "position",                 default: 1,     null: false
-    t.boolean  "visible",                  default: true
+    t.boolean  "visible",                  default: false
     t.string   "meta_keywords"
     t.string   "meta_description"
     t.string   "layout"
     t.boolean  "show_in_sidebar",          default: false, null: false
     t.string   "meta_title"
     t.boolean  "render_layout_as_partial", default: false
+    t.string   "nav_title"
+    t.string   "path"
+    t.boolean  "accessible",               default: true
   end
 
   add_index "spree_pages", ["slug"], name: "index_pages_on_slug", using: :btree
+
+  create_table "spree_pages_old", force: true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "slug"
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.boolean  "show_in_header",           default: false, null: false
+    t.boolean  "show_in_footer",           default: false, null: false
+    t.string   "foreign_link"
+    t.integer  "position",                 default: 1,     null: false
+    t.boolean  "visible",                  default: false
+    t.string   "meta_keywords"
+    t.string   "meta_description"
+    t.string   "layout"
+    t.boolean  "show_in_sidebar",          default: false, null: false
+    t.string   "meta_title"
+    t.boolean  "render_layout_as_partial", default: false
+    t.string   "nav_title"
+    t.string   "path"
+    t.boolean  "accessible",               default: true
+  end
+
+  add_index "spree_pages_old", ["slug"], name: "index_pages_on_slug", using: :btree
 
   create_table "spree_payment_methods", force: true do |t|
     t.string   "type"
@@ -408,6 +459,37 @@ ActiveRecord::Schema.define(version: 20150506151048) do
   end
 
   add_index "spree_paypal_express_checkouts", ["transaction_id"], name: "index_spree_paypal_express_checkouts_on_transaction_id", using: :btree
+
+  create_table "spree_post_categories", force: true do |t|
+    t.string   "name"
+    t.string   "permalink"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spree_post_categories_posts", id: false, force: true do |t|
+    t.integer "post_id"
+    t.integer "post_category_id"
+  end
+
+  create_table "spree_post_products", force: true do |t|
+    t.integer "post_id"
+    t.integer "product_id"
+    t.integer "position"
+  end
+
+  create_table "spree_posts", force: true do |t|
+    t.string   "title"
+    t.string   "path"
+    t.string   "teaser"
+    t.datetime "posted_at"
+    t.text     "body"
+    t.string   "author"
+    t.boolean  "live",       default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "blog_id"
+  end
 
   create_table "spree_preferences", force: true do |t|
     t.text     "value"
@@ -612,6 +694,20 @@ ActiveRecord::Schema.define(version: 20150506151048) do
 
   add_index "spree_roles_users", ["role_id"], name: "index_spree_roles_users_on_role_id", using: :btree
   add_index "spree_roles_users", ["user_id"], name: "index_spree_roles_users_on_user_id", using: :btree
+
+  create_table "spree_sale_prices", force: true do |t|
+    t.integer  "price_id"
+    t.decimal  "value",      precision: 10, scale: 2, null: false
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.boolean  "enabled"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "spree_sale_prices", ["price_id", "start_at", "end_at", "enabled"], name: "index_active_sale_prices_for_price", using: :btree
+  add_index "spree_sale_prices", ["price_id"], name: "index_sale_prices_for_price", using: :btree
+  add_index "spree_sale_prices", ["start_at", "end_at", "enabled"], name: "index_active_sale_prices_for_all_variants", using: :btree
 
   create_table "spree_shipments", force: true do |t|
     t.string   "tracking"
@@ -953,11 +1049,14 @@ ActiveRecord::Schema.define(version: 20150506151048) do
     t.datetime "created_at"
   end
 
-  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
   add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
 
   create_table "tags", force: true do |t|
-    t.string "name"
+    t.string  "name"
+    t.integer "taggings_count", default: 0
   end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
 end

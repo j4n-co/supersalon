@@ -1,0 +1,74 @@
+<table class="index" data-hook="sale_price_table" id="product_sale_prices">
+  <colgroup>
+    <col style="width: 15%"></col>
+    <col style="width: 5%"></col>
+    <col style="width: 15%"></col>
+    <col style="width: 15%"></col>
+    <col style="width: 20%"></col>
+    <col style="width: 20%"></col>
+    <col style="width: 10%"></col>
+  </colgroup>
+  <thead>
+    <tr data-hook="products_header">
+      <th>
+        <%= Spree.t('sku') %>
+      </th>
+      <th>
+        <%= Spree.t('sale_price_active') %>
+      </th>
+      <th>
+        <%= Spree.t('price') %>
+      </th>
+      <th>
+        <%= Spree.t('sale_price') %>
+      </th>
+      <th>
+        <%= Spree.t('sale_price_start_at') %>
+      </th>
+      <th>
+        <%= Spree.t('sale_price_end_at') %>
+      </th>
+      <th>
+        <%= Spree.t('sale_price_enabled') %>
+      </th>
+      <th class="actions"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if product.variants.blank? %> 
+    <% if product.on_sale? %>
+      <% sale_price = product.master.sale_prices.first %>
+      <tr class="spree-product-sale-price" data-hook="products_row" id="<%= spree_dom_id(product) %>">
+        <td>
+          <%= product.sku %>
+        </td>
+        <td>
+          <%=  active_for_sale_price(product.master, sale_price) ? Spree.t(:yes) : '' %>
+        </td>
+        <td>
+          <%= display_original_price(product) %>
+        </td>
+        <td>
+          <%= product.display_price.to_html %>
+        </td>
+        <td>
+          <%= sale_price.start_at.to_date %>
+        </td>
+        <td>
+          <%= sale_price.end_at.to_date %>
+        </td>
+        <td>
+          <%= sale_price.enabled %>
+        </td>
+        <td class="actions">
+          <%= link_to_delete sale_price, {:url => admin_product_sale_price_url(product, sale_price.id), :no_text => true} %>
+        </td>
+      </tr>
+    <% end %>
+
+    <%= render partial: "variant", collection: product.master, locals: {product: product} %>
+    <% else %> 
+    <%= render partial: "variant", collection: product.variants, locals: {product: product} %>
+    <% end %> 
+  </tbody>
+</table>
