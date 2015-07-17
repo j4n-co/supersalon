@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150717115612) do
+ActiveRecord::Schema.define(version: 20150717211650) do
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -28,6 +28,53 @@ ActiveRecord::Schema.define(version: 20150717115612) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+
+  create_table "contents", force: true do |t|
+    t.integer  "page_id"
+    t.string   "title"
+    t.text     "body"
+    t.string   "link"
+    t.string   "link_text"
+    t.string   "context"
+    t.boolean  "hide_title",              default: false
+    t.integer  "position",                default: 999
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "post_categories", force: true do |t|
+    t.string   "name"
+    t.string   "permalink"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "post_categories_posts", id: false, force: true do |t|
+    t.integer "post_id"
+    t.integer "post_category_id"
+  end
+
+  create_table "post_products", force: true do |t|
+    t.integer "post_id"
+    t.integer "product_id"
+    t.integer "position"
+  end
+
+  create_table "posts", force: true do |t|
+    t.string   "title"
+    t.string   "path"
+    t.string   "teaser"
+    t.datetime "posted_at"
+    t.text     "body"
+    t.string   "author"
+    t.boolean  "live",       default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "spree_activator_translations", force: true do |t|
     t.integer  "spree_activator_id"
@@ -332,15 +379,15 @@ ActiveRecord::Schema.define(version: 20150717115612) do
 
   create_table "spree_orders", force: true do |t|
     t.string   "number",               limit: 32
-    t.decimal  "item_total",                      precision: 10, scale: 2
-    t.decimal  "total",                           precision: 10, scale: 2
+    t.decimal  "item_total",                      precision: 10, scale: 0, default: 0,       null: false
+    t.decimal  "total",                           precision: 10, scale: 0, default: 0,       null: false
     t.string   "state"
-    t.decimal  "adjustment_total",                precision: 10, scale: 2
+    t.decimal  "adjustment_total",                precision: 10, scale: 0, default: 0,       null: false
     t.integer  "user_id"
     t.datetime "completed_at"
     t.integer  "bill_address_id"
     t.integer  "ship_address_id"
-    t.decimal  "payment_total",                   precision: 10, scale: 2
+    t.decimal  "payment_total",                   precision: 10, scale: 0, default: 0
     t.integer  "shipping_method_id"
     t.string   "shipment_state"
     t.string   "payment_state"
@@ -372,16 +419,13 @@ ActiveRecord::Schema.define(version: 20150717115612) do
     t.boolean  "show_in_footer",           default: false, null: false
     t.string   "foreign_link"
     t.integer  "position",                 default: 1,     null: false
-    t.boolean  "visible",                  default: false
+    t.boolean  "visible",                  default: true
     t.string   "meta_keywords"
     t.string   "meta_description"
     t.string   "layout"
     t.boolean  "show_in_sidebar",          default: false, null: false
     t.string   "meta_title"
     t.boolean  "render_layout_as_partial", default: false
-    t.string   "nav_title"
-    t.string   "path"
-    t.boolean  "accessible",               default: true
   end
 
   add_index "spree_pages", ["slug"], name: "index_pages_on_slug", using: :btree
@@ -703,6 +747,7 @@ ActiveRecord::Schema.define(version: 20150717115612) do
     t.boolean  "enabled"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "currency"
   end
 
   add_index "spree_sale_prices", ["price_id", "start_at", "end_at", "enabled"], name: "index_active_sale_prices_for_price", using: :btree

@@ -11,8 +11,9 @@ Spree::Price.class_eval do
     start_at = params[:start_at] || Time.now
     end_at = params[:end_at] || nil
     enabled = params[:enabled] || true
+    currency =  params[:currency] || nil
 
-    sale_price = sale_prices.new({ value: value, start_at: start_at, end_at: end_at, enabled: enabled, calculator: calculator_type })
+    sale_price = sale_prices.new({ value: value, start_at: start_at, end_at: end_at, enabled: enabled, calculator: calculator_type, currency: currency })
     sale_price
   end
 

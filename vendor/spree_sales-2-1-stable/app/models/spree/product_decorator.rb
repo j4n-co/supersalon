@@ -22,7 +22,6 @@ Spree::Product.class_eval do
   # TODO also accept a class reference for calculator type instead of only a string
   def put_on_sale value, params={}
     all_variants = params[:all_variants] || true
-
     run_on_variants(all_variants) { |v| v.put_on_sale(value, params) }
   end
   alias :create_sale :put_on_sale
