@@ -24,7 +24,11 @@ module Spree
     end
 
     def price
-      calculator.compute self
+      if (calculator) 
+        calculator.compute self
+      else 
+        self.value
+      end
     end
 
     def enable

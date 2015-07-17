@@ -13,7 +13,6 @@ module Spree
 
       # Create a new sale price
       def create
-        binding.pry
         @sale_price = @product.put_on_sale params[:sale_price][:value], sale_price_params
         respond_with(@sale_price)
       end
