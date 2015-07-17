@@ -11,9 +11,11 @@
                 <%= product_property.property.presentation %>: <%= @product.master.stock_items.first().count_on_hand %> 
               </td>
             <% else %> 
+              <% if product_property.value != ""%> 
               <td> 
                 <%= product_property.property.presentation %>: <%= product_property.value %>
               </td>
+              <% end %> 
             <% end %> 
 
           </tr>
@@ -21,10 +23,30 @@
         <% reset_cycle('properties') %>
         <% end %>
         <% if @product.price_in(current_currency).amount %>
-
           <tr>
             <td>
-                <span itemprop="price"><%= @product.price_in(current_currency).display_price %></span>
+          <% if @product.on_sale? %> 
+
+            <%#figure out currency sale prices later %> 
+            
+            <% if current_currency == "EUR" %> 
+              <span itemprop="price"><%= @product.price_in(current_currency).display_price %></span> 
+            <% else %> 
+              <span class="sale-price"> 
+                <%= @product.price_in(current_currency).display_price %>
+              <span> 
+              <span class="original-price"> 
+                <%= @product.original_price %> 
+              </span>
+              <meta itemprop="priceCurrency" content="<%=current_currency%>" />
+              <meta itemprop="price" content="<%=@product.price%>" />
+            <% end %> 
+          
+          <% else %> 
+            <span itemprop="price"><%= @product.price_in(current_currency).display_price %></span>
+            <meta itemprop="priceCurrency" content="<%=current_currency%>" />
+            <meta itemprop="price" content="<%=@product.price%>" />
+          <% end %> 
             </td>
           </tr>
           <% end %>
