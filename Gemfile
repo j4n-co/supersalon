@@ -74,7 +74,7 @@ gem 'spree_auth_devise', path: 'vendor/spree_auth_devise-2-1-stable' #changing v
 gem 'globalize', '~> 4.0.3'
 
 #static content and blog
-gem 'spree_essential_content', :github => 'FineLineAutomation/spree_essential_content', :branch => '2-1-stable'
+#gem 'spree_essential_content', :github => 'FineLineAutomation/spree_essential_content', :branch => '2-1-stable'
 
 #custom gems
 #gem 'spree_static_content', 	github: 'spree/spree_static_content', 		:branch => '2-1-stable' #installed
