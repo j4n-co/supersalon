@@ -120,7 +120,7 @@ gem 'sunspot_solr'
 gem 'spree_solr', path:'vendor/spree_solr'
 
 #static content and blog
-gem 'spree_essential_content', :github => 'FineLineAutomation/spree_essential_content', :branch => '2-1-stable'
+#gem 'spree_essential_content', :github => 'FineLineAutomation/spree_essential_content', :branch => '2-1-stable'
 
 #payu integration
 gem 'openpayu'
