@@ -73,6 +73,9 @@ gem 'spree_auth_devise', path: 'vendor/spree_auth_devise-2-1-stable' #changing v
 
 gem 'globalize', '~> 4.0.3'
 
+#static content and blog
+gem 'spree_essential_content', :github => 'FineLineAutomation/spree_essential_content', :branch => '2-1-stable'
+
 #custom gems
 #gem 'spree_static_content', 	github: 'spree/spree_static_content', 		:branch => '2-1-stable' #installed
 gem 'spree_related_products', 	github: 'spree/spree_related_products', 	:branch => '2-1-stable' #installed
@@ -118,9 +121,6 @@ gem 'spree_promotion_zones_rule', 			path: 'vendor/spree_promotion_zones_rule' #
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 gem 'spree_solr', path:'vendor/spree_solr'
-
-#static content and blog
-#gem 'spree_essential_content', :github => 'FineLineAutomation/spree_essential_content', :branch => '2-1-stable'
 
 #payu integration
 gem 'openpayu'

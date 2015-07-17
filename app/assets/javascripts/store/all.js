@@ -17,4 +17,5 @@
 //= require_tree .
 //= require spree/frontend/spree_promotion_zones_rule
 //= require store/spree_agree_to_terms
+//= require store/spree_essential_content
 //= require store/spree_frontend
