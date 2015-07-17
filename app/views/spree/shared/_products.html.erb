@@ -41,7 +41,6 @@
             <div itemprop="offers" itemscope itemtype="http://data-vocabulary.org/Offer" class="product-price"> 
               <% if product.on_sale? %> 
                 <%#figure out currency sale prices later %> 
-                
                 <% if current_currency == "EUR" %> 
                   <%= product.price_in(current_currency).display_price %>
                 <% else %> 
@@ -50,7 +49,7 @@
                 <%= product.price_in(current_currency).display_price.to_html %>
                 <span> 
                 <span class="original-price"> 
-                <%= product.original_price %> 
+                <%= money(product.original_price).to_html %> 
                 </span>
                 <meta itemprop="priceCurrency" content="<%=current_currency%>" />
                 <meta itemprop="price" content="<%=product.price%>" />

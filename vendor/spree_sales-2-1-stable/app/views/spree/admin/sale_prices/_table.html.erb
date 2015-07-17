@@ -37,33 +37,35 @@
   <tbody>
     <% if product.variants.blank? %> 
     <% if product.on_sale? %>
-      <% sale_price = product.master.sale_prices.first %>
-      <tr class="spree-product-sale-price" data-hook="products_row" id="<%= spree_dom_id(product) %>">
-        <td>
-          <%= product.sku %>
-        </td>
-        <td>
-          <%=  active_for_sale_price(product.master, sale_price) ? Spree.t(:yes) : '' %>
-        </td>
-        <td>
-          <%= display_original_price(product) %>
-        </td>
-        <td>
-          <%= product.display_price.to_html %>
-        </td>
-        <td>
-          <%= sale_price.start_at.to_date %>
-        </td>
-        <td>
-          <%= sale_price.end_at.to_date %>
-        </td>
-        <td>
-          <%= sale_price.enabled %>
-        </td>
-        <td class="actions">
-          <%= link_to_delete sale_price, {:url => admin_product_sale_price_url(product, sale_price.id), :no_text => true} %>
-        </td>
-      </tr>
+      <% sale_prices = product.master.sale_prices %>
+        <% sale_prices.each do |sale_price| %> 
+          <tr class="spree-product-sale-price" data-hook="products_row" id="<%= spree_dom_id(product) %>">
+            <td>
+              <%= product.sku %>
+            </td>
+            <td>
+              <%=  active_for_sale_price(product.master, sale_price) ? Spree.t(:yes) : '' %>
+            </td>
+            <td>
+              <%= display_original_price(product) %>
+            </td>
+            <td>
+              <%= product.display_price.to_html %>
+            </td>
+            <td>
+              <%= sale_price.start_at.to_date %>
+            </td>
+            <td>
+              <%= sale_price.end_at.to_date %>
+            </td>
+            <td>
+              <%= sale_price.enabled %>
+            </td>
+            <td class="actions">
+              <%= link_to_delete sale_price, {:url => admin_product_sale_price_url(product, sale_price.id), :no_text => true} %>
+            </td>
+          </tr>
+          <% end %> 
     <% end %>
 
     <%= render partial: "variant", collection: product.master, locals: {product: product} %>

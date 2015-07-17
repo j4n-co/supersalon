@@ -36,7 +36,7 @@
                 <%= @product.price_in(current_currency).display_price %>
               <span> 
               <span class="original-price"> 
-                <%= @product.original_price %> 
+                <%= money(@product.original_price).to_html %> 
               </span>
               <meta itemprop="priceCurrency" content="<%=current_currency%>" />
               <meta itemprop="price" content="<%=@product.price%>" />
