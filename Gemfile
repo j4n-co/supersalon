@@ -73,9 +73,6 @@ gem 'spree_auth_devise', path: 'vendor/spree_auth_devise-2-1-stable' #changing v
 
 gem 'globalize', '~> 4.0.3'
 
-#static content and blog
-#gem 'spree_essential_content', :github => 'FineLineAutomation/spree_essential_content', :branch => '2-1-stable'
-
 #custom gems
 #gem 'spree_static_content', 	github: 'spree/spree_static_content', 		:branch => '2-1-stable' #installed
 gem 'spree_related_products', 	github: 'spree/spree_related_products', 	:branch => '2-1-stable' #installed
@@ -131,6 +128,9 @@ gem 'spree_devise_simple_weight_calculator', path: 'vendor/spree_devise_simple_w
 gem 'spree_sorted_shipping_methods', path: 'vendor/spree_sorted_shipping_methods' #custom spree extension for sorting shipping.  
 
 #sales
-gem 'spree_sales', :path => 'vendor/spree_sales-2-1-stable'
+#gem 'spree_sales', :path => 'vendor/spree_sales-2-1-stable'
 #gem 'spree_sale_prices', path: 'vendor/spree_sale_prices'
+
+#static content and blog
+gem 'spree_essential_content', path: 'vendor/spree_essential_content-2-1-stable', :branch => '2-1-stable'
 

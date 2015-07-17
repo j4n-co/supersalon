@@ -15,6 +15,8 @@ set :deploy_to, '/root/rails'
 set :repository, 'https://github.com/j4n-co/supersalon.git'
 set :branch, 'master'
 
+set :keep_releases, 10
+
 # For system-wide RVM install.
 #   set :rvm_path, '/usr/local/rvm/bin/rvm'
 
