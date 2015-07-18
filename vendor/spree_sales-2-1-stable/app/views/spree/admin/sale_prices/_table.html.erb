@@ -36,7 +36,6 @@
   </thead>
   <tbody>
     <% if product.variants.blank? %> 
-    <% if product.on_sale? %>
       <% sale_prices = product.master.sale_prices %>
         <% sale_prices.each do |sale_price| %> 
           <tr class="spree-product-sale-price" data-hook="products_row" id="<%= spree_dom_id(product) %>">
@@ -66,7 +65,6 @@
             </td>
           </tr>
           <% end %> 
-    <% end %>
 
     <%= render partial: "variant", collection: product.master, locals: {product: product} %>
     <% else %> 
