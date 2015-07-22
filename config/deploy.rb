@@ -11,7 +11,7 @@ require 'mina/rvm'    # for rvm support. (http://rvm.io)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
 set :domain, '46.101.103.98'
-set :deploy_to, '/home/rails'
+set :deploy_to, '/home/rails/supersalon'
 set :repository, 'https://github.com/j4n-co/supersalon.git'
 set :branch, 'master'
 
@@ -25,7 +25,7 @@ set :keep_releases, 10
 set :shared_paths, ['config/database.yml', 'log']
 
 # Optional settings:
-   set :user, 'rails'    # Username in the server to SSH to.
+   set :user, 'root'    # Username in the server to SSH to.
    set :identity_file, '/home/jan/.ssh/supersalon_ubuntu-14.04' 
 #   set :port, '30000'     # SSH port number.
 #   set :forward_agent, true     # SSH forward_agent.
@@ -60,17 +60,17 @@ task :deploy => :environment do
   deploy do
     # Put things that will set up an empty directory into a fully set-up
     # instance of your project.
-    invoke 'stop_sunspot'
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
-    invoke :'rails:db_migrate'
+    #invoke :'rails:db_migrate'
     #invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
 
 
 
     to :launch do
+      invoke 'stop_sunspot'
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/cache"
       queue "chmod 777 #{deploy_to}/#{current_path}/tmp/cache"
@@ -84,20 +84,20 @@ end
 
 task :stop_sunspot do
   queue 'service nginx stop'
-  if File.exists?('/root/rails/current/solr/pids/production/sunspot-solr-production.pid')
-    queue "cd /root/rails/current ; RAILS_ENV=production bundle exec rake sunspot:solr:stop"
+  if File.exists?('/home/rails/supersalon/current/solr/pids/production/sunspot-solr-production.pid')
+    queue "cd /home/rails/supersalon/current ; RAILS_ENV=production bundle exec rake sunspot:solr:stop"
   end
 end
 
 task :start_sunspot do
   
-  queue "cd #{deploy_to}/current ; RAILS_ENV=production bundle exec rake sunspot:solr:start"
-  queue "cd #{deploy_to}/current ; RAILS_ENV=production bundle exec rake sunspot:solr:reindex"
+  queue "cd /home/rails/supersalon/current ; RAILS_ENV=production bundle exec rake sunspot:solr:start"
+  queue "cd /home/rails/supersalon/current ; RAILS_ENV=production bundle exec rake sunspot:solr:reindex"
 end
 
 
 task :force_precompile do 
-  queue "cd /root/rails/current ; RAILS_ENV=production bundle exec rake assets:precompile"
+  queue "cd /home/rails/supersalon/current ; RAILS_ENV=production bundle exec rake assets:precompile"
 end
 
 task :restart do
