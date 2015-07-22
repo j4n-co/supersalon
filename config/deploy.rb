@@ -10,8 +10,8 @@ require 'mina/rvm'    # for rvm support. (http://rvm.io)
 #   repository   - Git repo to clone from. (needed by mina/git)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
-set :domain, '128.199.57.94'
-set :deploy_to, '/root/rails'
+set :domain, '46.101.103.98'
+set :deploy_to, '/home/rails'
 set :repository, 'https://github.com/j4n-co/supersalon.git'
 set :branch, 'master'
 
@@ -25,7 +25,7 @@ set :keep_releases, 10
 set :shared_paths, ['config/database.yml', 'log']
 
 # Optional settings:
-   set :user, 'root'    # Username in the server to SSH to.
+   set :user, 'rails'    # Username in the server to SSH to.
    set :identity_file, '/home/jan/.ssh/supersalon_ubuntu-14.04' 
 #   set :port, '30000'     # SSH port number.
 #   set :forward_agent, true     # SSH forward_agent.
@@ -83,7 +83,7 @@ task :deploy => :environment do
 end
 
 task :stop_sunspot do
-  queue 'sudo service nginx stop'
+  queue 'service nginx stop'
   if File.exists?('/root/rails/current/solr/pids/production/sunspot-solr-production.pid')
     queue "cd /root/rails/current ; RAILS_ENV=production bundle exec rake sunspot:solr:stop"
   end
@@ -101,7 +101,7 @@ task :force_precompile do
 end
 
 task :restart do
-      queue 'sudo service nginx start'
+      queue 'service nginx start'
 end
 
 # For help in making your deploy script, see the Mina documentation:
