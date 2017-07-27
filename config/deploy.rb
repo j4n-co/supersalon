@@ -26,7 +26,7 @@ set :shared_paths, ['config/database.yml', 'log']
 
 # Optional settings:
    set :user, 'root'    # Username in the server to SSH to.
-   set :identity_file, '/home/jan/.ssh/supersalon_ubuntu-14.04' 
+   set :identity_file, '/home/jan/.ssh/supersalon_ubuntu-14.04'
 #   set :port, '30000'     # SSH port number.
 #   set :forward_agent, true     # SSH forward_agent.
 
@@ -60,17 +60,18 @@ task :deploy => :environment do
   deploy do
     # Put things that will set up an empty directory into a fully set-up
     # instance of your project.
+    queue "export PATH=$PATH:/usr/local/rvm/gems/ruby-2.1.5/bin/bundle:/usr/local/rvm/gems/ruby-2.1.5/bin/bundler:/usr/local/rvm/gems/ruby-2.1.5/bin:/usr/local/rvm/gems/ruby-2.1.5@global/bin:/usr/local/rvm/rubies/ruby-2.1.5/bin:/usr/local/rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+    invoke 'stop_sunspot'
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
-    #invoke :'rails:db_migrate'
-    #invoke :'rails:assets_precompile'
+    invoke :'rails:db_migrate'
+    invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
 
 
 
     to :launch do
-      invoke 'stop_sunspot'
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/cache"
       queue "chmod 777 #{deploy_to}/#{current_path}/tmp/cache"
@@ -90,13 +91,13 @@ task :stop_sunspot do
 end
 
 task :start_sunspot do
-  
+
   queue "cd /home/rails/supersalon/current ; RAILS_ENV=production bundle exec rake sunspot:solr:start"
   queue "cd /home/rails/supersalon/current ; RAILS_ENV=production bundle exec rake sunspot:solr:reindex"
 end
 
 
-task :force_precompile do 
+task :force_precompile do
   queue "cd /home/rails/supersalon/current ; RAILS_ENV=production bundle exec rake assets:precompile"
 end
 

@@ -3,25 +3,25 @@
 <header id="header" class="row top" data-hook>
 
   <div class="main-nav-bar">
-    
-    <div class="main-nav-item social_items"> 
+
+    <div class="main-nav-item social_items">
       <ul id="links-in-header"></ul>
-    </div> 
+    </div>
 
     <%= cache 'taxonomies_cache' , skip_digest: true do %>
-  	<div class="main-taxon-menu"> 
-      <% if defined?(get_taxonomies) %> 
+  	<div class="main-taxon-menu">
+      <% if defined?(get_taxonomies) %>
         <% get_taxonomies.each do |taxonomy| %>
           <%= taxons_tree(taxonomy.root, @taxon, Spree::Config[:max_level_in_taxons_menu] || 2) %>
         <% end %>
 
       <% end %>
     </div>
-    <% end %> 
-    
+    <% end %>
+
     <h1 class="main-nav-item logo">
       <%= link_to 'Super Salon', root_path %>
     </h1>
 
-  </div> 
+  </div>
 </header>
