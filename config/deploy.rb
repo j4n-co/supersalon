@@ -10,7 +10,7 @@ require 'mina/rvm'    # for rvm support. (http://rvm.io)
 #   repository   - Git repo to clone from. (needed by mina/git)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
-set :domain, '46.101.103.98'
+set :domain, 'supersalon.org'
 set :deploy_to, '/home/rails/supersalon'
 set :repository, 'https://github.com/j4n-co/supersalon.git'
 set :branch, 'master'
